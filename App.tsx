@@ -7,7 +7,7 @@
  *
  * @format
  */
-
+import 'react-native-gesture-handler';
 import React from 'react';
 import {
   SafeAreaView,
@@ -17,6 +17,7 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
 
 import {
   Header,
@@ -26,11 +27,18 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import Home from './app/screens/Home';
+import {SignedIn} from './app/config/router';
+import DrawerNavigatorExample from './app/screens/NavigationDrawerStructure';
 
 declare const global: {HermesInternal: null | {}};
 
 const App = () => {
-  return <Home />;
+  return (
+    <NavigationContainer>
+      <StatusBar hidden />
+      <DrawerNavigatorExample />
+    </NavigationContainer>
+  );
 };
 
 const styles = StyleSheet.create({

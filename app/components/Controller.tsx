@@ -33,6 +33,8 @@ export default Controller = ({
   paused,
   fullScreen,
   toggleFullScreen,
+  muted,
+  onToggleVolume,
 }) => {
   return (
     <View style={styles.mainContainer}>
@@ -42,7 +44,7 @@ export default Controller = ({
         maximumValue={totalLength}
         value={seekValue}
         minimumTrackTintColor="#0793DB"
-        maximumTrackTintColor="#FBFEFE"
+        maximumTrackTintColor="grey"
         onValueChange={(changedValue) => onDragSeekBar(changedValue)}
         onSlidingComplete={(changedValue) => onSliderReleased(changedValue)}
         style={{width: '100%', marginTop: 10}}
@@ -61,7 +63,13 @@ export default Controller = ({
           )} / ${formatTime(totalLength)}`}</Text>
         </View>
         <View style={styles.controllerContainer}>
-          <Icon name="volume-medium" type="ionicon" color="black" size={60} />
+          <Icon
+            name={muted ? 'md-volume-mute' : 'volume-medium'}
+            type="ionicon"
+            color="black"
+            size={60}
+            onPress={onToggleVolume}
+          />
           <Icon
             name={fullScreen ? 'fullscreen-exit' : 'fullscreen'}
             type="material-community"
