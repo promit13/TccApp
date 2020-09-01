@@ -1,119 +1,90 @@
-import React, {useState} from 'react';
-import {View, Text, Image, Dimensions} from 'react-native';
-import Modal from 'react-native-modal';
-import {Icon} from 'react-native-elements';
+import React from 'react';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+import {View, StyleSheet, Text, Dimensions} from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
+import Dashboard from './Dashboard';
+import Sessions from './Sessions';
 import Header from '../components/Header';
-import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
-import VideoPlayer from './VideoPlayer';
 
-const width = Dimensions.get('window').width;
-const height = Dimensions.get('window').height;
+const {width, height} = Dimensions.get('window');
 
-function Home({navigation}) {
-  const [modalVisible, setModalVisible] = useState(false);
+const Drawer = createDrawerNavigator();
+
+//This is an example code for Navigation Drawer with Custom Side bar//
+const items = [
+  {
+    navOptionName: 'Dashboard',
+    screenToNavigate: 'Dashboard',
+  },
+  {
+    navOptionName: 'Sessions',
+    screenToNavigate: 'Sessions',
+  },
+  {
+    navOptionName: 'Campaigns',
+    screenToNavigate: 'Dashboard',
+  },
+  {
+    navOptionName: 'Users',
+    screenToNavigate: 'Sessions',
+  },
+  {
+    navOptionName: 'Logout',
+    screenToNavigate: 'Dashboard',
+  },
+];
+
+export function CustomSidebarMenu(props) {
   return (
-    <View style={{flex: 1, backgroundColor: 'grey'}}>
-      <Header nav={navigation} backgroundColor="green" />
-      {/* <Button title="Open drawer" onPress={() => navigation.openDrawer()} />
-      <Button title="Toggle drawer" onPress={() => navigation.toggleDrawer()} /> */}
-      <View
-        style={{
-          flex: 1,
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          paddingHorizontal: 20,
-        }}>
-        <TouchableWithoutFeedback onPress={() => console.log('Pressed')}>
-          <Image
-            style={{width: 200, height: 200}}
-            source={require('../res/sun.jpeg')}
-          />
-        </TouchableWithoutFeedback>
-        <TouchableWithoutFeedback>
-          <Image
-            style={{width: 200, height: 200}}
-            source={require('../res/sun.jpeg')}
-          />
-        </TouchableWithoutFeedback>
-        <TouchableWithoutFeedback>
-          <Image
-            style={{width: 200, height: 200}}
-            source={require('../res/sun.jpeg')}
-          />
-        </TouchableWithoutFeedback>
-        <TouchableWithoutFeedback>
-          <Image
-            style={{width: 200, height: 200}}
-            source={require('../res/sun.jpeg')}
-          />
-        </TouchableWithoutFeedback>
-      </View>
-      <View
-        style={{
-          alignSelf: 'flex-end',
-          flexDirection: 'row',
-          padding: 20,
-          alignItems: 'center',
-        }}>
-        <Text style={{fontSize: 20}}>A message from our CEO</Text>
-        <Icon
-          name="ios-play-circle"
-          type="ionicon"
-          size={60}
-          onPress={() => setModalVisible(true)}
-          iconStyle={{color: 'white', marginLeft: 20}}
-        />
-      </View>
-      <Modal
-        style={{
-          flex: 1,
-          alignItems: 'center',
-        }}
-        isVisible={modalVisible}
-        coverScreen
-        hasBackdrop
-        backdropColor="grey"
-        backdropOpacity={1}
-        onBackdropPress={() => setModalVisible(false)}>
-        <View
+    <View style={styles.sideMenuContainer}>
+      {items.map((item, key) => (
+        <TouchableOpacity
           style={{
-            backgroundColor: 'white',
-            alignItems: 'center',
-            padding: 10,
+            padding: 30,
+            borderColor: 'grey',
+            borderWidth: 0.5,
+          }}
+          key={key}
+          onPress={() => {
+            props.navigation.navigate(item.screenToNavigate);
           }}>
-          <View
+          <Text
             style={{
-              width: width / 2,
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              alignItems: 'center',
+              fontSize: 20,
+              color: 'grey',
             }}>
-            <View style={{width: 1, height: 1}} />
-            <Text
-              style={{
-                color: 'grey',
-                fontSize: 18,
-                fontWeight: 'bold',
-              }}>
-              INTRODUCTION VIDEO
-            </Text>
-            <Icon
-              name="cross"
-              type="entypo"
-              size={40}
-              onPress={() => setModalVisible(false)}
-              iconStyle={{
-                color: 'grey',
-                alignSelf: 'flex-end',
-              }}
-            />
-          </View>
-          <VideoPlayer />
-        </View>
-      </Modal>
+            {item.navOptionName}
+          </Text>
+        </TouchableOpacity>
+      ))}
     </View>
   );
 }
+
+function Home({navigation}) {
+  return (
+    <View style={{flex: 1, backgroundColor: 'grey'}}>
+      <Header nav={navigation} backgroundColor="green" />
+      <Drawer.Navigator
+        drawerType="permanent"
+        drawerContent={(props) => <CustomSidebarMenu {...props} />}
+        drawerStyle={{
+          width: width / 5,
+        }}>
+        <Drawer.Screen name="Dashboard" component={Dashboard} />
+        <Drawer.Screen name="Sessions" component={Sessions} />
+        <Drawer.Screen name="Campaigns" component={Dashboard} />
+        <Drawer.Screen name="Users" component={Sessions} />
+        <Drawer.Screen name="Logout" component={Dashboard} />
+      </Drawer.Navigator>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  sideMenuContainer: {
+    flex: 1,
+  },
+});
 
 export default Home;

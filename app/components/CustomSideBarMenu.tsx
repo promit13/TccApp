@@ -13,13 +13,13 @@ const items = [
     navOptionThumb: 'bar-chart-2',
     type: 'feather',
     navOptionName: 'Zones',
-    screenToNavigate: 'Test',
+    screenToNavigate: 'Zone',
   },
   {
     navOptionThumb: 'heart-outlined',
     navOptionName: 'Living Well',
     type: 'entypo',
-    screenToNavigate: 'Notifications',
+    screenToNavigate: 'Test',
   },
   {
     navOptionThumb: 'leaf',
@@ -31,34 +31,19 @@ const items = [
     navOptionThumb: 'food-drumstick',
     type: 'material-community',
     navOptionName: 'Food for Thought',
-    screenToNavigate: 'Test',
+    screenToNavigate: 'Zone',
   },
   {
     navOptionThumb: 'user-friends',
     type: 'font-awesome-5',
     navOptionName: 'Friends and Family',
-    screenToNavigate: 'Notifications',
+    screenToNavigate: 'Test',
   },
 ];
 
 export function CustomSidebarMenu(props) {
-  //Setting up the Main Top Large Image of the Custom Sidebar
-  //Array of the sidebar navigation option with icon and screen to navigate
-  //This screens can be any screen defined in Drawer Navigator in App.js
-  //You can find the Icons from here https://material.io/tools/icons/
-
   return (
     <View style={styles.sideMenuContainer}>
-      {/*Top Large Image */}
-      {/* <View
-        style={{
-          width: '100%',
-          height: 1,
-          backgroundColor: '#e2e2e2',
-          marginTop: 15,
-        }}
-      /> */}
-      {/*Setting up Navigation Options from option array using loop*/}
       <View style={{width: '100%'}}>
         {items.map((item, key) => (
           <TouchableOpacity

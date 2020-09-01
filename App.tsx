@@ -26,7 +26,7 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import Home from './app/screens/Home';
+import Home from './app/screens/Zone';
 import {SignedIn} from './app/config/router';
 import DrawerNavigatorExample from './app/screens/NavigationDrawerStructure';
 

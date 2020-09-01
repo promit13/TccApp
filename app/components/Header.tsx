@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {View, Text, Image, StyleSheet, Dimensions} from 'react-native';
 import {Icon, SearchBar} from 'react-native-elements';
 
-const width = Dimensions.get('window').width;
+const {width, height} = Dimensions.get('window');
 
 export default HeaderBar = ({nav, backgroundColor}) => {
   const [searchLens, setSearchLens] = useState(true);

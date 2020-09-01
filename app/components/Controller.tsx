@@ -1,6 +1,9 @@
 import React from 'react';
 import {View, Slider, StyleSheet, Dimensions, Text} from 'react-native';
 import {Icon} from 'react-native-elements';
+
+const {width, height} = Dimensions.get('window');
+
 const formatTime = (time: number) => {
   //   let minutes = 0;
   //   const seconds = Math.round(timeToFormat);
@@ -85,7 +88,7 @@ export default Controller = ({
 
 const styles = StyleSheet.create({
   mainContainer: {
-    width: Dimensions.get('window').width / 2,
+    width: width / 2,
   },
   controllerContainer: {
     flexDirection: 'row',

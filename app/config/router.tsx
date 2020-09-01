@@ -26,7 +26,7 @@ import {
   DrawerItem,
 } from '@react-navigation/drawer';
 import {Icon} from 'react-native-elements';
-import Home from '../screens/Home';
+import Zone from '../screens/Zone';
 
 function CustomDrawerContent(props) {
   return (

@@ -9,8 +9,7 @@ import {
 import Video from 'react-native-video';
 import Controller from '../components/Controller';
 
-const width = Dimensions.get('window').width;
-const height = Dimensions.get('window').height;
+const {width, height} = Dimensions.get('window');
 
 type FormData = {
   userId: string;
