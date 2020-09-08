@@ -90,7 +90,7 @@ class VideoPlayer extends React.Component {
           fullscreen={fullScreen}
           muted={muted}
           progressUpdateInterval={50.0}
-          playInBackground
+          // playInBackground
           ignoreSilentSwitch="ignore"
           playWhenInactive
           onLoad={this.onLoad}

@@ -11,7 +11,6 @@ target 'TccApp' do
   pod 'react-native-video', :path => '../node_modules/react-native-video'
 
 
-  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
   target 'TccAppTests' do
     inherit! :complete
