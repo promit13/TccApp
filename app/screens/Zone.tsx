@@ -3,16 +3,22 @@ import {View, Text, Image, Dimensions} from 'react-native';
 import Modal from 'react-native-modal';
 import {Icon} from 'react-native-elements';
 import Header from '../components/Header';
-import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
+import {
+  TouchableWithoutFeedback,
+  TouchableOpacity,
+} from 'react-native-gesture-handler';
 import VideoPlayer from './VideoPlayer';
 
 const {width, height} = Dimensions.get('window');
 
+const earthImage = require('../res/earth.gif');
+
 function Zone({navigation}) {
   const [modalVisible, setModalVisible] = useState(false);
+  console.log(Image.resolveAssetSource(earthImage));
   return (
     <View style={{flex: 1, backgroundColor: 'grey'}}>
-      <Header nav={navigation} backgroundColor="green" />
+      <Header nav={navigation} />
       {/* <Button title="Open drawer" onPress={() => navigation.openDrawer()} />
       <Button title="Toggle drawer" onPress={() => navigation.toggleDrawer()} /> */}
       <View
@@ -23,12 +29,9 @@ function Zone({navigation}) {
           alignItems: 'center',
           paddingHorizontal: 20,
         }}>
-        <TouchableWithoutFeedback onPress={() => console.log('Pressed')}>
-          <Image
-            style={{width: 200, height: 200}}
-            source={require('../res/sun.jpeg')}
-          />
-        </TouchableWithoutFeedback>
+        <TouchableOpacity onPress={() => console.log('Pressed')}>
+          <Image style={{width: 200, height: 200}} source={earthImage} />
+        </TouchableOpacity>
         <TouchableWithoutFeedback>
           <Image
             style={{width: 200, height: 200}}
@@ -108,7 +111,8 @@ function Zone({navigation}) {
               }}
             />
           </View>
-          <VideoPlayer />
+          {/* <VideoPlayer videoUrl="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4" /> */}
+          <VideoPlayer videoUrl="video" />
         </View>
       </Modal>
     </View>

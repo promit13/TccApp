@@ -10,6 +10,9 @@ import {CustomSidebarMenu} from '../components/CustomSideBarMenu';
 import Zone from './Zone';
 import Test from './Test';
 import Home from './Home';
+import Panorama from './Panorama';
+import Download from './Download';
+import GraphDemo from './GraphDemo';
 
 const Stack = createStackNavigator();
 
@@ -29,7 +32,9 @@ const SignedIn = () => {
       drawerPosition="right">
       <Drawer.Screen name="Home" component={Home} />
       <Drawer.Screen name="Zone" component={Zone} />
-      <Drawer.Screen name="Test" component={Test} />
+      <Drawer.Screen name="GraphDemo" component={GraphDemo} />
+      <Drawer.Screen name="Panorama" component={Panorama} />
+      <Drawer.Screen name="Download" component={Download} />
     </Drawer.Navigator>
   );
 };

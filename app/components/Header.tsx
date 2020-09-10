@@ -4,15 +4,16 @@ import {Icon, SearchBar} from 'react-native-elements';
 
 const {width, height} = Dimensions.get('window');
 
-export default HeaderBar = ({nav, backgroundColor}) => {
+export default HeaderBar = ({nav}) => {
   const [searchLens, setSearchLens] = useState(true);
   const [searchValue, setSearchValue] = useState('');
 
   return (
-    <View style={[styles.headerStyle, {backgroundColor: backgroundColor}]}>
+    <View style={styles.headerStyle}>
       <Image
-        style={{width: 60, height: 60}}
-        source={require('../res/sun.jpeg')}
+        style={{width: 100, height: 100}}
+        source={require('../res/logo.png')}
+        resizeMode="contain"
       />
       <View
         style={{
@@ -62,5 +63,6 @@ const styles = StyleSheet.create({
     height: 100,
     justifyContent: 'space-between',
     paddingHorizontal: 40,
+    backgroundColor: '#758592',
   },
 });

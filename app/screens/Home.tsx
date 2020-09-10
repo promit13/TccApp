@@ -64,7 +64,7 @@ export function CustomSidebarMenu(props) {
 function Home({navigation}) {
   return (
     <View style={{flex: 1, backgroundColor: 'grey'}}>
-      <Header nav={navigation} backgroundColor="green" />
+      <Header nav={navigation} />
       <Drawer.Navigator
         drawerType="permanent"
         drawerContent={(props) => <CustomSidebarMenu {...props} />}

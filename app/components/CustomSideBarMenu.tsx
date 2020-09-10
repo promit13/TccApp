@@ -19,13 +19,13 @@ const items = [
     navOptionThumb: 'heart-outlined',
     navOptionName: 'Living Well',
     type: 'entypo',
-    screenToNavigate: 'Test',
+    screenToNavigate: 'Download',
   },
   {
     navOptionThumb: 'leaf',
     type: 'entypo',
     navOptionName: 'Caring for the Environment',
-    screenToNavigate: 'Home',
+    screenToNavigate: 'GraphDemo',
   },
   {
     navOptionThumb: 'food-drumstick',
@@ -37,7 +37,7 @@ const items = [
     navOptionThumb: 'user-friends',
     type: 'font-awesome-5',
     navOptionName: 'Friends and Family',
-    screenToNavigate: 'Test',
+    screenToNavigate: 'Panorama',
   },
 ];
 

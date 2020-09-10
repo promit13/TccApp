@@ -6,6 +6,9 @@ import {
   TouchableOpacity,
   Dimensions,
 } from 'react-native';
+import RNBackgroundDownloader, {
+  TaskInfo,
+} from 'react-native-background-downloader';
 import Video from 'react-native-video';
 import Controller from '../components/Controller';
 
@@ -31,12 +34,14 @@ class VideoPlayer extends React.Component {
     this.setState({paused: !this.state.paused});
   };
   onLoad = (data) => {
+    console.log(data);
     this.setState({loading: false, totalLength: data.duration});
   };
   onEnd = () => {
     this.setState({paused: true, currentTime: 0});
   };
   onProgress = (data) => {
+    console.log(data);
     this.setState({currentTime: data.currentTime});
   };
   onDrageSeekBar = () => {
@@ -70,13 +75,17 @@ class VideoPlayer extends React.Component {
       videoHeight,
       muted,
     } = this.state;
+    console.log(
+      'VP PATH',
+      `file:/${RNBackgroundDownloader.directories.documents}/${this.props.videoUrl}.mp4`,
+    );
     return (
       <View>
         {/* <View style={[styles.videoContainer, {width: videoWidth}]}> */}
         <Video
           source={{
-            uri:
-              'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4',
+            // uri: `file://${RNBackgroundDownloader.directories.documents}/${this.props.videoUrl}.mp4`,
+            uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4',
           }} // Can be a URL or a local file.
           ref={(ref) => {
             this.player = ref;
@@ -85,12 +94,12 @@ class VideoPlayer extends React.Component {
             width: videoWidth,
             height: videoHeight,
           }}
+          onError={(e) => console.log(e)}
           paused={paused}
           controls={true}
           fullscreen={fullScreen}
           muted={muted}
           progressUpdateInterval={50.0}
-          playInBackground
           ignoreSilentSwitch="ignore"
           playWhenInactive
           onLoad={this.onLoad}
