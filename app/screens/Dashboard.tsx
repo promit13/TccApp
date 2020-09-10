@@ -2,6 +2,7 @@ import React from 'react';
 // import {LineChart, BarChart, XAxis, Grid} from 'react-native-svg-charts';
 import {View, Dimensions} from 'react-native';
 import {BarChart} from 'react-native-chart-kit';
+import Video from 'react-native-video';
 const {width, height} = Dimensions.get('window');
 
 class Dashboard extends React.PureComponent {
@@ -15,24 +16,26 @@ class Dashboard extends React.PureComponent {
       ],
     };
     return (
-      <BarChart
-        style={{marginVertical: 10, padding: 10, width: width / 2}}
-        data={data}
-        width={width / 3}
-        height={height / 3}
-        fromZero
-        chartConfig={{
-          backgroundGradientFrom: '#fff',
-          backgroundGradientTo: '#fff',
-          fillShadowGradientOpacity: 1,
-          decimalPlaces: 0,
-          color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
-          style: {
-            borderRadius: 16,
-          },
-        }}
-        verticalLabelRotation={0}
-      />
+      <View style={{flex: 1}}>
+        <BarChart
+          style={{marginVertical: 10, padding: 10, width: width / 2}}
+          data={data}
+          width={width / 3}
+          height={height / 3}
+          fromZero
+          chartConfig={{
+            backgroundGradientFrom: '#fff',
+            backgroundGradientTo: '#fff',
+            fillShadowGradientOpacity: 1,
+            decimalPlaces: 0,
+            color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+            style: {
+              borderRadius: 16,
+            },
+          }}
+          verticalLabelRotation={0}
+        />
+      </View>
     );
   }
 }
