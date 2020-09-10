@@ -1,24 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
-import {View, Text, StyleSheet} from 'react-native';
-import {Button} from 'react-native-elements';
-
-type FormData = {
-  userId: string;
-  password: string;
-};
-
-export default function Home({navigation}) {
-  return (
-    <View>
-      <Text>Home</Text>
-      <Button
-        buttonStyle={styles.buttonStyle}
-        title="LOGIN"
-        onPress={() => navigation.navigate('Login')}
-        titleStyle={styles.buttonStyle}
-      />
-=======
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {View, StyleSheet, Text, Dimensions} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
@@ -97,36 +77,14 @@ function Home({navigation}) {
         <Drawer.Screen name="Users" component={Sessions} />
         <Drawer.Screen name="Logout" component={Dashboard} />
       </Drawer.Navigator>
->>>>>>> feature/videoplayer
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-<<<<<<< HEAD
-  mainContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  buttonStyle: {
-    marginTop: 10,
-    paddingHorizontal: 80,
-    paddingVertical: 20,
-    borderRadius: 10,
-    borderWidth: 1,
-    borderColor: 'grey',
-  },
-  textStyle: {
-    fontSize: 20,
-    color: 'grey',
-  },
-});
-=======
   sideMenuContainer: {
     flex: 1,
   },
 });
 
 export default Home;
->>>>>>> feature/videoplayer

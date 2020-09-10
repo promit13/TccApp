@@ -160,11 +160,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				A735C14D67A0CC4D1F159F0D /* Pods */,
-<<<<<<< HEAD
-				21554ED73EB84249AF2F7459 /* Resources */,
-=======
 				8DB46D79C38840DFA9861929 /* Resources */,
->>>>>>> feature/videoplayer
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";

@@ -13,8 +13,7 @@ import {
 } from 'react-native';
 import {Icon, Button} from 'react-native-elements';
 
-const width = Dimensions.get('window').width;
-const height = Dimensions.get('window').height;
+const {height, width} = Dimensions.get('window');
 
 type FormData = {
   userId: string;

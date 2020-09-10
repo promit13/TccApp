@@ -238,14 +238,11 @@ PODS:
   - React-jsinspector (0.63.2)
   - react-native-safe-area-context (3.1.7):
     - React
-<<<<<<< HEAD
-=======
   - react-native-video (5.1.0-alpha8):
     - React
     - react-native-video/Video (= 5.1.0-alpha8)
   - react-native-video/Video (5.1.0-alpha8):
     - React
->>>>>>> feature/videoplayer
   - React-RCTActionSheet (0.63.2):
     - React-Core/RCTActionSheetHeaders (= 0.63.2)
   - React-RCTAnimation (0.63.2):
@@ -314,11 +311,8 @@ PODS:
     - React
   - RNScreens (2.10.1):
     - React
-<<<<<<< HEAD
-=======
   - RNSVG (12.1.0):
     - React
->>>>>>> feature/videoplayer
   - RNVectorIcons (7.0.0):
     - React
   - Yoga (1.14.0)
@@ -363,10 +357,7 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
-<<<<<<< HEAD
-=======
   - react-native-video (from `../node_modules/react-native-video`)
->>>>>>> feature/videoplayer
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
   - React-RCTBlob (from `../node_modules/react-native/Libraries/Blob`)
@@ -381,10 +372,7 @@ DEPENDENCIES:
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
-<<<<<<< HEAD
-=======
   - RNSVG (from `../node_modules/react-native-svg`)
->>>>>>> feature/videoplayer
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -436,11 +424,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
-<<<<<<< HEAD
-=======
   react-native-video:
     :path: "../node_modules/react-native-video"
->>>>>>> feature/videoplayer
   React-RCTActionSheet:
     :path: "../node_modules/react-native/Libraries/ActionSheetIOS"
   React-RCTAnimation:
@@ -469,11 +454,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
     :path: "../node_modules/react-native-screens"
-<<<<<<< HEAD
-=======
   RNSVG:
     :path: "../node_modules/react-native-svg"
->>>>>>> feature/videoplayer
   RNVectorIcons:
     :path: "../node_modules/react-native-vector-icons"
   Yoga:
@@ -507,10 +489,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 8ca588cc921e70590820ce72b8789b02c67cce38
   React-jsinspector: b14e62ebe7a66e9231e9581279909f2fc3db6606
   react-native-safe-area-context: 955ecfce672683b495d9294d2f154a9ad1d9796b
-<<<<<<< HEAD
-=======
   react-native-video: dbb8df4f0bbdf80de6797c90fcad8bc12b19401d
->>>>>>> feature/videoplayer
   React-RCTActionSheet: 910163b6b09685a35c4ebbc52b66d1bfbbe39fc5
   React-RCTAnimation: 9a883bbe1e9d2e158d4fb53765ed64c8dc2200c6
   React-RCTBlob: 39cf0ece1927996c4466510e25d2105f67010e13
@@ -525,18 +504,11 @@ SPEC CHECKSUMS:
   RNGestureHandler: b6b359bb800ae399a9c8b27032bdbf7c18f08a08
   RNReanimated: 89f5e0a04d1dd52fbf27e7e7030d8f80a646a3fc
   RNScreens: b748efec66e095134c7166ca333b628cd7e6f3e2
-<<<<<<< HEAD
-=======
   RNSVG: ce9d996113475209013317e48b05c21ee988d42e
->>>>>>> feature/videoplayer
   RNVectorIcons: da6fe858f5a65d7bbc3379540a889b0b12aa5976
   Yoga: 7740b94929bbacbddda59bf115b5317e9a161598
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-<<<<<<< HEAD
-PODFILE CHECKSUM: f8830fb367dda8d14a97d952b5bf737fc5e48cf2
-=======
 PODFILE CHECKSUM: 9a207b1d82391b6767efdaf54492a3b886874823
->>>>>>> feature/videoplayer
 
 COCOAPODS: 1.9.3
