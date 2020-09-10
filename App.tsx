@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -9,7 +7,6 @@
  *
  * @format
  */
->>>>>>> feature/videoplayer
 import 'react-native-gesture-handler';
 import React from 'react';
 import {
@@ -22,11 +19,6 @@ import {
 } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 
-<<<<<<< HEAD
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-import {NavigationContainer} from '@react-navigation/native';
-import {SignedOut} from './app/config/router';
-=======
 import {
   Header,
   LearnMoreLinks,
@@ -35,21 +27,15 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import Home from './app/screens/Zone';
-import {SignedIn} from './app/config/router';
 import DrawerNavigatorExample from './app/screens/NavigationDrawerStructure';
->>>>>>> feature/videoplayer
 
 declare const global: {HermesInternal: null | {}};
 
 const App = () => {
   return (
     <NavigationContainer>
-<<<<<<< HEAD
-      <SignedOut />
-=======
       <StatusBar hidden />
       <DrawerNavigatorExample />
->>>>>>> feature/videoplayer
     </NavigationContainer>
   );
 };
