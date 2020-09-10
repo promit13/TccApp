@@ -13,19 +13,12 @@ import Home from './Home';
 import Panorama from './Panorama';
 import Download from './Download';
 import GraphDemo from './GraphDemo';
+import Login from './Login';
 
 const Stack = createStackNavigator();
 
-function HomeStack() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Home" component={Home} />
-    </Stack.Navigator>
-  );
-}
-
 const Drawer = createDrawerNavigator();
-const SignedIn = () => {
+const HomeStack = () => {
   return (
     <Drawer.Navigator
       drawerContent={(props) => <CustomSidebarMenu {...props} />}
@@ -38,6 +31,19 @@ const SignedIn = () => {
     </Drawer.Navigator>
   );
 };
+
+function SignedIn() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
+      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="Home" component={HomeStack} />
+    </Stack.Navigator>
+  );
+}
+
 export default function NavigationDrawerStructure() {
   return (
     <View style={{flex: 1}}>

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import {DropdownHeader} from '../components/DropdownHeader';
 import {
   ScrollView,
@@ -168,7 +168,7 @@ export default function Sessions({navigation}) {
       <View style={{backgroundColor: 'white', marginTop: 20}}>
         <View
           style={{
-            backgroundColor: 'grey',
+            backgroundColor: '#4778A0',
             padding: 10,
             borderTopLeftRadius: 10,
             borderTopRightRadius: 10,
@@ -178,22 +178,30 @@ export default function Sessions({navigation}) {
         <View
           style={{
             flexDirection: 'row',
-            backgroundColor: 'grey',
+            backgroundColor: '#A2A9AD',
             padding: 10,
             margin: 10,
             borderTopLeftRadius: 10,
             borderTopRightRadius: 10,
           }}>
-          <Text style={{fontSize: 16}}>SESSION ID</Text>
-          <Text style={{fontSize: 16, marginLeft: 100}}>DATE</Text>
-          <Text style={{fontSize: 16, marginLeft: 100}}>TIME</Text>
-          <Text style={{fontSize: 16, marginLeft: 100}}>
-            COMPLETED SESSIONS
+          <Text style={[styles.headerTextStyle, {marginLeft: 0}]}>
+            SESSION ID
           </Text>
-          <Text style={{fontSize: 14, marginLeft: 100}}>FAVOURITED</Text>
+          <Text style={styles.headerTextStyle}>DATE</Text>
+          <Text style={styles.headerTextStyle}>TIME</Text>
+          <Text style={styles.headerTextStyle}>COMPLETED SESSIONS</Text>
+          <Text style={styles.headerTextStyle}>FAVOURITED</Text>
         </View>
         {renderScrollView()}
       </View>
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  headerTextStyle: {
+    fontSize: 16,
+    color: 'white',
+    marginLeft: 100,
+  },
+});

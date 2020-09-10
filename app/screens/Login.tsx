@@ -33,7 +33,7 @@ export default function Login({navigation}) {
 
   return (
     <ScrollView contentContainerStyle={styles.mainContainer}>
-      <Image style={styles.imageStyle} source={require('../res/sun.jpeg')} />
+      <Image style={styles.imageStyle} source={require('../res/logo.png')} />
       <Controller
         control={control}
         render={({onChange, onBlur, value}) => (
@@ -102,7 +102,7 @@ export default function Login({navigation}) {
             // eslint-disable-next-line react-native/no-inline-styles
             style={{
               marginLeft: 1,
-              width: 70,
+              width: 90,
               height: 1,
               backgroundColor: 'grey',
             }}
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
   inputViewStyle: {
     marginVertical: 20,
     flexDirection: 'row',
-    width: width / 2,
+    width: width / 3,
     height: 80,
     padding: 20,
     borderColor: 'grey',
@@ -133,6 +133,7 @@ const styles = StyleSheet.create({
   textInputStyle: {
     marginLeft: 10,
     fontSize: 25,
+    width: width / 4,
   },
   buttonStyle: {
     marginTop: 10,
@@ -153,8 +154,9 @@ const styles = StyleSheet.create({
     color: 'grey',
   },
   imageStyle: {
-    width: width / 2,
-    resizeMode: 'cover',
+    height: 200,
+    width: width / 3,
+    resizeMode: 'contain',
   },
   errorTextStyle: {
     color: 'red',

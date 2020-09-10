@@ -3,14 +3,15 @@ import RNBackgroundDownloader, {
   TaskInfo,
 } from 'react-native-background-downloader';
 import {Button, View} from 'react-native';
+import Header from '../components/Header';
 
 let task: TaskInfo;
 console.log(
   'Path',
   `${RNBackgroundDownloader.directories.documents}/video.mp4`,
 );
-class Download extends React.Component {
-  startDownload = () => {
+function Download({navigation}) {
+  const startDownload = () => {
     task = RNBackgroundDownloader.download({
       id: 'Video',
       url:
@@ -31,28 +32,29 @@ class Download extends React.Component {
       });
   };
 
-  pauseDownload = () => {
+  const pauseDownload = () => {
     task.pause();
   };
 
-  resumeDownload = () => {
+  const resumeDownload = () => {
     task.resume();
   };
 
-  stopDownload = () => {
+  const stopDownload = () => {
     task.stop();
   };
 
-  render() {
-    return (
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Button onPress={this.startDownload} title="Start" color="#841584" />
-        <Button onPress={this.pauseDownload} title="Pause" color="#841584" />
-        <Button onPress={this.resumeDownload} title="Resume" color="#841584" />
-        <Button onPress={this.stopDownload} title="Stop" color="#841584" />
+  return (
+    <View style={{flex: 1, alignItems: 'center'}}>
+      <Header nav={navigation} />
+      <View style={{flex: 1, justifyContent: 'center'}}>
+        <Button onPress={startDownload} title="Start" color="#841584" />
+        <Button onPress={pauseDownload} title="Pause" color="#841584" />
+        <Button onPress={resumeDownload} title="Resume" color="#841584" />
+        <Button onPress={stopDownload} title="Stop" color="#841584" />
       </View>
-    );
-  }
+    </View>
+  );
 }
 
 export default Download;

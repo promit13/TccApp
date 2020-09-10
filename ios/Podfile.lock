@@ -326,11 +326,8 @@ PODS:
     - React
   - RNVectorIcons (7.0.0):
     - React
-<<<<<<< HEAD
-=======
   - ViroKit_static_lib (1.0)
   - ViroReact (1.0)
->>>>>>> feature/panorama
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
@@ -394,11 +391,8 @@ DEPENDENCIES:
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNSVG (from `../node_modules/react-native-svg`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
-<<<<<<< HEAD
-=======
   - "ViroKit_static_lib (from `../node_modules/@citychallenge/react-viro/ios/dist/ViroRenderer/static_lib`)"
   - "ViroReact (from `../node_modules/@citychallenge/react-viro/ios/`)"
->>>>>>> feature/panorama
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -492,13 +486,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-svg"
   RNVectorIcons:
     :path: "../node_modules/react-native-vector-icons"
-<<<<<<< HEAD
-=======
   ViroKit_static_lib:
     :path: "../node_modules/@citychallenge/react-viro/ios/dist/ViroRenderer/static_lib"
   ViroReact:
     :path: "../node_modules/@citychallenge/react-viro/ios/"
->>>>>>> feature/panorama
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -556,18 +547,11 @@ SPEC CHECKSUMS:
   RNScreens: b748efec66e095134c7166ca333b628cd7e6f3e2
   RNSVG: ce9d996113475209013317e48b05c21ee988d42e
   RNVectorIcons: da6fe858f5a65d7bbc3379540a889b0b12aa5976
-<<<<<<< HEAD
-  Yoga: 7740b94929bbacbddda59bf115b5317e9a161598
-  YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
-
-PODFILE CHECKSUM: 9a207b1d82391b6767efdaf54492a3b886874823
-=======
   ViroKit_static_lib: ae9c112ac4b128f8d4466fc581c7b07a0264754d
   ViroReact: 7ec32276dcd1883662b4587eaedfff67f7fc3625
   Yoga: 7740b94929bbacbddda59bf115b5317e9a161598
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
 PODFILE CHECKSUM: 2901e2a92929338ee9f45a83f76a2cc57282aed1
->>>>>>> feature/panorama
 
 COCOAPODS: 1.9.3

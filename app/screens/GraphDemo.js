@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import PureChart from 'react-native-pure-chart';
+import Header from '../components/Header';
 
 let sampleData = [
   {x: '2018-01-01', y: 30, color: '#fff'},
@@ -41,9 +42,10 @@ let sampleDataThree = [
     color: 'yellow',
   },
 ];
-function GraphDemo() {
+function GraphDemo({navigation}) {
   return (
     <View style={{flex: 1}}>
+      <Header nav={navigation} />
       <PureChart data={sampleDataThree} type="bar" height={200} />
     </View>
   );

@@ -17,7 +17,7 @@ function Zone({navigation}) {
   const [modalVisible, setModalVisible] = useState(false);
   console.log(Image.resolveAssetSource(earthImage));
   return (
-    <View style={{flex: 1, backgroundColor: 'grey'}}>
+    <View style={{flex: 1}}>
       <Header nav={navigation} />
       {/* <Button title="Open drawer" onPress={() => navigation.openDrawer()} />
       <Button title="Toggle drawer" onPress={() => navigation.toggleDrawer()} /> */}
@@ -64,7 +64,7 @@ function Zone({navigation}) {
           type="ionicon"
           size={60}
           onPress={() => setModalVisible(true)}
-          iconStyle={{color: 'white', marginLeft: 20}}
+          iconStyle={{color: 'grey', marginLeft: 20}}
         />
       </View>
       <Modal

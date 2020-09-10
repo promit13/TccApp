@@ -27,7 +27,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import Home from './app/screens/Zone';
-import DrawerNavigatorExample from './app/screens/NavigationDrawerStructure';
+import NavigationDrawerStructure from './app/screens/NavigationDrawerStructure';
 
 declare const global: {HermesInternal: null | {}};
 
@@ -35,7 +35,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <StatusBar hidden />
-      <DrawerNavigatorExample />
+      <NavigationDrawerStructure />
     </NavigationContainer>
   );
 };
