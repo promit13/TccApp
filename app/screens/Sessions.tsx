@@ -65,7 +65,7 @@ const testData = [
     favourited: '8',
   },
 ];
-export default function Sessions({navigation}) {
+export default function Sessions(props) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [showDetail, setShowDetail] = useState(false);
   const renderScrollView = () => {
@@ -109,18 +109,18 @@ export default function Sessions({navigation}) {
   };
   return (
     <ScrollView style={{flex: 1, padding: 20}}>
-      <View
-        style={{
-          elevation: 10,
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}>
-        <Text style={{fontSize: 20}}>NICKNAME HERE</Text>
-        <DropdownHeader dataArray={testPickerData} />
-        <DropdownHeader dataArray={testPickerData} />
-        <DropdownHeader dataArray={testPickerData} />
-        {/* <DropdownHeader
+      {props.hide ? null : (
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}>
+          <Text style={{fontSize: 20}}>NICKNAME HERE</Text>
+          <DropdownHeader dataArray={testPickerData} />
+          <DropdownHeader dataArray={testPickerData} />
+          <DropdownHeader dataArray={testPickerData} />
+          {/* <DropdownHeader
           dataArray={[
             {
               label: 'LAST 7 DAYS',
@@ -164,11 +164,12 @@ export default function Sessions({navigation}) {
             },
           ]}
         /> */}
-      </View>
+        </View>
+      )}
       <View style={{backgroundColor: 'white', marginTop: 20}}>
         <View
           style={{
-            backgroundColor: '#4778A0',
+            backgroundColor: props.color ? props.color : '#4778A0',
             padding: 10,
             borderTopLeftRadius: 10,
             borderTopRightRadius: 10,

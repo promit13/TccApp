@@ -12,6 +12,7 @@ import {
   ScrollView,
 } from 'react-native';
 import {Icon, Button} from 'react-native-elements';
+import AsyncStorage from '@react-native-community/async-storage';
 
 const {height, width} = Dimensions.get('window');
 
@@ -25,9 +26,10 @@ export default function Login({navigation}) {
   const [error, setError] = useState(false);
   const {control, handleSubmit, errors} = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     console.log(data);
     const {userId, password} = data;
+    await AsyncStorage.setItem('login', 'loggedIn');
     navigation.navigate('Home');
   };
 
@@ -118,6 +120,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: 'white',
   },
   inputViewStyle: {
     marginVertical: 20,

@@ -4,6 +4,9 @@ import {View, StyleSheet, Text, Dimensions} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import Dashboard from './Dashboard';
 import Sessions from './Sessions';
+import Logout from './Logout';
+import Campaign from './Campaign';
+import Users from './Users';
 import Header from '../components/Header';
 
 const {width, height} = Dimensions.get('window');
@@ -22,15 +25,15 @@ const items = [
   },
   {
     navOptionName: 'Campaigns',
-    screenToNavigate: 'Dashboard',
+    screenToNavigate: 'Campaign',
   },
   {
     navOptionName: 'Users',
-    screenToNavigate: 'Sessions',
+    screenToNavigate: 'Users',
   },
   {
     navOptionName: 'Logout',
-    screenToNavigate: 'Dashboard',
+    screenToNavigate: 'Logout',
   },
 ];
 
@@ -73,9 +76,9 @@ function Home({navigation}) {
         }}>
         <Drawer.Screen name="Dashboard" component={Dashboard} />
         <Drawer.Screen name="Sessions" component={Sessions} />
-        <Drawer.Screen name="Campaigns" component={Dashboard} />
-        <Drawer.Screen name="Users" component={Sessions} />
-        <Drawer.Screen name="Logout" component={Dashboard} />
+        <Drawer.Screen name="Campaign" component={Campaign} />
+        <Drawer.Screen name="Users" component={Users} />
+        <Drawer.Screen name="Logout" component={Logout} />
       </Drawer.Navigator>
     </View>
   );

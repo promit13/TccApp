@@ -1,11 +1,23 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {View, StyleSheet, Dimensions} from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import ModalSelector from 'react-native-modal-selector';
 import RNPickerSelect from 'react-native-picker-select';
 import {Icon} from 'react-native-elements';
+import {Value} from 'react-native-reanimated';
 
-export function DropdownHeader({dataArray}) {
+const {height, width} = Dimensions.get('window');
+
+export function DropdownHeader({
+  showCountries,
+  showDirectors,
+  countries,
+  directors,
+  days,
+  onDaySelected,
+  onCountrySelected,
+  onDirectorSelected,
+}) {
   return (
     // <DropDownPicker
     //   items={dataArray}
@@ -34,21 +46,62 @@ export function DropdownHeader({dataArray}) {
     //     alert(`${option.label} (${option.key}) nom nom nom`);
     //   }}
     // />
-    <RNPickerSelect
-      placeholder={{label: 'All Sales Directors ', value: null}}
-      onValueChange={(value) => console.log(value)}
-      itemKey={dataArray.key}
-      items={dataArray}
-      useNativeAndroidPickerStyle={false}
-      style={pickerSelectStyles}
-      Icon={() => (
-        <Icon
-          name="chevron-small-down"
-          type="entypo"
-          iconStyle={{color: 'grey', marginTop: 12, marginRight: 5}}
+    <View
+      style={{
+        width: width / 2,
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+      }}>
+      {showCountries ? (
+        <RNPickerSelect
+          placeholder={{label: 'All Countries ', value: 'all'}}
+          onValueChange={(value) => onCountrySelected(value)}
+          itemKey={countries.key}
+          items={countries}
+          useNativeAndroidPickerStyle={false}
+          style={pickerSelectStyles}
+          Icon={() => (
+            <Icon
+              name="chevron-small-down"
+              type="entypo"
+              iconStyle={{color: 'grey', marginTop: 12, marginRight: 5}}
+            />
+          )}
         />
-      )}
-    />
+      ) : null}
+      {showDirectors ? (
+        <RNPickerSelect
+          placeholder={{label: 'All Directors ', value: 'all'}}
+          onValueChange={(value) => onDirectorSelected(value)}
+          itemKey={directors.key}
+          items={directors}
+          useNativeAndroidPickerStyle={false}
+          style={pickerSelectStyles}
+          Icon={() => (
+            <Icon
+              name="chevron-small-down"
+              type="entypo"
+              iconStyle={{color: 'grey', marginTop: 12, marginRight: 5}}
+            />
+          )}
+        />
+      ) : null}
+      <RNPickerSelect
+        placeholder={{label: 'Last 7 Days ', value: '7'}}
+        onValueChange={(value) => onDaySelected(value)}
+        itemKey={days.key}
+        items={days}
+        useNativeAndroidPickerStyle={false}
+        style={pickerSelectStyles}
+        Icon={() => (
+          <Icon
+            name="chevron-small-down"
+            type="entypo"
+            iconStyle={{color: 'grey', marginTop: 12, marginRight: 5}}
+          />
+        )}
+      />
+    </View>
   );
 }
 
@@ -61,6 +114,7 @@ const pickerSelectStyles = StyleSheet.create({
     borderRadius: 15,
     backgroundColor: 'white',
     color: 'black',
+    marginLeft: 10,
     // to ensure the text is never behind the icon
   },
   inputAndroid: {
@@ -68,6 +122,7 @@ const pickerSelectStyles = StyleSheet.create({
     padding: 10,
     borderRadius: 4,
     backgroundColor: 'white',
+    marginLeft: 10,
     color: 'black', // to ensure the text is never behind the icon
   },
 });

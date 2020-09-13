@@ -5,6 +5,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   Dimensions,
+  ActivityIndicator,
 } from 'react-native';
 import RNBackgroundDownloader, {
   TaskInfo,
@@ -74,11 +75,15 @@ class VideoPlayer extends React.Component {
       videoWidth,
       videoHeight,
       muted,
+      loading,
     } = this.state;
     console.log(
       'VP PATH',
       `file:/${RNBackgroundDownloader.directories.documents}/${this.props.videoUrl}.mp4`,
     );
+    if (loading) {
+      <ActivityIndicator />;
+    }
     return (
       <View>
         {/* <View style={[styles.videoContainer, {width: videoWidth}]}> */}
@@ -107,17 +112,17 @@ class VideoPlayer extends React.Component {
           onProgress={this.onProgress}
         />
         {/* <Controller
-          totalLength={totalLength}
-          seekValue={currentTime && currentTime}
-          onSliderReleased={this.onSliderReleased}
-          onDragSeekBar={this.onDrageSeekBar}
-          onPlay={this.onPlay}
-          paused={paused}
-          fullScreen={fullScreen}
-          muted={muted}
-          toggleFullScreen={this.onToggleFullScreen}
-          onToggleVolume={this.onToggleVolume}
-        /> */}
+            totalLength={totalLength}
+            seekValue={currentTime && currentTime}
+            onSliderReleased={this.onSliderReleased}
+            onDragSeekBar={this.onDrageSeekBar}
+            onPlay={this.onPlay}
+            paused={paused}
+            fullScreen={fullScreen}
+            muted={muted}
+            toggleFullScreen={this.onToggleFullScreen}
+            onToggleVolume={this.onToggleVolume}
+          /> */}
         {/* </View> */}
       </View>
     );

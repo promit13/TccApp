@@ -2,6 +2,8 @@
 import React, {Component} from 'react';
 //import react in our code.
 import {View} from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
+
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createStackNavigator} from '@react-navigation/stack';
 import {CustomSidebarMenu} from '../components/CustomSideBarMenu';
@@ -22,7 +24,11 @@ const HomeStack = () => {
   return (
     <Drawer.Navigator
       drawerContent={(props) => <CustomSidebarMenu {...props} />}
-      drawerPosition="right">
+      drawerPosition="right"
+      initialRouteName="Home"
+      drawerContentOptions={{
+        activeTintColor: 'grey',
+      }}>
       <Drawer.Screen name="Home" component={Home} />
       <Drawer.Screen name="Zone" component={Zone} />
       <Drawer.Screen name="GraphDemo" component={GraphDemo} />
@@ -37,7 +43,8 @@ function SignedIn() {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-      }}>
+      }}
+      initialRouteName="Home">
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Home" component={HomeStack} />
     </Stack.Navigator>
