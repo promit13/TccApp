@@ -67,12 +67,15 @@ export function CustomSidebarMenu(props) {
 function Home({navigation}) {
   return (
     <View style={{flex: 1, backgroundColor: 'grey'}}>
-      <Header nav={navigation} />
+      <View style={{position: 'absolute', zIndex: 1}}>
+        <Header nav={navigation} />
+      </View>
       <Drawer.Navigator
         drawerType="permanent"
         drawerContent={(props) => <CustomSidebarMenu {...props} />}
         drawerStyle={{
           width: width / 5,
+          marginTop: 100,
         }}>
         <Drawer.Screen name="Dashboard" component={Dashboard} />
         <Drawer.Screen name="Sessions" component={Sessions} />

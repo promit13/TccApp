@@ -20,7 +20,7 @@ export function DropdownHeader({
 }) {
   return (
     // <DropDownPicker
-    //   items={dataArray}
+    //   items={countries}
     //   defaultValue={'uk'}
     //   containerStyle={{height: 60, width: 200}}
     //   style={{

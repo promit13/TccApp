@@ -87,7 +87,6 @@ export default HeaderBar = ({nav}) => {
             containerStyle={{
               width: 300,
               backgroundColor: '#F5F5F5',
-              marginRight: 15,
             }}
             itemStyle={{
               padding: 10,
@@ -97,7 +96,12 @@ export default HeaderBar = ({nav}) => {
               borderRadius: 5,
             }}
             itemTextStyle={{color: '#222', fontSize: 30}}
-            itemsContainerStyle={{maxHeight: 400}}
+            itemsContainerStyle={{
+              maxHeight: 400,
+              position: 'absolute',
+              zIndex: 1,
+              marginTop: 60,
+            }}
             textInputStyle={{fontSize: 30, color: 'red'}}
             items={items}
             defaultIndex={0}

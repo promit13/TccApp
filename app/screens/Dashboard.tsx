@@ -1,13 +1,20 @@
 import React from 'react';
 // import {LineChart, BarChart, XAxis, Grid} from 'react-native-svg-charts';
-import {View, Dimensions, Text} from 'react-native';
+import {View, Dimensions, Text, FlatList} from 'react-native';
 import {BarChart} from 'react-native-chart-kit';
 import Video from 'react-native-video';
 import _ from 'lodash';
+import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
+import SearchableDropdown from 'react-native-searchable-dropdown';
 import Session from './Sessions';
 import {DropdownHeader} from '../components/DropdownHeader';
 import {Loading} from '../components/Loading';
 import {testData} from '../config/testData';
+import {TitleBar} from '../components/TitleBar';
+import Table from '../components/Table';
+import Header from '../components/Header';
+import Sessions from './Sessions';
+
 const {width, height} = Dimensions.get('window');
 
 // const countriesArray = [
@@ -35,6 +42,59 @@ const data = {
     },
   ],
 };
+
+var items = [
+  {
+    id: 1,
+    name: 'JavaScript',
+  },
+  {
+    id: 2,
+    name: 'Java',
+  },
+  {
+    id: 3,
+    name: 'Ruby',
+  },
+  {
+    id: 4,
+    name: 'React Native',
+  },
+  {
+    id: 5,
+    name: 'PHP',
+  },
+  {
+    id: 6,
+    name: 'Python',
+  },
+  {
+    id: 7,
+    name: 'Go',
+  },
+  {
+    id: 8,
+    name: 'Swift',
+  },
+  {
+    id: 9,
+    name: 'C',
+  },
+  {
+    id: 10,
+    name: 'C++',
+  },
+  {
+    id: 11,
+    name: 'C#',
+  },
+  {
+    id: 12,
+    name: 'Redux',
+  },
+];
+
+const titleArray = ['NICKNAME', 'DATE', 'TIME', 'FAVOURITED'];
 
 let countries = [];
 let countryObjectArray = [];
@@ -72,21 +132,15 @@ class Dashboard extends React.PureComponent {
   };
   onCountrySelected = (country) => {
     console.log('Country', country);
-    this.setState({country});
+    this.setState({country, director: 'all'});
   };
   onDirectorSelected = (director) => {
     console.log('Director', director);
     this.setState({director});
   };
   render() {
-    const {
-      country,
-      director,
-      days,
-      showCountries,
-      showDirectors,
-      loading,
-    } = this.state;
+    const {country, showCountries, showDirectors, loading} = this.state;
+    directorsObjectArray = [];
 
     if (country === 'all') {
       testData.map((item, index) => {
@@ -94,58 +148,128 @@ class Dashboard extends React.PureComponent {
         directorsObjectArray.push(directorObject);
       });
     } else {
-      directorsObjectArray = _.filter(testData, function (item) {
-        var directorObj = {};
+      _.filter(testData, function (item) {
         if (item.country === country) {
-          directorObj = {label: item.name, value: item.uid};
+          const directorObj = {label: item.name, value: item.uid};
+          directorsObjectArray.push(directorObj);
         }
-        return directorObj;
       });
     }
-    console.log(`${country} ${director} ${days}`);
     console.log(directorsObjectArray);
+
+    const renderItem = ({item}) => {
+      const color = Math.floor(Math.random() * 16777215).toString(16);
+      return (
+        <View
+          style={{
+            backgroundColor: 'white',
+            borderRightWidth: 1,
+            borderColor: 'grey',
+            borderBottomWidth: 1,
+            borderBottomColor: 'grey',
+            width: width / 4,
+            padding: 20,
+          }}>
+          <TouchableOpacity
+            style={{flexDirection: 'row'}}
+            onPress={() => console.log('PRESSED')}>
+            <View
+              style={{
+                width: 44,
+                height: 44,
+                borderRadius: 44 / 2,
+                backgroundColor: `#${color}`,
+              }}
+            />
+            <View style={{marginLeft: 10}}>
+              <Text>{item.id}</Text>
+              <Text>{item.name}</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+      );
+    };
     if (loading) {
       return <Loading message="Loading" />;
     }
     return (
       <View style={{flex: 1, padding: 10}}>
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}>
-          <Text style={{fontSize: 20, marginLeft: 10}}>DASHBOARD</Text>
-          <DropdownHeader
-            showCountries={showCountries}
-            showDirectors={showDirectors}
-            countries={countryObjectArray}
-            directors={directorsObjectArray}
-            days={daysArray}
-            onDaySelected={this.onDaySelected}
-            onCountrySelected={this.onCountrySelected}
-            onDirectorSelected={this.onDirectorSelected}
-          />
+        <View style={{position: 'absolute', zIndex: 1}}>
+          <Header nav={this.props.navigation} />
         </View>
-        <BarChart
-          style={{marginVertical: 10, padding: 10, width: width / 2}}
-          data={data}
-          width={width / 3}
-          height={height / 3}
-          fromZero
-          chartConfig={{
-            backgroundGradientFrom: '#fff',
-            backgroundGradientTo: '#fff',
-            fillShadowGradientOpacity: 1,
-            decimalPlaces: 0,
-            color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
-            style: {
-              borderRadius: 16,
-            },
-          }}
-          verticalLabelRotation={0}
-        />
-        <Session hide={true} color="#50A486" />
+        <ScrollView style={{marginTop: 120}}>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+            }}>
+            <Text style={{fontSize: 20, marginLeft: 10}}>DASHBOARD</Text>
+            <DropdownHeader
+              showCountries={showCountries}
+              showDirectors={showDirectors}
+              countries={countryObjectArray}
+              directors={directorsObjectArray}
+              days={daysArray}
+              onDaySelected={this.onDaySelected}
+              onCountrySelected={this.onCountrySelected}
+              onDirectorSelected={this.onDirectorSelected}
+            />
+          </View>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              marginTop: 10,
+            }}>
+            <View>
+              <TitleBar
+                message="SESSIONS"
+                width={width / 2}
+                backgroundColor="#4778A0"
+              />
+              <BarChart
+                data={data}
+                width={width / 2}
+                height={height / 3}
+                fromZero
+                chartConfig={{
+                  backgroundGradientFrom: '#fff',
+                  backgroundGradientTo: '#fff',
+                  fillShadowGradientOpacity: 1,
+                  decimalPlaces: 0,
+                  color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
+                  style: {
+                    borderRadius: 16,
+                  },
+                }}
+                verticalLabelRotation={0}
+              />
+            </View>
+            <View style={{marginLeft: 10}}>
+              <TitleBar
+                message="MOST FAVOURITED CAMPAIGNS"
+                width={width / 2}
+                backgroundColor="#DE843D"
+              />
+              <View style={{height: height / 3}}>
+                <FlatList
+                  data={items}
+                  renderItem={renderItem}
+                  keyExtractor={(item) => item.id}
+                  numColumns={2}
+                />
+              </View>
+            </View>
+          </View>
+          <Table
+            data={titleArray}
+            barColor="#50A486"
+            barTitle="RECENTLY COMPLETED SESSIONS"
+            showTitleBar={true}
+          />
+          <Sessions />
+        </ScrollView>
       </View>
     );
   }

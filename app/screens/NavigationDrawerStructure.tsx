@@ -10,30 +10,48 @@ import {CustomSidebarMenu} from '../components/CustomSideBarMenu';
 
 //Import all the screens
 import Zone from './Zone';
-import Test from './Test';
+import Campaign from './Campaign';
 import Home from './Home';
+import Dashboard from './Dashboard';
 import Panorama from './Panorama';
 import Download from './Download';
 import GraphDemo from './GraphDemo';
 import Login from './Login';
+import Logout from './Logout';
 
 const Stack = createStackNavigator();
 
 const Drawer = createDrawerNavigator();
+
+function ZoneStack() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
+      <Stack.Screen name="Zone" component={Zone} />
+      <Stack.Screen name="CampaignMenu" component={Campaign} />
+      <Stack.Screen name="Panorama" component={Panorama} />
+    </Stack.Navigator>
+  );
+}
+
 const HomeStack = () => {
   return (
     <Drawer.Navigator
       drawerContent={(props) => <CustomSidebarMenu {...props} />}
       drawerPosition="right"
-      initialRouteName="Home"
+      initialRouteName="Zone"
       drawerContentOptions={{
         activeTintColor: 'grey',
-      }}>
-      <Drawer.Screen name="Home" component={Home} />
-      <Drawer.Screen name="Zone" component={Zone} />
+      }}
+      overlayColor="transparent">
+      <Drawer.Screen name="Home" component={Dashboard} />
+      <Drawer.Screen name="Zone" component={ZoneStack} />
       <Drawer.Screen name="GraphDemo" component={GraphDemo} />
       <Drawer.Screen name="Panorama" component={Panorama} />
       <Drawer.Screen name="Download" component={Download} />
+      <Drawer.Screen name="Logout" component={Logout} />
     </Drawer.Navigator>
   );
 };

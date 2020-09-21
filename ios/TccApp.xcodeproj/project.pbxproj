@@ -126,13 +126,6 @@
 			name = TccApp;
 			sourceTree = "<group>";
 		};
-		21554ED73EB84249AF2F7459 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (

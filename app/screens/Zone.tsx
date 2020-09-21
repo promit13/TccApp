@@ -1,17 +1,14 @@
 import React, {useState} from 'react';
 import {View, Text, Image, Dimensions, StyleSheet} from 'react-native';
 import Modal from 'react-native-modal';
-import {Icon} from 'react-native-elements';
+import {Icon, Button} from 'react-native-elements';
 import Header from '../components/Header';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 import VideoPlayer from './VideoPlayer';
+import {ZoneMenu} from '../components/ZoneMenu';
 
 const {width, height} = Dimensions.get('window');
 
-const firstImage = require('../res/brown.gif');
-const secondImage = require('../res/green.gif');
-const thirdImage = require('../res/red.gif');
-const fourthImage = require('../res/purple.gif');
 const videoImage = require('../res/video.png');
 
 function Zone({navigation}) {
@@ -19,7 +16,9 @@ function Zone({navigation}) {
   // console.log(Image.resolveAssetSource(earthImage));
   return (
     <View style={styles.mainContainer}>
-      <Header nav={navigation} />
+      <View style={{position: 'absolute', zIndex: 1}}>
+        <Header nav={navigation} />
+      </View>
       <View style={styles.videoTouchableStyle}>
         <TouchableOpacity onPress={() => setModalVisible(true)}>
           <Image
@@ -29,42 +28,28 @@ function Zone({navigation}) {
           />
         </TouchableOpacity>
       </View>
-      <View style={styles.gifImageContainerStyle}>
-        <TouchableOpacity
-          style={styles.touchableStyle}
-          onPress={() => console.log('Pressed')}>
+      <View style={[styles.videoTouchableStyle, {marginTop: 10}]}>
+        <TouchableOpacity onPress={() => setModalVisible(true)}>
           <Image
-            style={styles.gifImageStyle}
-            source={secondImage}
-            resizeMode="cover"
+            resizeMode="contain"
+            style={styles.videoIconStyle}
+            source={videoImage}
           />
-          <Text style={styles.titleStyle}>Living Well</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.touchableStyle}>
-          <Image
-            style={styles.gifImageStyle}
-            source={firstImage}
-            resizeMode="cover"
-          />
-          <Text style={styles.titleStyle}>Caring for the Planet</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.touchableStyle}>
-          <Image
-            style={styles.gifImageStyle}
-            source={fourthImage}
-            resizeMode="cover"
-          />
-          <Text style={styles.titleStyle}>Friends and Family</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.touchableStyle}>
-          <Image
-            style={styles.gifImageStyle}
-            source={thirdImage}
-            resizeMode="cover"
-          />
-          <Text style={styles.titleStyle}>Food for Thought</Text>
         </TouchableOpacity>
       </View>
+      <ZoneMenu nav={navigation} />
+
+      <Button
+        title="Share with client"
+        containerStyle={{
+          width: 300,
+          position: 'absolute',
+          bottom: 30,
+        }}
+        buttonStyle={styles.buttonStyle}
+        titleStyle={{color: 'black', fontWeight: 'bold', fontSize: 20}}
+        onPress={() => console.log('pressed')}
+      />
       {/* <View
         style={{
           alignSelf: 'flex-end',
@@ -118,23 +103,24 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'flex-end',
-    marginTop: 20,
+    marginTop: 120,
   },
   videoIconStyle: {width: 80, height: 80},
   gifImageContainerStyle: {
-    marginTop: height / 8,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: 10,
+    alignContent: 'center',
+
+    backgroundColor: 'white',
   },
-  gifImageStyle: {width: 300, height: 350},
+  gifImageStyle: {width: width / 4, height: 350},
   touchableStyle: {
     justifyContent: 'center',
     alignItems: 'center',
   },
   titleStyle: {
-    fontSize: 30,
+    fontSize: 25,
   },
   modalStyle: {
     flex: 1,
@@ -153,6 +139,11 @@ const styles = StyleSheet.create({
   iconStyle: {
     color: 'white',
     alignSelf: 'flex-end',
+  },
+  buttonStyle: {
+    backgroundColor: '#F5F5F5',
+    padding: 20,
+    marginLeft: 30,
   },
 });
 
