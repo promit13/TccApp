@@ -16,8 +16,8 @@ target 'TccApp' do
   # pod 'ViroReact', :path => '../node_modules/react-viro/ios/'
   # pod 'ViroKit_static_lib', :path => '../node_modules/react-viro/ios/dist/ViroRenderer/static_lib'
 
-  pod 'ViroReact', :path => '../node_modules/@citychallenge/react-viro/ios/'
-  pod 'ViroKit_static_lib', :path => '../node_modules/@citychallenge/react-viro/ios/dist/ViroRenderer/static_lib'
+  # pod 'ViroReact', :path => '../node_modules/@citychallenge/react-viro/ios/'
+  # pod 'ViroKit_static_lib', :path => '../node_modules/@citychallenge/react-viro/ios/dist/ViroRenderer/static_lib'
 
 
   target 'TccAppTests' do

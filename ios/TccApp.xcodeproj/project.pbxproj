@@ -201,7 +201,6 @@
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
 				53C3474203CC6117EEA8F86E /* [CP] Copy Pods Resources */,
-				BA9854AD05C6B3BBD76D6516 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -224,7 +223,6 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				EA15D0724B68FA9CEE069B5C /* [CP] Copy Pods Resources */,
-				4639507AB03E212910F1AF89 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -382,24 +380,6 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		4639507AB03E212910F1AF89 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TccApp/Pods-TccApp-frameworks.sh",
-				"${PODS_ROOT}/../../node_modules/@citychallenge/react-viro/ios/dist/ViroRenderer/static_lib/ViroKit_static_lib.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViroKit_static_lib.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TccApp/Pods-TccApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		53C3474203CC6117EEA8F86E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -448,24 +428,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TccApp-TccAppTests/Pods-TccApp-TccAppTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BA9854AD05C6B3BBD76D6516 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TccApp-TccAppTests/Pods-TccApp-TccAppTests-frameworks.sh",
-				"${PODS_ROOT}/../../node_modules/@citychallenge/react-viro/ios/dist/ViroRenderer/static_lib/ViroKit_static_lib.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViroKit_static_lib.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TccApp-TccAppTests/Pods-TccApp-TccAppTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CD6459AB7B3AFD403DC01BF2 /* [CP] Check Pods Manifest.lock */ = {
