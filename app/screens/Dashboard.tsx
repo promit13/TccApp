@@ -6,7 +6,6 @@ import Video from 'react-native-video';
 import _ from 'lodash';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 import SearchableDropdown from 'react-native-searchable-dropdown';
-import Session from './Sessions';
 import {DropdownHeader} from '../components/DropdownHeader';
 import {Loading} from '../components/Loading';
 import {testData} from '../config/testData';

@@ -2,6 +2,7 @@
 import React, {useState} from 'react';
 import {View, StyleSheet, Image, Text} from 'react-native';
 import {Icon} from 'react-native-elements';
+import {scale, moderateScale} from 'react-native-size-matters';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {
   DrawerContentScrollView,
@@ -11,97 +12,95 @@ import {
 
 const items = [
   {
-    fontSize: 30,
-    navOptionThumb: 'home',
-    navOptionName: 'Home',
+    fontSize: moderateScale(15),
+    navOptionName: 'DASHBOARD',
     screenToNavigate: 'Home',
   },
   {
-    fontSize: 30,
-    navOptionThumb: 'bar-chart-2',
-    type: 'feather',
-    navOptionName: 'Zones',
+    fontSize: moderateScale(15),
+    navOptionName: 'INTRODUCTION',
+    screenToNavigate: 'Introduction',
+  },
+  {
+    fontSize: moderateScale(15),
+    navOptionName: 'ZONES',
     screenToNavigate: 'Zone',
   },
   {
-    fontSize: 20,
-    navOptionThumb: 'user-friends',
-    type: 'font-awesome-5',
-    navOptionName: 'Friends and Family',
-    screenToNavigate: 'CampaignMenu',
+    fontSize: moderateScale(10),
+    navOptionName: 'FRIENDS AND FAMILY',
+    screenToNavigate: 'Campaign',
     index: 1,
+    id: '5f08c1f26e3da910bbf313a5',
   },
   {
-    fontSize: 20,
-    navOptionThumb: 'food-drumstick',
-    type: 'material-community',
-    navOptionName: 'Food for Thought',
-    screenToNavigate: 'CampaignMenu',
+    fontSize: moderateScale(10),
+    navOptionName: 'FOOD FOR THOUGHT',
+    screenToNavigate: 'Campaign',
     index: 2,
+    id: '5f08c1ea6e3da910bbf313a4',
   },
   {
-    fontSize: 20,
-    navOptionThumb: 'heart-outlined',
-    navOptionName: 'Living Well',
-    type: 'entypo',
-    screenToNavigate: 'CampaignMenu',
-    index: 3,
-  },
-  {
-    fontSize: 20,
-    navOptionThumb: 'leaf',
-    type: 'entypo',
-    navOptionName: 'Caring for the Planet',
-    screenToNavigate: 'CampaignMenu',
+    fontSize: moderateScale(10),
+    navOptionName: 'CARING FOR THE PLANET',
+    screenToNavigate: 'Download',
     index: 4,
+    id: '5f08c1e46e3da910bbf313a3',
   },
   {
-    fontSize: 30,
-    navOptionThumb: 'logout',
-    type: 'material-community',
-    navOptionName: 'Help',
-    screenToNavigate: 'GraphDemo',
+    fontSize: moderateScale(10),
+    navOptionName: 'LIVING WELL',
+    screenToNavigate: 'Campaign',
+    id: '5f08c1d96e3da910bbf313a2',
   },
   {
-    fontSize: 30,
-    navOptionThumb: 'logout',
-    type: 'material-community',
-    navOptionName: 'Logout',
+    fontSize: moderateScale(15),
+    navOptionName: 'CASE STUDIES',
+    screenToNavigate: 'CaseStudies',
+  },
+  {
+    fontSize: moderateScale(15),
+    navOptionName: 'HELP',
+    screenToNavigate: 'Help',
+  },
+  {
+    fontSize: moderateScale(15),
+    navOptionName: 'LOGOUT',
     screenToNavigate: 'Logout',
   },
 ];
 
 export function CustomSidebarMenu(props) {
-  const [index, setIndex] = useState(1);
+  const [index, setIndex] = useState(2);
   return (
     <View style={styles.sideMenuContainer}>
-      <View style={{width: '100%'}}>
-        <Icon
-          iconStyle={{alignSelf: 'flex-end', marginRight: 10}}
-          type="evilicon"
-          name="close"
-          size={50}
-          color="#fff"
-          onPress={() => {
-            props.navigation.closeDrawer();
-          }}
-        />
-        {items.map((item, key) => {
-          return (
-            <TouchableOpacity
-              style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                paddingVertical: 20,
-              }}
-              key={key}
-              onPress={() => {
-                setIndex(key);
-                props.navigation.navigate(item.screenToNavigate, {
-                  index: item.index,
-                });
-              }}>
-              {/* <View style={{marginRight: 10, marginLeft: 20}}>
+      <Icon
+        iconStyle={{alignSelf: 'flex-end', marginRight: moderateScale(5)}}
+        type="evilicon"
+        name="close"
+        size={moderateScale(30)}
+        color="#fff"
+        onPress={() => {
+          props.navigation.closeDrawer();
+        }}
+      />
+      {items.map((item, key) => {
+        return (
+          <TouchableOpacity
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              paddingVertical: moderateScale(10),
+            }}
+            key={key}
+            onPress={() => {
+              setIndex(key);
+              props.navigation.navigate(item.screenToNavigate, {
+                id: JSON.stringify(item.id),
+                showBackButton: false,
+              });
+            }}>
+            {/* <View style={{marginRight: 10, marginLeft: 20}}>
               <Icon
                 type={item.type}
                 name={item.navOptionThumb}
@@ -109,35 +108,25 @@ export function CustomSidebarMenu(props) {
                 color="#fff"
               />
             </View> */}
-              <Text
-                style={{
-                  fontSize: item.fontSize,
-                  marginLeft: 30,
-                  color: key === index ? '#848484' : 'white',
-                }}>
-                {item.navOptionName}
-              </Text>
-            </TouchableOpacity>
-          );
-        })}
-      </View>
+            <Text
+              style={{
+                fontSize: item.fontSize,
+                marginLeft: moderateScale(18),
+                color: key === index ? '#848484' : 'white',
+              }}>
+              {item.navOptionName}
+            </Text>
+          </TouchableOpacity>
+        );
+      })}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   sideMenuContainer: {
-    width: '100%',
     height: '100%',
     backgroundColor: '#4F4F4F',
-    alignItems: 'center',
-    paddingTop: 40,
-  },
-  sideMenuProfileIcon: {
-    resizeMode: 'center',
-    width: 150,
-    height: 150,
-    marginTop: 20,
-    borderRadius: 150 / 2,
+    paddingTop: moderateScale(25),
   },
 });

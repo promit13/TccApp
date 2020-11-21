@@ -10,17 +10,20 @@ import {
 import RNBackgroundDownloader, {
   TaskInfo,
 } from 'react-native-background-downloader';
-import Video from 'react-native-video';
+// import Video from 'react-native-video';
+import VideoPlayer from 'react-native-video-controls';
 import Controller from '../components/Controller';
 
 const {width, height} = Dimensions.get('window');
+
+const introVideo = require('../res/welcome.mp4');
 
 type FormData = {
   userId: string;
   password: string;
 };
 
-class VideoPlayer extends React.Component {
+class Video extends React.Component {
   state = {
     paused: true,
     loading: true,
@@ -28,8 +31,8 @@ class VideoPlayer extends React.Component {
     muted: false,
     totalLength: 0,
     currentTime: 0,
-    videoWidth: width / 2,
-    videoHeight: height / 2,
+    videoWidth: width - 100,
+    videoHeight: height - 100,
   };
   onPlay = () => {
     this.setState({paused: !this.state.paused});
@@ -77,21 +80,29 @@ class VideoPlayer extends React.Component {
       muted,
       loading,
     } = this.state;
-    console.log(
-      'VP PATH',
-      `file:/${RNBackgroundDownloader.directories.documents}/${this.props.videoUrl}.mp4`,
-    );
     if (loading) {
       <ActivityIndicator />;
     }
     return (
       <View>
+        <VideoPlayer
+          style={{
+            width: videoWidth,
+            height: videoHeight,
+          }}
+          source={introVideo}
+          onBack
+          //source={{uri: 'https://vjs.zencdn.net/v/oceans.mp4'}}
+        />
         {/* <View style={[styles.videoContainer, {width: videoWidth}]}> */}
-        <Video
-          source={{
-            // uri: `file://${RNBackgroundDownloader.directories.documents}/${this.props.videoUrl}.mp4`,
-            uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4',
-          }} // Can be a URL or a local file.
+        {/* <Video
+          source={
+            introVideo
+            // {
+            //   // uri: `file://${RNBackgroundDownloader.directories.documents}/${this.props.videoUrl}.mp4`,
+            //   // uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4',
+            // }
+          } // Can be a URL or a local file.
           ref={(ref) => {
             this.player = ref;
           }}
@@ -105,12 +116,13 @@ class VideoPlayer extends React.Component {
           fullscreen={fullScreen}
           muted={muted}
           progressUpdateInterval={50.0}
+          fullScreenOrientation="landscape"
           ignoreSilentSwitch="ignore"
           playWhenInactive
           onLoad={this.onLoad}
           onEnd={this.onEnd}
           onProgress={this.onProgress}
-        />
+        /> */}
         {/* <Controller
             totalLength={totalLength}
             seekValue={currentTime && currentTime}
@@ -151,4 +163,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default VideoPlayer;
+export default Video;

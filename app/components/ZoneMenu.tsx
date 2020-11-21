@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   View,
   Text,
@@ -7,67 +7,57 @@ import {
   Dimensions,
   StyleSheet,
 } from 'react-native';
+import {scale, moderateScale} from 'react-native-size-matters';
+import {Loading} from './Loading';
 
 const {width, height} = Dimensions.get('window');
 
-const firstImage = require('../res/brown.gif');
-const secondImage = require('../res/green.gif');
-const thirdImage = require('../res/red.gif');
-const fourthImage = require('../res/purple.gif');
+const zoneImages = [
+  require('../res/purple.gif'),
+  require('../res/red.gif'),
+  require('../res/brown.gif'),
+  require('../res/green.gif'),
+];
 
-export function ZoneMenu({nav, onPress}) {
-  return (
-    <View style={styles.gifImageContainerStyle}>
-      <TouchableOpacity
-        style={styles.touchableStyle}
-        onPress={() => {
-          nav ? nav.navigate('CampaignMenu', {index: 1}) : onPress(1);
-        }}>
-        <Image
-          style={styles.gifImageStyle}
-          source={secondImage}
-          resizeMode="cover"
-        />
-        <Text style={styles.titleStyle}>Living Well</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.touchableStyle}
-        onPress={() => {
-          nav ? nav.navigate('CampaignMenu', {index: 2}) : onPress(2);
-        }}>
-        <Image
-          style={styles.gifImageStyle}
-          source={firstImage}
-          resizeMode="cover"
-        />
-        <Text style={styles.titleStyle}>Caring for the Planet</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.touchableStyle}
-        onPress={() => {
-          nav ? nav.navigate('CampaignMenu', {index: 3}) : onPress(3);
-        }}>
-        <Image
-          style={styles.gifImageStyle}
-          source={fourthImage}
-          resizeMode="cover"
-        />
-        <Text style={styles.titleStyle}>Friends and Family</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.touchableStyle}
-        onPress={() => {
-          nav ? nav.navigate('CampaignMenu', {index: 4}) : onPress(4);
-        }}>
-        <Image
-          style={styles.gifImageStyle}
-          source={thirdImage}
-          resizeMode="cover"
-        />
-        <Text style={styles.titleStyle}>Food for Thought</Text>
-      </TouchableOpacity>
-    </View>
-  );
+export function ZoneMenu({nav, onPress, zones}) {
+  const [sortedZone, setSortedZone] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const zoneSorted = zones.sort((a, b) => a.Order - b.Order);
+    setSortedZone(zoneSorted);
+    // setLoading(false);
+  }, [zones]);
+
+  const renderZone = () => {
+    const zonesImage = sortedZone.map((item, index) => {
+      const {_id, title} = item;
+      const id = JSON.stringify(_id);
+      return (
+        <TouchableOpacity
+          key={id}
+          style={styles.touchableStyle}
+          onPress={() => {
+            nav
+              ? nav.navigate('CampaignTest', {
+                  id,
+                })
+              : onPress(id);
+          }}>
+          <Image
+            style={styles.gifImageStyle}
+            source={zoneImages[index]}
+            resizeMode="contain"
+          />
+          <Text style={styles.titleStyle}>{title}</Text>
+        </TouchableOpacity>
+      );
+    });
+    return zonesImage;
+  };
+
+  // if (loading) return <Loading message="loading" />;
+  return <View style={styles.gifImageContainerStyle}>{renderZone()}</View>;
 }
 
 const styles = StyleSheet.create({
@@ -75,53 +65,20 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
   },
-  videoTouchableStyle: {
-    backgroundColor: 'grey',
-    width: 100,
-    height: 100,
-    justifyContent: 'center',
-    alignItems: 'center',
-    alignSelf: 'flex-end',
-    marginTop: 120,
-  },
-  videoIconStyle: {width: 80, height: 80},
   gifImageContainerStyle: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     alignContent: 'center',
-
     backgroundColor: 'white',
   },
-  gifImageStyle: {width: width / 4, height: 350},
+  gifImageStyle: {width: width / 4, height: moderateScale(200)},
   touchableStyle: {
     justifyContent: 'center',
     alignItems: 'center',
   },
   titleStyle: {
-    fontSize: 25,
-  },
-  modalStyle: {
-    flex: 1,
-    alignItems: 'center',
-  },
-  videoContainer: {
-    alignItems: 'center',
-    padding: 10,
-  },
-  iconContainer: {
-    width: width / 2,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  iconStyle: {
-    color: 'white',
-    alignSelf: 'flex-end',
-  },
-  buttonStyle: {
-    backgroundColor: '#F5F5F5',
-    padding: 20,
-    marginLeft: 30,
+    fontSize: moderateScale(15),
+    color: '#707070',
   },
 });

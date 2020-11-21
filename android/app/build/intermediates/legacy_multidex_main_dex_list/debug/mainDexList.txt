@@ -356,8 +356,8 @@ kotlin/ExperimentalStdlibApi.class
 kotlin/ExperimentalUnsignedTypes.class
 kotlin/ExtensionFunctionType.class
 kotlin/Function.class
-kotlin/MathKt__BigDecimalsKt.class
 kotlin/Metadata.class
+kotlin/NumbersKt__BigDecimalsKt.class
 kotlin/OptionalExpectation.class
 kotlin/ParameterName.class
 kotlin/PublishedApi.class
@@ -462,6 +462,8 @@ kotlin/text/StringsKt__StringNumberConversionsJVMKt.class
 kotlin/text/StringsKt__StringNumberConversionsKt.class
 kotlin/text/StringsKt__StringsJVMKt.class
 kotlin/text/StringsKt__StringsKt.class
+kotlin/time/ClockKt.class
+kotlin/time/ExperimentalTime.class
 okhttp3/internal/annotations/EverythingIsNonNull.class
 org/intellij/lang/annotations/Flow.class
 org/intellij/lang/annotations/Identifier.class

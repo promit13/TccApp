@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
 import {View} from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage';
+import {useAuth} from '../Providers/AuthProvider';
 
 export default function Logout({navigation}) {
+  const {logOut} = useAuth();
   useEffect(() => {
-    AsyncStorage.removeItem('login');
-    navigation.navigate('Login');
+    logOut();
   });
   return <View />;
 }

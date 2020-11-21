@@ -3198,25 +3198,6 @@
             "outputFile": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/values_values.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/36b6ddd0b7b68222aee430179a92e5e4/jetified-sdk-commonwidget-1.180.0/res/values/values.xml",
-                    "from": {
-                        "startLines": "4,8,11",
-                        "startColumns": "0,0,0",
-                        "startOffsets": "151,276,405",
-                        "endLines": "4,8,16",
-                        "endColumns": "42,44,8",
-                        "endOffsets": "193,320,675"
-                    },
-                    "to": {
-                        "startLines": "284,621,2740",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "18420,39566,185581",
-                        "endLines": "284,621,2745",
-                        "endColumns": "46,48,8",
-                        "endOffsets": "18462,39610,185851"
-                    }
-                },
-                {
                     "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/813aaf7d6bb80469e1f61dc1b20a9feb/cardview-1.0.0/res/values/values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,35,36,37,38,45,47,50,7",
@@ -3272,7 +3253,7 @@
                     }
                 },
                 {
-                    "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/54c59358249bc92081dd4825e6d48b6e/jetified-android-scalablevideoview-1.0.4/res/values/values.xml",
+                    "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/e8a32536d629ece0a47e629dd7104506/jetified-android-scalablevideoview-1.0.4/res/values/values.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -3339,6 +3320,25 @@
                         "startOffsets": "43320",
                         "endColumns": "43",
                         "endOffsets": "43359"
+                    }
+                },
+                {
+                    "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/909c36b89dbbf603a98a386a6c267628/jetified-sdk-commonwidget-1.180.0/res/values/values.xml",
+                    "from": {
+                        "startLines": "4,8,11",
+                        "startColumns": "0,0,0",
+                        "startOffsets": "151,276,405",
+                        "endLines": "4,8,16",
+                        "endColumns": "42,44,8",
+                        "endOffsets": "193,320,675"
+                    },
+                    "to": {
+                        "startLines": "284,621,2740",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "18420,39566,185581",
+                        "endLines": "284,621,2745",
+                        "endColumns": "46,48,8",
+                        "endOffsets": "18462,39610,185851"
                     }
                 },
                 {
@@ -3437,7 +3437,7 @@
                     }
                 },
                 {
-                    "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/e0c1fc0d00bb109d3be62a909f14ecd8/jetified-react-native-0.63.2/res/values/values.xml",
+                    "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/59d26ecffbf1f294d9bbffcaca77a68d/jetified-react-native-0.63.2/res/values/values.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,73,77,80,83,86,89,93,97,100,103,106,109,110,111,120,127,134,137,140,143,149",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

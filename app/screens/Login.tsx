@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {useForm, Controller} from 'react-hook-form';
 import {
   View,
@@ -9,12 +9,17 @@ import {
   Dimensions,
   TouchableOpacity,
   Image,
+  PermissionsAndroid,
+  Platform,
+  KeyboardAvoidingView,
   ScrollView,
 } from 'react-native';
+import {moderateScale} from 'react-native-size-matters';
 import {Icon, Button} from 'react-native-elements';
-import AsyncStorage from '@react-native-community/async-storage';
+import {useAuth} from '../Providers/AuthProvider';
+import {Loading} from '../components/Loading';
 
-const {height, width} = Dimensions.get('window');
+const {width} = Dimensions.get('window');
 
 type FormData = {
   userId: string;
@@ -22,96 +27,142 @@ type FormData = {
 };
 
 export default function Login({navigation}) {
-  console.log('tes');
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
   const {control, handleSubmit, errors} = useForm();
 
+  const {logIn} = useAuth();
+
+  useEffect(() => {
+    if (Platform.OS === 'android') {
+      async function requestStorageAccessPermission() {
+        try {
+          await PermissionsAndroid.requestMultiple([
+            PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
+            PermissionsAndroid.PERMISSIONS.READ_EXTERNAL_STORAGE,
+          ]);
+        } catch (err) {
+          console.warn(err);
+        }
+      }
+      requestStorageAccessPermission();
+    }
+  }, []);
+
   const onSubmit = async (data) => {
-    console.log(data);
     const {userId, password} = data;
-    await AsyncStorage.setItem('login', 'loggedIn');
-    navigation.navigate('Home');
+    try {
+      setLoading(true);
+      await logIn(userId, password);
+      setLoading(false);
+    } catch (e) {
+      setLoading(false);
+      console.log(e);
+    }
   };
 
+  if (loading) return <Loading message="loading" />;
   return (
-    <ScrollView contentContainerStyle={styles.mainContainer}>
-      <Image style={styles.imageStyle} source={require('../res/logo.png')} />
-      <Controller
-        control={control}
-        render={({onChange, onBlur, value}) => (
-          <View style={styles.inputViewStyle}>
-            <Icon name="user" type="antdesign" color="grey" size={40} />
-            <TextInput
-              style={styles.textInputStyle}
-              placeholder="User Id"
-              onBlur={onBlur}
-              onChangeText={(value) => onChange(value)}
-              value={value}
-            />
-          </View>
+    <KeyboardAvoidingView
+      behavior={Platform.OS === 'ios' ? 'padding' : null}
+      style={{flex: 1}}>
+      <ScrollView contentContainerStyle={styles.mainContainer}>
+        <Image
+          style={styles.imageStyle}
+          source={require('../res/logo.png')}
+          resizeMode="contain"
+        />
+        <Controller
+          control={control}
+          render={({onChange, onBlur, value}) => (
+            <View style={styles.inputViewStyle}>
+              <Icon
+                name="user"
+                type="antdesign"
+                color="grey"
+                size={moderateScale(15)}
+              />
+              <TextInput
+                style={styles.textInputStyle}
+                placeholder="Email address"
+                onBlur={onBlur}
+                onChangeText={(value) => onChange(value)}
+                value={value}
+                autoCapitalize="none"
+              />
+            </View>
+          )}
+          name="userId"
+          rules={{
+            required: 'Email required',
+          }}
+          defaultValue=""
+        />
+        {errors.userId && (
+          <Text style={styles.errorTextStyle}>{errors.userId.message}</Text>
         )}
-        name="userId"
-        rules={{
-          required: 'User Id required',
-        }}
-        defaultValue=""
-      />
-      {errors.userId && (
-        <Text style={styles.errorTextStyle}>{errors.userId.message}</Text>
-      )}
-      <Controller
-        control={control}
-        render={({onChange, onBlur, value}) => (
-          <View style={styles.inputViewStyle}>
-            <Icon name="lock" type="entypo" color="grey" size={40} />
-            <TextInput
-              secureTextEntry
-              style={styles.textInputStyle}
-              placeholder="Password"
-              onBlur={onBlur}
-              onChangeText={(value) => onChange(value)}
-              value={value}
-            />
-          </View>
+        <Controller
+          control={control}
+          render={({onChange, onBlur, value}) => (
+            <View style={styles.inputViewStyle}>
+              <Icon
+                name="lock"
+                type="entypo"
+                color="grey"
+                size={moderateScale(15)}
+              />
+              <TextInput
+                secureTextEntry
+                style={styles.textInputStyle}
+                placeholder="Password"
+                onBlur={onBlur}
+                onChangeText={(value) => onChange(value)}
+                value={value}
+                autoCapitalize="none"
+              />
+            </View>
+          )}
+          rules={{
+            required: 'Password required',
+            validate: (value) =>
+              value.length >= 6
+                ? true
+                : 'Password must be at least 6 characters',
+          }}
+          name="password"
+          defaultValue=""
+        />
+        {errors.password && (
+          <Text style={styles.errorTextStyle}>{errors.password.message}</Text>
         )}
-        rules={{
-          required: 'Password required',
-          validate: (value) =>
-            value.length >= 6 ? true : 'Password must be at least 6 characters',
-        }}
-        name="password"
-        defaultValue=""
-      />
-      {errors.password && (
-        <Text style={styles.errorTextStyle}>{errors.password.message}</Text>
-      )}
-      {error ? (
-        <Text style={styles.errorTextStyle}>Invalid user ID or password</Text>
-      ) : null}
-      <Button
-        buttonStyle={styles.buttonStyle}
-        title="LOGIN"
-        onPress={handleSubmit(onSubmit)}
-        titleStyle={styles.buttonTitleStyle}
-      />
-      <View style={{flexDirection: 'row', marginTop: 40}}>
-        <Text style={styles.textStyle}>
-          Don't have valid login credentials?
-        </Text>
-        <TouchableOpacity>
-          <Text style={styles.textStyle}> Click here</Text>
-          <View
-            // eslint-disable-next-line react-native/no-inline-styles
-            style={{
-              marginLeft: 1,
-              width: 90,
-              height: 1,
-              backgroundColor: 'grey',
-            }}
-          />
-        </TouchableOpacity>
-      </View>
-    </ScrollView>
+        {error ? (
+          <Text style={styles.errorTextStyle}>Invalid user ID or password</Text>
+        ) : null}
+        <Button
+          buttonStyle={styles.buttonStyle}
+          title="LOGIN"
+          onPress={handleSubmit(onSubmit)}
+          titleStyle={styles.buttonTitleStyle}
+        />
+        <View style={{flexDirection: 'row', marginTop: moderateScale(20)}}>
+          <Text style={styles.textStyle}>
+            Don't have valid login credentials?
+          </Text>
+          <TouchableOpacity>
+            <Text style={styles.textStyle}> Click here</Text>
+            <View
+              // eslint-disable-next-line react-native/no-inline-styles
+              style={{
+                marginLeft: 1,
+                width: moderateScale(50),
+                height: 1,
+                backgroundColor: 'grey',
+              }}
+            />
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 }
 
@@ -123,46 +174,46 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   inputViewStyle: {
-    marginVertical: 20,
+    marginVertical: moderateScale(10),
     flexDirection: 'row',
     width: width / 3,
-    height: 80,
-    padding: 20,
+    height: moderateScale(40),
+    padding: moderateScale(10),
     borderColor: 'grey',
     borderWidth: 1,
     borderRadius: 5,
     alignItems: 'center',
   },
   textInputStyle: {
-    marginLeft: 10,
-    fontSize: 25,
+    marginLeft: moderateScale(5),
+    fontSize: moderateScale(12),
     width: width / 4,
   },
   buttonStyle: {
-    marginTop: 10,
-    paddingHorizontal: 80,
-    paddingVertical: 20,
+    marginTop: moderateScale(5),
+    paddingHorizontal: moderateScale(40),
+    paddingVertical: moderateScale(10),
     backgroundColor: 'white',
-    borderRadius: 10,
+    borderRadius: moderateScale(5),
     borderWidth: 1,
     borderColor: 'grey',
   },
   buttonTitleStyle: {
     color: 'grey',
-    fontSize: 30,
+    fontSize: moderateScale(12),
     fontWeight: 'bold',
   },
   textStyle: {
-    fontSize: 20,
+    fontSize: moderateScale(10),
     color: 'grey',
   },
   imageStyle: {
-    height: 200,
+    height: moderateScale(50),
     width: width / 3,
     resizeMode: 'contain',
   },
   errorTextStyle: {
     color: 'red',
-    fontSize: 18,
+    fontSize: moderateScale(10),
   },
 });

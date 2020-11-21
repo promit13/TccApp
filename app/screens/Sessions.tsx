@@ -10,8 +10,6 @@ import _ from 'lodash';
 import {Icon} from 'react-native-elements';
 import {Loading} from '../components/Loading';
 import {testData} from '../config/testData';
-import {TitleBar} from '../components/TitleBar';
-import Table from '../components/Table';
 
 const {height, width} = Dimensions.get('window');
 
@@ -115,7 +113,6 @@ export default class Sessions extends React.Component {
       }
     });
     this.setState({loading: false});
-    console.log(countryObjectArray);
   }
   renderScrollView = () => {
     const {selectedIndex, showDetail} = this.state;

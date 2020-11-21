@@ -7,65 +7,11 @@ import {
 } from 'react-native-gesture-handler';
 import {Icon} from 'react-native-elements';
 import {TitleBar} from '../components/TitleBar';
+import {scale, moderateScale} from 'react-native-size-matters';
 
 export default function Table({data, barColor, barTitle, showTitleBar}) {
   return (
-    <View style={{marginTop: showTitleBar ? 10 : 0}}>
-      {/* <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}> */}
-      {/* <DropdownHeader dataArray={testPickerData} />
-            <DropdownHeader dataArray={testPickerData} />
-            <DropdownHeader dataArray={testPickerData} /> */}
-      {/* <DropdownHeader
-            dataArray={[
-              {
-                label: 'LAST 7 DAYS',
-                value: 'uk',
-              },
-              {
-                label: 'LAST 6 DAYS',
-                value: 'france',
-              },
-              {
-                label: 'LAST 5 DAYS',
-                value: 'france',
-              },
-              {
-                label: 'LAST 4 DAYS',
-                value: 'france',
-              },
-              {
-                label: 'LAST 3 DAYS',
-                value: 'france',
-              },
-              {
-                label: 'LAST 2 DAYS',
-                value: 'france',
-              },
-              {
-                label: 'LAST 1 DAYS',
-                value: 'france',
-              },
-            ]}
-          />
-          <DropdownHeader
-            dataArray={[
-              {
-                label: 'UK',
-                value: 'uk',
-              },
-              {
-                label: 'France',
-                value: 'france',
-              },
-            ]}
-          /> */}
-      {/* </View> */}
-
+    <View style={{marginTop: showTitleBar ? moderateScale(5) : 0}}>
       <View style={{backgroundColor: 'white'}}>
         {showTitleBar ? (
           <TitleBar backgroundColor={barColor} message={barTitle} />
@@ -76,8 +22,8 @@ export default function Table({data, barColor, barTitle, showTitleBar}) {
             backgroundColor: '#A2A9AD',
             padding: 10,
             margin: 10,
-            borderTopLeftRadius: 10,
-            borderTopRightRadius: 10,
+            borderTopLeftRadius: moderateScale(5),
+            borderTopRightRadius: moderateScale(5),
             justifyContent: 'space-between',
           }}>
           {data.map((item, index) => {
@@ -98,7 +44,7 @@ export default function Table({data, barColor, barTitle, showTitleBar}) {
 
 const styles = StyleSheet.create({
   headerTextStyle: {
-    fontSize: 16,
+    fontSize: moderateScale(10),
     color: 'white',
   },
 });

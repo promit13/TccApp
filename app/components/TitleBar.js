@@ -1,8 +1,8 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import {scale, moderateScale} from 'react-native-size-matters';
 
 export function TitleBar({message, width, backgroundColor}) {
-  console.log(message);
   return (
     <View style={[styles.mainContainer, {width, backgroundColor}]}>
       <Text style={styles.textStyle}>{message}</Text>
@@ -12,12 +12,12 @@ export function TitleBar({message, width, backgroundColor}) {
 
 const styles = StyleSheet.create({
   mainContainer: {
-    height: 40,
-    padding: 10,
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
+    height: moderateScale(25),
+    padding: moderateScale(5),
+    borderTopLeftRadius: moderateScale(5),
+    borderTopRightRadius: moderateScale(5),
   },
   textStyle: {
-    fontSize: 18,
+    fontSize: moderateScale(10),
   },
 });

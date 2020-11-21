@@ -1,55 +1,46 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useState} from 'react';
-import {View, Text, Image, StyleSheet, Dimensions, Alert} from 'react-native';
-import {Icon, SearchBar} from 'react-native-elements';
+import React, {useState, useEffect} from 'react';
+import {View, Text, Image, StyleSheet, Dimensions} from 'react-native';
+import {scale, moderateScale} from 'react-native-size-matters';
+import {Icon} from 'react-native-elements';
+import _ from 'lodash';
 import SearchableDropdown from 'react-native-searchable-dropdown';
+
+import {useDatas} from '../Providers/DataProviders';
 
 const {width, height} = Dimensions.get('window');
 
-var items = [
-  {
-    id: 1,
-    name: 'JavaScript',
-  },
-  {
-    id: 2,
-    name: 'Java',
-  },
-  {
-    id: 3,
-    name: 'Ruby',
-  },
-  {
-    id: 4,
-    name: 'React Native',
-  },
-  {
-    id: 5,
-    name: 'PHP',
-  },
-  {
-    id: 6,
-    name: 'Python',
-  },
-  {
-    id: 7,
-    name: 'Go',
-  },
-  {
-    id: 8,
-    name: 'Swift',
-  },
-];
-
+let titleArray = [];
+let rangeArray = [];
+let rewardsArray = [];
+let newArray = [];
 export default HeaderBar = ({nav}) => {
   const [searchLens, setSearchLens] = useState(false);
-  const [searchValue, setSearchValue] = useState('');
   const [itemSelected, setItemSelected] = useState('Search...');
+  const [reset, setReset] = useState(false);
+
+  const {campaigns, rewards} = useDatas();
+
+  useEffect(() => {
+    titleArray = [];
+    rangeArray = [];
+    rewardsArray = [];
+    newArray = [];
+    titleArray = _.map(campaigns, (o) =>
+      _.extend({name: o.title, campaigns: [o._id]}, o),
+    );
+    rangeArray = _.map(campaigns, (o) =>
+      _.extend({name: o.range, campaigns: [o._id]}, o),
+    );
+    rewardsArray = _.map(rewards, (o) => _.extend({name: o.Title}, o));
+    // newArray = [...titleArray, ...rangeArray, ...rewardsArray];
+    newArray = titleArray.concat(rangeArray, rewardsArray);
+  });
 
   return (
     <View style={styles.headerStyle}>
       <Image
-        style={{width: 100, height: 100}}
+        style={{width: moderateScale(150), height: moderateScale(50)}}
         source={require('../res/logo.png')}
         resizeMode="contain"
       />
@@ -58,34 +49,16 @@ export default HeaderBar = ({nav}) => {
           flexDirection: 'row',
           alignItems: 'center',
         }}>
-        {/* {searchLens ? (
-          <SearchBar
-            onClear={() => setSearchLens(true)}
-            placeholder="Search..."
-            onChangeText={(search) => setSearchValue(search)}
-            searchIcon={false}
-            value={searchValue}
-            containerStyle={{
-              height: 60,
-              width: 300,
-              backgroundColor: '#F5F5F5',
-              borderBottomColor: '#F5F5F5',
-              borderTopColor: '#F5F5F5',
-              marginRight: 15,
-            }}
-            inputContainerStyle={{
-              backgroundColor: '#F5F5F5',
-            }}
-            inputStyle={{fontSize: 25}}
-          />
-        ) : null} */}
         {searchLens ? (
           <SearchableDropdown
             onItemSelect={(item) => {
-              console.log(item);
+              // setItemSelected('');
+              nav.navigate('CampaignSingleTest', {
+                selectedCampaign: item.campaigns,
+              });
             }}
             containerStyle={{
-              width: 300,
+              width: moderateScale(150),
               backgroundColor: '#F5F5F5',
             }}
             itemStyle={{
@@ -95,15 +68,15 @@ export default HeaderBar = ({nav}) => {
               borderWidth: 0.2,
               borderRadius: 5,
             }}
-            itemTextStyle={{color: '#222', fontSize: 30}}
+            itemTextStyle={{color: '#222', fontSize: moderateScale(15)}}
             itemsContainerStyle={{
-              maxHeight: 400,
+              maxHeight: moderateScale(250),
               position: 'absolute',
               zIndex: 1,
-              marginTop: 60,
+              marginTop: moderateScale(30),
             }}
-            textInputStyle={{fontSize: 30, color: 'red'}}
-            items={items}
+            textInputStyle={{fontSize: moderateScale(10), color: 'red'}}
+            items={newArray}
             defaultIndex={0}
             resetValue={false}
             textInputProps={{
@@ -111,7 +84,7 @@ export default HeaderBar = ({nav}) => {
               underlineColorAndroid: 'transparent',
               style: {
                 padding: 12,
-                fontSize: 30,
+                fontSize: moderateScale(15),
               },
               onTextChange: (text) => setItemSelected(text),
             }}
@@ -123,22 +96,22 @@ export default HeaderBar = ({nav}) => {
         <Icon
           name="search"
           type="fontisto"
-          size={40}
+          size={moderateScale(20)}
           onPress={() => setSearchLens(!searchLens)}
-          iconStyle={{color: 'grey', marginRight: 40}}
+          iconStyle={{color: 'grey', marginRight: moderateScale(20)}}
         />
 
         <View
           style={{
             backgroundColor: '#BC955C',
-            width: 100,
-            height: 100,
+            width: moderateScale(45),
+            height: moderateScale(50),
             justifyContent: 'center',
           }}>
           <Icon
             name="menu"
-            type="entypo"
-            size={50}
+            type="feather"
+            size={moderateScale(25)}
             onPress={() => nav.toggleDrawer()}
             iconStyle={{color: 'white'}}
           />
@@ -154,7 +127,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingLeft: 40,
+    paddingLeft: moderateScale(20),
     backgroundColor: '#F5F5F5',
   },
 });
