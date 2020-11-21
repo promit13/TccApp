@@ -13,7 +13,6 @@ import {SessionStart} from '../components/SessionStart';
 
 const {width, height} = Dimensions.get('window');
 
-const videoImage = require('../res/video.png');
 const caseStudyImage = require('../res/casestudy.png');
 const infoImage = require('../res/information.png');
 

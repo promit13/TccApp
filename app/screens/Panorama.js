@@ -35,8 +35,6 @@ const caseStudyImage = require('../res/casestudy.png');
 const iphoneImage = require('../res/iphone.png');
 const rangeImage = require('../res/range.png');
 
-const demoVideo = require('../res/demo.mp4');
-
 let activationSliderArray = [];
 let productInformationArray = [];
 let kulaTitleArray = [];

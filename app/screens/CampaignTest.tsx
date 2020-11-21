@@ -22,16 +22,6 @@ import {Loading} from '../components/Loading';
 import {usePrevious} from '../components/userPrevious';
 import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 
-const images = [
-  require('../res/brick.jpeg'),
-  require('../res/brickOne.jpeg'),
-  require('../res/brickTwo.jpeg'),
-  require('../res/brickThree.jpeg'),
-  require('../res/brickFour.jpeg'),
-  require('../res/brickFive.jpeg'),
-  require('../res/brickSix.jpeg'),
-];
-
 const {height, width} = Dimensions.get('window');
 
 let campaignsFiltered = [];

@@ -16,7 +16,7 @@ import Controller from '../components/Controller';
 
 const {width, height} = Dimensions.get('window');
 
-const introVideo = require('../res/welcome.mp4');
+const introVideo = null;
 
 type FormData = {
   userId: string;

@@ -23,8 +23,6 @@ import {useDatas} from '../Providers/DataProviders';
 import {Loading} from '../components/Loading';
 import {SessionStart} from '../components/SessionStart';
 
-const introVideo = require('../res/welcome.mp4');
-
 const {width, height} = Dimensions.get('window');
 
 let casesArray = [];
