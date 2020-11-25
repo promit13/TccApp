@@ -1,37 +1,26 @@
-import React, {useEffect, useState, useRef} from 'react';
-import {View, Dimensions, Text, FlatList} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {View, Text, FlatList} from 'react-native';
 import {Button} from 'react-native-elements';
 import {BarChart} from 'react-native-chart-kit';
 import _ from 'lodash';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 import moment from 'moment';
-import {scale, moderateScale} from 'react-native-size-matters';
+import {moderateScale} from 'react-native-size-matters';
 import {DropdownHeaderTest} from '../components/DropdownHeaderTest';
 import SessionsTest from './SessionsTest';
 import {Loading} from '../components/Loading';
-import {testData} from '../config/testData';
 import {TitleBar} from '../components/TitleBar';
 import Table from '../components/Table';
 import Header from '../components/Header';
 
 import {useDatas} from '../Providers/DataProviders';
 import {useAuth} from '../Providers/AuthProvider';
-
-const {width, height} = Dimensions.get('window');
-
-// const countriesArray = [
-//   {label: 'UK', value: 'uk', key: '2'},
-//   {label: 'Australia', value: 'au', key: '3'},
-//   {label: 'Africa', value: 'af', key: '4'},
-// ];
+import {width, height} from '../config/utils';
 
 let chartData;
 const titleArray = ['SESSION', 'DATE', 'TIME', 'FAVOURITED'];
 
-let countries = [];
-let countryObjectArray = [];
 let directors = [];
-let directorsObjectArray = [];
 
 let filteredSessions = [];
 let filteredFavourites = [];
@@ -190,14 +179,14 @@ function DashboardTestSecond({navigation}) {
       'campaignName',
     );
 
-    // chartData = {
-    //   labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-    //   datasets: [
-    //     {
-    //       data: [Mo, Tu, We, Th, Fr, Sa, Su],
-    //     },
-    //   ],
-    // };
+    chartData = {
+      labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+      datasets: [
+        {
+          data: [Mo, Tu, We, Th, Fr, Sa, Su],
+        },
+      ],
+    };
     setUserType(type);
     setLoading(false);
   }, [
@@ -366,7 +355,7 @@ function DashboardTestSecond({navigation}) {
   }
   return (
     <View style={{flex: 1, padding: moderateScale(10)}}>
-      <View style={{position: 'absolute', zIndex: 1}}>
+      <View style={{position: 'absolute', zIndex: 1, elevation: 5}}>
         <Header nav={navigation} />
       </View>
       <ScrollView
@@ -414,7 +403,7 @@ function DashboardTestSecond({navigation}) {
                 width={width / 2}
                 backgroundColor="#4778A0"
               />
-              {/* <BarChart
+              <BarChart
                 data={chartData}
                 width={width / 2}
                 height={height / 6}
@@ -430,7 +419,7 @@ function DashboardTestSecond({navigation}) {
                   },
                 }}
                 verticalLabelRotation={0}
-              /> */}
+              />
               <View
                 style={{
                   flexDirection: 'row',
@@ -498,7 +487,7 @@ function DashboardTestSecond({navigation}) {
             </View>
           </View>
         )}
-        <Button
+        {/* <Button
           containerStyle={{width: moderateScale(120), alignSelf: 'flex-end'}}
           buttonStyle={{
             width: moderateScale(120),
@@ -508,8 +497,8 @@ function DashboardTestSecond({navigation}) {
           }}
           title={showAllSessions ? 'Back to dashboard' : 'View All'}
           onPress={() => setShowAllSessions(!showAllSessions)}
-        />
-        <View style={{marginTop: moderateScale(5)}}>
+        /> */}
+        <View style={{marginTop: moderateScale(15)}}>
           <Table
             data={titleArray}
             barColor="#50A486"

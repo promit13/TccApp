@@ -1,16 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import {
-  View,
-  Text,
-  Image,
-  TouchableOpacity,
-  Dimensions,
-  StyleSheet,
-} from 'react-native';
-import {scale, moderateScale} from 'react-native-size-matters';
-import {Loading} from './Loading';
+import {View, Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
+import {moderateScale} from 'react-native-size-matters';
 
-const {width, height} = Dimensions.get('window');
+import {width, height} from '../config/utils';
 
 const zoneImages = [
   require('../res/purple.gif'),
@@ -21,7 +13,6 @@ const zoneImages = [
 
 export function ZoneMenu({nav, onPress, zones}) {
   const [sortedZone, setSortedZone] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const zoneSorted = zones.sort((a, b) => a.Order - b.Order);

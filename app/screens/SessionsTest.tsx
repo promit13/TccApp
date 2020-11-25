@@ -1,23 +1,13 @@
 import React, {useState} from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  Dimensions,
-  ActivityIndicator,
-  Alert,
-} from 'react-native';
+import {View, Text, StyleSheet, Alert} from 'react-native';
 import {Button, Overlay} from 'react-native-elements';
-import {DropdownHeader} from '../components/DropdownHeader';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import _ from 'lodash';
 import {Icon} from 'react-native-elements';
-import {scale, moderateScale} from 'react-native-size-matters';
+import {moderateScale} from 'react-native-size-matters';
 import moment from 'moment';
 import {useDatas} from '../Providers/DataProviders';
 import {SendCampaignDialog} from '../components/SendCampaignDialog';
-
-const {height, width} = Dimensions.get('window');
 
 let objectArray = [];
 

@@ -56,11 +56,6 @@ static void InitializeFlipper(UIApplication *application) {
   return YES;
 }
 
-- (void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)(void))completionHandler
-{
-  [RNBackgroundDownloader setCompletionHandlerWithIdentifier:identifier completionHandler:completionHandler];
-}
-
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge {
 #ifdef FB_SONARKIT_ENABLED
   return

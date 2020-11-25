@@ -1,43 +1,17 @@
 import React, {useState, useEffect} from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  Image,
-  TouchableOpacity,
-  Dimensions,
-} from 'react-native';
-import * as Animatable from 'react-native-animatable';
+import {View, Text, ScrollView, Image, TouchableOpacity} from 'react-native';
 import _ from 'lodash';
-import RNBackgroundDownloader from 'react-native-background-downloader';
-import {scale, moderateScale} from 'react-native-size-matters';
-import {Icon} from 'react-native-elements';
+import {moderateScale} from 'react-native-size-matters';
 import Header from '../components/Header';
-import {ZoneMenu} from '../components/ZoneMenu';
-import {CampaignMenu} from '../components/CampaignMenu';
 import {useDatas} from '../Providers/DataProviders';
 import {Loading} from '../components/Loading';
-import {DrawerItem} from '@react-navigation/drawer';
-import {TitleBar} from '../components/TitleBar';
-
-const {height, width} = Dimensions.get('window');
-
-const data = [
-  {image: 'sun', title: 'Fresh Take', id: 1},
-  {image: 'sun', title: 'Love My Garden Chef', id: 2},
-  {image: 'sun', title: 'Nava', id: 3},
-  {image: 'sun', title: 'Zyliss', id: 4},
-  {image: 'sun', title: 'Guzzini Venice', id: 5},
-  {image: 'sun', title: 'Kappa Active Life', id: 6},
-  {image: 'sun', title: 'Nerf', id: 7},
-];
+import {dirs, platform, height, width} from '../config/utils';
 
 let totalCampaigns = [];
 
 export default function CampaignSingleTest(props) {
   const [loading, setLoading] = useState(true);
   const [totalFilteredCampaigns, setTotalFilteredCampaigns] = useState([]);
-  // const [imageUrl, setImageUrl] = useState('');
   const {selectedCampaign} = props.route.params;
   const {zones, campaigns, files} = useDatas();
 
@@ -47,17 +21,11 @@ export default function CampaignSingleTest(props) {
       const campaign = campaigns.find(
         (o) => JSON.stringify(o._id) === JSON.stringify(item),
       );
-      // const {url, ext} = files.find(
-      //   (o) => JSON.stringify(o._id) === JSON.stringify(campaign.thumbnail),
-      // );
       const {title} = zones.find(
         (o) => JSON.stringify(o._id) === JSON.stringify(campaign.zone),
       );
       // for offline
-      const imageUrl = `${RNBackgroundDownloader.directories.documents}/${campaign.thumbnail}.jpeg`;
-      // for online
-      //const imageUrl = `https://admin.tcccampaignportal.com${url}`;
-
+      const imageUrl = `file://${dirs}/${campaign.thumbnail}.jpeg`;
       totalCampaigns.push(_.extend({zoneTitle: title, imageUrl}, campaign));
     });
     setTotalFilteredCampaigns(totalCampaigns);
@@ -83,6 +51,7 @@ export default function CampaignSingleTest(props) {
       const {title, zoneTitle, imageUrl} = item;
       return (
         <TouchableOpacity
+          key={index}
           onPress={() => onCampaignClick(item)}
           style={{
             width: width / 4,
@@ -133,12 +102,18 @@ export default function CampaignSingleTest(props) {
         flex: 1,
         padding: moderateScale(15),
       }}>
-      <View style={{position: 'absolute', zIndex: 1}}>
+      <View style={{position: 'absolute', zIndex: 1, elevation: 5}}>
         <Header nav={props.navigation} />
       </View>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        {renderCampaigns()}
-      </ScrollView>
+      <View
+        style={{
+          flex: 1,
+          marginTop: platform === 'android' ? moderateScale(30) : 0,
+        }}>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          {renderCampaigns()}
+        </ScrollView>
+      </View>
     </View>
   );
 }

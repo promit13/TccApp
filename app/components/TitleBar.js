@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
-import {scale, moderateScale} from 'react-native-size-matters';
+import {moderateScale} from 'react-native-size-matters';
 
 export function TitleBar({message, width, backgroundColor}) {
   return (

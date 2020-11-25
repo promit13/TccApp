@@ -1,29 +1,17 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {useEffect, useState} from 'react';
-import {
-  View,
-  Text,
-  Image,
-  Dimensions,
-  StyleSheet,
-  FlatList,
-} from 'react-native';
+import {View, Text, Image, StyleSheet, FlatList} from 'react-native';
 import _ from 'lodash';
 import Swiper from 'react-native-swiper';
-import RNBackgroundDownloader from 'react-native-background-downloader';
-import {scale, moderateScale} from 'react-native-size-matters';
+import {moderateScale} from 'react-native-size-matters';
 import Modal from 'react-native-modal';
-import {Icon, Button, Overlay} from 'react-native-elements';
+import {Icon} from 'react-native-elements';
 import Header from '../components/Header';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import VideoComponent from '../components/Video';
-import Video from 'react-native-video';
 import VideoPlayer from 'react-native-video-controls';
-import {ZoneMenu} from '../components/ZoneMenu';
 import {useDatas} from '../Providers/DataProviders';
 import {Loading} from '../components/Loading';
-import {SessionStart} from '../components/SessionStart';
-
-const {width, height} = Dimensions.get('window');
+import {dirs, height, width} from '../config/utils';
 
 let casesArray = [];
 
@@ -39,9 +27,8 @@ function CaseStudies(props) {
     casesArray = sortedCasesArray.map((item) => {
       return _.extend(
         {
-          imageUrl: `${RNBackgroundDownloader.directories.documents}/${item.Thumbnail}.jpeg`,
+          imageUrl: `file://file://${dirs}/${item.Thumbnail}.jpeg`,
         },
-        // {imageUrl: `https://admin.tcccampaignportal.com${url}`},
         item,
       );
     });
@@ -117,34 +104,27 @@ function CaseStudies(props) {
           style={{
             alignItems: 'center',
             justifyContent: 'center',
+            flex: 1,
           }}>
           {item.image ? (
             <Image
               resizeMode="contain"
               style={styles.sliderImageStyle}
               source={{
-                // uri: `${RNBackgroundDownloader.directories.documents}/${item.url}${item.ext}`,
-                uri: `${RNBackgroundDownloader.directories.documents}/${item.id}.jpeg`,
+                uri: `file://${dirs}/${item.id}.jpeg`,
               }}
-              //source={{uri: `https://admin.tcccampaignportal.com${item.url}`}}
             />
           ) : (
-            // <VideoComponent
-            //   videoHeight={height - height / 4}
-            //   videoWidth={width - moderateScale(150)}
-            //   onBack={toggleOverlay}
-            //   videoUrl={`${RNBackgroundDownloader.directories.documents}/${item.id}.mp4`}
-            // />
-            <Video
-              controls={true}
+            <VideoPlayer
               style={{
-                height: height - height / 4,
+                height: height - moderateScale(150),
                 width: width - moderateScale(150),
+                alignSelf: 'center',
               }}
-              // source={demoVideo}
               source={{
-                uri: `${RNBackgroundDownloader.directories.documents}/${item.id}.mp4`,
+                uri: `file://${dirs}/${item.id}.mp4`,
               }}
+              onBack={toggleOverlay}
             />
           )}
         </View>
@@ -181,7 +161,7 @@ function CaseStudies(props) {
   if (loading) return <Loading message="Loading" />;
   return (
     <View style={styles.mainContainer}>
-      <View style={{position: 'absolute', zIndex: 1}}>
+      <View style={{position: 'absolute', zIndex: 1, elevation: 5}}>
         <Header nav={props.navigation} />
       </View>
       <View
@@ -226,6 +206,7 @@ function CaseStudies(props) {
         isVisible={overlayVisible}
         coverScreen
         hasBackdrop
+        onBackdropPress={toggleOverlay}
         backdropColor="black"
         backdropOpacity={0.9}>
         <View

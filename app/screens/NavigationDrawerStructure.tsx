@@ -2,9 +2,9 @@
 //This is an example code for Navigation Drawer with Custom Side bar//
 import React, {useState} from 'react';
 //import react in our code.
-import {View, Dimensions} from 'react-native';
+import {View} from 'react-native';
 import {Button, Overlay} from 'react-native-elements';
-import {scale, moderateScale} from 'react-native-size-matters';
+import {moderateScale} from 'react-native-size-matters';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createStackNavigator} from '@react-navigation/stack';
 import {CustomSidebarMenu} from '../components/CustomSideBarMenu';
@@ -32,22 +32,11 @@ import Introduction from './Introduction';
 import CaseSingle from './CaseSingle';
 import {useDatas} from '../Providers/DataProviders';
 
-const {height, width} = Dimensions.get('window');
+import {width, height} from '../config/utils';
 
 const Stack = createStackNavigator();
 
 const Drawer = createDrawerNavigator();
-
-function ZoneStack() {
-  return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-      }}>
-      <Stack.Screen name="Zone" component={Zone} />
-    </Stack.Navigator>
-  );
-}
 
 const HomeStack = () => {
   return (
@@ -82,6 +71,7 @@ function SignedIn() {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
+        animationEnabled: false,
       }}
       initialRouteName="Home">
       <Stack.Screen name="Login" component={Login} />

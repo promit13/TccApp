@@ -492,6 +492,21 @@ com/google/vr/cardboard/R.java
  com.google.vr.cardboard.R$layout
  com.google.vr.cardboard.R$string
  com.google.vr.cardboard.R$style
+com/reactnativecommunity/netinfo/R.java
+ com.reactnativecommunity.netinfo.R
+ com.reactnativecommunity.netinfo.R$anim
+ com.reactnativecommunity.netinfo.R$attr
+ com.reactnativecommunity.netinfo.R$bool
+ com.reactnativecommunity.netinfo.R$color
+ com.reactnativecommunity.netinfo.R$dimen
+ com.reactnativecommunity.netinfo.R$drawable
+ com.reactnativecommunity.netinfo.R$id
+ com.reactnativecommunity.netinfo.R$integer
+ com.reactnativecommunity.netinfo.R$layout
+ com.reactnativecommunity.netinfo.R$string
+ com.reactnativecommunity.netinfo.R$style
+ com.reactnativecommunity.netinfo.R$styleable
+ com.reactnativecommunity.netinfo.R$xml
 com/swmansion/reanimated/R.java
  com.swmansion.reanimated.R
  com.swmansion.reanimated.R$anim

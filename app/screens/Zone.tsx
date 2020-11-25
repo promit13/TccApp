@@ -1,17 +1,15 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, Image, Dimensions, StyleSheet} from 'react-native';
-import Modal from 'react-native-modal';
-import {scale, moderateScale} from 'react-native-size-matters';
-import {Icon, Button, Overlay} from 'react-native-elements';
+import {View, Image, StyleSheet} from 'react-native';
+import {moderateScale} from 'react-native-size-matters';
+import {Button, Overlay} from 'react-native-elements';
 import Header from '../components/Header';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import Video from '../components/Video';
 import {ZoneMenu} from '../components/ZoneMenu';
 import {useDatas} from '../Providers/DataProviders';
 import {Loading} from '../components/Loading';
 import {SessionStart} from '../components/SessionStart';
 
-const {width, height} = Dimensions.get('window');
+import {width, height} from '../config/utils';
 
 const caseStudyImage = require('../res/casestudy.png');
 const infoImage = require('../res/information.png');
@@ -33,7 +31,7 @@ function Zone({navigation}) {
   if (loading) return <Loading message="Loading" />;
   return (
     <View style={styles.mainContainer}>
-      <View style={{position: 'absolute', zIndex: 1}}>
+      <View style={{position: 'absolute', zIndex: 1, elevation: 1}}>
         <Header nav={navigation} />
       </View>
       <View style={styles.videoTouchableStyle}>

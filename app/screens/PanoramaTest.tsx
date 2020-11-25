@@ -1,21 +1,21 @@
 import React, {useState, useEffect} from 'react';
 import {
   View,
-  Dimensions,
   StyleSheet,
   Text,
   TouchableOpacity,
   Image,
   FlatList,
   ImageBackground,
+  ActivityIndicator,
 } from 'react-native';
-import {Icon, Overlay, Button} from 'react-native-elements';
-import {scale, moderateScale} from 'react-native-size-matters';
+import {Icon, Button} from 'react-native-elements';
+import {moderateScale} from 'react-native-size-matters';
 import {PanoramaView} from 'react-native-panorama-view';
 import * as Animatable from 'react-native-animatable';
 import Modal from 'react-native-modal';
 import Swiper from 'react-native-swiper';
-import RNBackgroundDownloader from 'react-native-background-downloader';
+import Video from 'react-native-video';
 import {ObjectId} from 'bson';
 import Header from '../components/Header';
 import {CampaignMenu} from '../components/CampaignMenu';
@@ -24,9 +24,8 @@ import {useDatas} from '../Providers/DataProviders';
 import {Loading} from '../components/Loading';
 import {usePrevious} from '../components/userPrevious';
 import VideoComponent from '../components/Video';
-import Video from 'react-native-video';
+import {dirs, height, width, platform} from '../config/utils';
 
-const {width, height} = Dimensions.get('window');
 const activationImage = require('../res/360.png');
 const gameImage = require('../res/game.png');
 const productInformationImage = require('../res/trolley.png');
@@ -65,6 +64,7 @@ function PanoramaTest(props) {
   const [campaignUrl, setCampaignUrl] = useState('');
   const [imageIndex, setImageIndex] = useState(0);
   const [panoBackground, setPanoBackground] = useState('');
+  const [showActivityIndicator, setShowActivityIndicator] = useState(false);
 
   const previousId = usePrevious(id);
 
@@ -127,41 +127,27 @@ function PanoramaTest(props) {
       kuula_execution_five_title,
     );
     kulaImageArray.push(
-      `${RNBackgroundDownloader.directories.documents}/${panorama_execition_one}.jpeg`,
-      `${RNBackgroundDownloader.directories.documents}/${panorama_execition_two}.jpeg`,
-      `${RNBackgroundDownloader.directories.documents}/${panorama_execition_three}.jpeg`,
-      `${RNBackgroundDownloader.directories.documents}/${panorama_execition_four}.jpeg`,
-      `${RNBackgroundDownloader.directories.documents}/${panorama_execition_five}.jpeg`,
+      `file://${dirs}/${panorama_execition_one}.jpeg`,
+      `file://${dirs}/${panorama_execition_two}.jpeg`,
+      `file://${dirs}/${panorama_execition_three}.jpeg`,
+      `file://${dirs}/${panorama_execition_four}.jpeg`,
+      `file://${dirs}/${panorama_execition_five}.jpeg`,
     );
-    console.log(kulaTitleArray, kulaImageArray, kulaImageArray.length);
 
-    console.log(panorama_execition_one, panorama_execition_two);
-    insightsArray.push(
-      `${RNBackgroundDownloader.directories.documents}/${insights}.jpeg`,
-    );
-    objectivesArray.push(
-      `${RNBackgroundDownloader.directories.documents}/${objectives}.jpeg`,
-    );
+    insightsArray.push(`file://${dirs}/${insights}.jpeg`);
+    objectivesArray.push(`file://${dirs}/${objectives}.jpeg`);
 
     const game =
-      game_video === null
-        ? null
-        : `${RNBackgroundDownloader.directories.documents}/${game_video}.mp4`;
+      game_video === null ? null : `file://${dirs}/${game_video}.mp4`;
 
     activation_slider.map((item, index) => {
-      activationSliderArray.push(
-        `${RNBackgroundDownloader.directories.documents}/${item}.jpeg`,
-      );
+      activationSliderArray.push(`file://${dirs}/${item}.jpeg`);
     });
     product_information.map((item) => {
-      productInformationArray.push(
-        `${RNBackgroundDownloader.directories.documents}/${item}.jpeg`,
-      );
+      productInformationArray.push(`file://${dirs}/${item}.jpeg`);
     });
     kv.map((item, index) => {
-      kvArray.push(
-        `${RNBackgroundDownloader.directories.documents}/${item}.jpeg`,
-      );
+      kvArray.push(`file://${dirs}/${item}.jpeg`);
     });
     const zoneObject = zones.find(
       (o) => JSON.stringify(zone) === JSON.stringify(o._id),
@@ -169,18 +155,15 @@ function PanoramaTest(props) {
     // setCampaignUrl(
     //   execution
     //     ? kulaImageArray[imageIndex]
-    //     : `${RNBackgroundDownloader.directories.documents}/${panorama_background}.jpeg`,
+    //     : `file://${dirs}/${panorama_background}.jpeg`,
     // );
     setCampaignUrl(kulaImageArray[imageIndex]);
-    console.log('V EN FILE', video_english_file);
     setZoneName(zoneObject.title);
     setZoneId(zoneObject._id);
     setCampaignTitle(title);
     setGameUrl(game);
     setVideoUrl(video_english_file);
-    setPanoBackground(
-      `${RNBackgroundDownloader.directories.documents}/${panorama_background}.jpeg`,
-    );
+    setPanoBackground(`file://${dirs}/${panorama_background}.jpeg`);
     setQRCodeone(qr_code_one);
     setQRCodeTwo(qr_code_two);
     setLoading(false);
@@ -196,7 +179,6 @@ function PanoramaTest(props) {
     imageIndex,
   ]); // Or [] if effect doesn't need props or state
 
-  console.log(campaignUrl);
   const onCampaignChange = (i) => {
     if (campaignId === i) {
       setMenuVisible(false);
@@ -268,12 +250,15 @@ function PanoramaTest(props) {
   if (loading) return <Loading />;
   return (
     <View style={styles.container}>
-      <View style={{position: 'absolute', zIndex: 1}}>
+      <View style={{position: 'absolute', zIndex: 1, elevation: 4}}>
         <Header nav={props.navigation} />
       </View>
       {execution ? (
         <PanoramaView
-          style={{flex: 1}}
+          style={{
+            flex: 1,
+            marginTop: platform === 'android' ? moderateScale(50) : 0,
+          }}
           dimensions={{
             height: height,
             width: width,
@@ -285,6 +270,7 @@ function PanoramaTest(props) {
         <ImageBackground
           style={{
             flex: 1,
+            marginTop: platform === 'android' ? moderateScale(50) : 0,
           }}
           resizeMode="cover"
           source={{uri: panoBackground}}
@@ -294,7 +280,7 @@ function PanoramaTest(props) {
 
       <TouchableOpacity
         onPress={() =>
-          props.navigation.navigate('Campaign', {
+          props.navigation.navigate('CampaignTest', {
             id: JSON.stringify(zoneId),
           })
         }
@@ -306,6 +292,7 @@ function PanoramaTest(props) {
           alignItems: 'center',
           position: 'absolute',
           zIndex: 1,
+          elevation: 4,
         }}>
         <Text
           style={{
@@ -321,6 +308,7 @@ function PanoramaTest(props) {
         isVisible={overLayVisible}
         coverScreen
         hasBackdrop
+        onBackdropPress={toggleOverlay}
         backdropColor="black"
         backdropOpacity={0.9}>
         <View
@@ -331,14 +319,19 @@ function PanoramaTest(props) {
             paddingHorizontal: moderateScale(20),
           }}>
           <View style={{height: 1, width: 1, backgroundColor: 'white'}} />
-          <Icon
-            name="close"
-            type="evilicon"
-            size={moderateScale(30)}
-            color="white"
-            onPress={toggleOverlay}
-          />
+          {!showActivityIndicator && (
+            <Icon
+              name="close"
+              type="evilicon"
+              size={moderateScale(30)}
+              color="white"
+              onPress={toggleOverlay}
+            />
+          )}
         </View>
+        {showActivityIndicator && (
+          <ActivityIndicator size="large" color="#BC955C" />
+        )}
         {gameVisible && (
           // <View style={{height: height - 300, width: width / 2}}>
           //   <WebViewComponent gameLink={gameUrl} />
@@ -362,10 +355,13 @@ function PanoramaTest(props) {
               <Video
                 style={{
                   height: height - height / 2 + moderateScale(25),
-                  width: width / 4,
+                  width:
+                    platform === 'android'
+                      ? width / 4 - moderateScale(15)
+                      : width / 4,
                 }}
                 resizeMode="cover"
-                controls={true}
+                // controls={true}
                 // source={demoVideo}
                 source={{uri: gameUrl}}
               />
@@ -378,7 +374,7 @@ function PanoramaTest(props) {
                 resizeMode="contain"
                 style={{height: height / 3, width: width / 4}}
                 source={{
-                  uri: `${RNBackgroundDownloader.directories.documents}/${qrCodeOne}.png`,
+                  uri: `file://${dirs}/${qrCodeOne}.png`,
                 }}
               />
               {qrCodeTwo && (
@@ -390,7 +386,7 @@ function PanoramaTest(props) {
                     marginTop: moderateScale(10),
                   }}
                   source={{
-                    uri: `${RNBackgroundDownloader.directories.documents}/${qrCodeTwo}.png`,
+                    uri: `file://${dirs}/${qrCodeTwo}.png`,
                   }}
                 />
               )}
@@ -463,7 +459,7 @@ function PanoramaTest(props) {
         )}
         {videoVisible && (
           <VideoComponent
-            videoUrl={`${RNBackgroundDownloader.directories.documents}/${videoUrl}.mp4`}
+            videoUrl={`file://${dirs}/${videoUrl}.mp4`}
             videoHeight={height}
             videoWidth={width - moderateScale(100)}
             onBack={toggleOverlay}
@@ -475,10 +471,16 @@ function PanoramaTest(props) {
           <View style={[styles.buttonContainerStyle, {marginTop: 0}]}>
             <TouchableOpacity
               onPress={() => {
-                createFavourites(
-                  JSON.stringify(campaignId),
-                  new ObjectId(campaignId),
-                );
+                setOverLayVisible(true);
+                setShowActivityIndicator(true);
+                setTimeout(() => {
+                  createFavourites(
+                    JSON.stringify(campaignId),
+                    new ObjectId(campaignId),
+                  );
+                  setShowActivityIndicator(false);
+                  setOverLayVisible(false);
+                }, 500);
               }}>
               <Image
                 resizeMode="contain"
@@ -613,16 +615,6 @@ function PanoramaTest(props) {
             alignItems: 'center',
             marginLeft: moderateScale(60),
           }}>
-          {/* <Icon
-            name="youtube-play"
-            type="font-awesome"
-            size={moderateScale(40)}
-            iconStyle={{color: 'transparent', marginLeft: moderateScale(50)}}
-            onPress={() => {
-              setVideoVisible(true);
-              setOverLayVisible(true);
-            }}
-          /> */}
           <TouchableOpacity
             style={[
               styles.buttonContainerStyle,
@@ -630,8 +622,14 @@ function PanoramaTest(props) {
                 backgroundColor: 'transparent',
                 height: moderateScale(30),
                 width: moderateScale(40),
-                marginTop: moderateScale(30),
-                marginLeft: moderateScale(30),
+                marginTop:
+                  platform === 'android'
+                    ? moderateScale(75)
+                    : moderateScale(30),
+                marginLeft:
+                  platform === 'android'
+                    ? moderateScale(80)
+                    : moderateScale(30),
               },
             ]}
             onPress={() => {
@@ -643,7 +641,7 @@ function PanoramaTest(props) {
           <View
             style={{
               flexDirection: 'row',
-              width: width / 3,
+              width: platform === 'android' ? width / 4 : width / 3,
               marginLeft: moderateScale(50),
             }}>
             <TouchableOpacity
@@ -653,7 +651,10 @@ function PanoramaTest(props) {
                   backgroundColor: 'transparent',
                   height: moderateScale(175),
                   width: moderateScale(100),
-                  marginTop: moderateScale(20),
+                  marginTop:
+                    platform === 'android'
+                      ? moderateScale(100)
+                      : moderateScale(30),
                 },
               ]}
               onPress={() => {
@@ -670,8 +671,14 @@ function PanoramaTest(props) {
                   backgroundColor: 'transparent',
                   height: moderateScale(175),
                   width: moderateScale(100),
-                  marginLeft: moderateScale(40),
-                  marginTop: moderateScale(20),
+                  marginLeft:
+                    platform === 'android'
+                      ? moderateScale(30)
+                      : moderateScale(40),
+                  marginTop:
+                    platform === 'android'
+                      ? moderateScale(100)
+                      : moderateScale(30),
                 },
               ]}
               onPress={() => {
@@ -689,9 +696,16 @@ function PanoramaTest(props) {
                 backgroundColor: 'transparent',
                 height: moderateScale(175),
                 width: moderateScale(125),
-                marginTop: moderateScale(20),
+                marginTop:
+                  platform === 'android'
+                    ? moderateScale(75)
+                    : moderateScale(30),
                 marginLeft: moderateScale(30),
-                marginRight: moderateScale(20),
+                // marginRight: moderateScale(20),
+                marginRight:
+                  platform === 'android'
+                    ? moderateScale(75)
+                    : moderateScale(20),
               },
             ]}
             onPress={() => {

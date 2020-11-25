@@ -7,7 +7,6 @@ import moment from 'moment';
 import {DropdownHeaderTest} from '../components/DropdownHeaderTest';
 import SessionsTest from './SessionsTest';
 import {Loading} from '../components/Loading';
-import {testData} from '../config/testData';
 import {TitleBar} from '../components/TitleBar';
 import Table from '../components/Table';
 import Header from '../components/Header';
@@ -15,12 +14,6 @@ import Header from '../components/Header';
 import {useDatas} from '../Providers/DataProviders';
 
 const {width, height} = Dimensions.get('window');
-
-// const countriesArray = [
-//   {label: 'UK', value: 'uk', key: '2'},
-//   {label: 'Australia', value: 'au', key: '3'},
-//   {label: 'Africa', value: 'af', key: '4'},
-// ];
 
 let data;
 const titleArray = ['SESSION', 'DATE', 'TIME', 'FAVOURITED'];

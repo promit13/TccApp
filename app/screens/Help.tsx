@@ -3,23 +3,20 @@ import {
   View,
   Text,
   ScrollView,
-  Dimensions,
   TouchableOpacity,
   FlatList,
   ImageBackground,
   StyleSheet,
 } from 'react-native';
-import {Icon, Overlay} from 'react-native-elements';
+import {Icon} from 'react-native-elements';
 import Modal from 'react-native-modal';
-import {scale, moderateScale} from 'react-native-size-matters';
+import {moderateScale} from 'react-native-size-matters';
 import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
-import RNBackgroundDownloader from 'react-native-background-downloader';
 import VideoComponent from '../components/Video';
 import Header from '../components/Header';
 import {useDatas} from '../Providers/DataProviders';
 import {Loading} from '../components/Loading';
-
-const {width, height} = Dimensions.get('window');
+import {dirs, height, width} from '../config/utils';
 
 export default function Help(props) {
   const [openedIndex, setOpenedIndex] = useState(0);
@@ -43,18 +40,13 @@ export default function Help(props) {
   };
 
   const renderTutorialItem = ({item}) => {
-    // const {url, ext} = files.find(
-    //   (o) => JSON.stringify(o._id) === JSON.stringify(item.Thumbnail),
-    // );
     return (
       <TouchableOpacity
         style={{
           margin: moderateScale(5),
         }}
         onPress={() => {
-          setVideoUrl(
-            `${RNBackgroundDownloader.directories.documents}/${item.video_file}.mp4`,
-          );
+          setVideoUrl(`file://${dirs}/${item.video_file}.mp4`);
           toggleOverlay();
         }}>
         <ImageBackground
@@ -66,10 +58,8 @@ export default function Help(props) {
           }}
           resizeMode="contain"
           source={{
-            uri: `${RNBackgroundDownloader.directories.documents}/${item.Thumbnail}.jpeg`,
-          }}
-          // source={{uri: `https://admin.tcccampaignportal.com${url}`}}
-        >
+            uri: `file://${dirs}/${item.Thumbnail}.jpeg`,
+          }}>
           <View style={styles.overlay} />
           <Icon
             name="controller-play"
@@ -77,9 +67,7 @@ export default function Help(props) {
             size={moderateScale(50)}
             color="white"
             onPress={() => {
-              setVideoUrl(
-                `${RNBackgroundDownloader.directories.documents}/${item.video_file}.mp4`,
-              );
+              setVideoUrl(`file://${dirs}/${item.video_file}.mp4`);
               toggleOverlay();
             }}
           />
@@ -147,7 +135,7 @@ export default function Help(props) {
   if (loading) return <Loading message="loading" />;
   return (
     <View style={{flex: 1}}>
-      <View style={{position: 'absolute', zIndex: 1}}>
+      <View style={{position: 'absolute', zIndex: 1, elevation: 5}}>
         <Header nav={props.navigation} />
       </View>
       <View
@@ -217,6 +205,7 @@ export default function Help(props) {
           isVisible={overlayVisible}
           coverScreen
           hasBackdrop
+          onBackdropPress={toggleOverlay}
           backdropColor="black"
           backdropOpacity={0.9}>
           <View

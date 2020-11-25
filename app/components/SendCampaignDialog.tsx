@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {ObjectId} from 'bson';
 // import emailJs from 'emailjs';
-import {View, Text, TextInput, StyleSheet, Dimensions} from 'react-native';
+import {View, Text, TextInput, StyleSheet} from 'react-native';
 import {useForm, Controller} from 'react-hook-form';
 import {moderateScale} from 'react-native-size-matters';
 import {Button, CheckBox} from 'react-native-elements';
@@ -14,7 +14,7 @@ import {
   client,
 } from '../config/emailJsClient';
 
-const {width, height} = Dimensions.get('window');
+import {width, height} from '../config/utils';
 
 let campgainIds = [];
 let campaignIdsString = [];
@@ -74,7 +74,6 @@ export function SendCampaignDialog({
               const i = campaignIdsString.indexOf(
                 JSON.stringify(favourite._id),
               );
-              console.log();
               campgainIds.splice(i, 1);
             }
           }}
@@ -93,14 +92,16 @@ export function SendCampaignDialog({
       Math.random().toString(36).substring(2, 15);
     const downloadId = new ObjectId();
     const downloadLink = `https://tcccampaignportal.com/downloads/${downloadId}`;
-    createDownloads(
-      downloadId,
-      campgainIds,
-      data.email,
-      JSON.stringify(sessionId),
-      password,
-    );
-    toggleOverlay();
+    setTimeout(() => {
+      createDownloads(
+        downloadId,
+        campgainIds,
+        data.email,
+        JSON.stringify(sessionId),
+        password,
+      );
+      toggleOverlay();
+    }, 500);
     try {
       // emailJs
       //   .sendForm(
@@ -132,7 +133,13 @@ export function SendCampaignDialog({
     }
   };
 
-  if (loading) return <Loading message="loading" />;
+  // if (loading) return <Loading message="loading" />;
+  if (loading)
+    return (
+      <View style={[styles.container, {height: height / 4}]}>
+        <Loading message="Please wait" showMessage={true} />
+      </View>
+    );
   return (
     <View style={styles.container}>
       <Text style={{fontSize: moderateScale(20)}}>Send campaign assets</Text>
@@ -143,6 +150,7 @@ export function SendCampaignDialog({
           <TextInput
             style={styles.textInputStyle}
             placeholder="Email address"
+            placeholderTextColor="grey"
             onBlur={onBlur}
             onChangeText={(session) => onChange(session)}
             value={value}
@@ -173,13 +181,13 @@ export function SendCampaignDialog({
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
-    width: width - 200,
+    width: width / 2 + moderateScale(50),
     padding: moderateScale(20),
   },
   textInputStyle: {
     marginTop: moderateScale(10),
     fontSize: moderateScale(12),
-    width: width - 250,
+    width: width / 2,
     padding: moderateScale(10),
     borderRadius: 5,
     borderWidth: 1,

@@ -96,7 +96,7 @@ const DataProvider = ({children, projectId}) => {
         partitionValue: projectId,
       },
       // path: Realm.defaultPath,
-      // path: `${RNBackgroundDownloader.directories.documents}/realm`,
+      // path: `file://${dirs}/realm`,
     };
 
     console.log(

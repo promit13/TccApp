@@ -1,6 +1,6 @@
 import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import {View, StyleSheet, Text, Dimensions} from 'react-native';
+import {View, StyleSheet, Text} from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import Dashboard from './Dashboard';
 import Sessions from './Sessions';
@@ -8,8 +8,7 @@ import Logout from './Logout';
 import Campaign from './Campaign';
 import Users from './Users';
 import Header from '../components/Header';
-
-const {width, height} = Dimensions.get('window');
+import {width, height} from '../config/utils';
 
 const Drawer = createDrawerNavigator();
 

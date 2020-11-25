@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 // @react-native-community/masked-view
 import org.reactnative.maskedview.RNCMaskedViewPackage;
+// @react-native-community/netinfo
+import com.reactnativecommunity.netinfo.NetInfoPackage;
 // @react-native-community/picker
 import com.reactnativecommunity.picker.RNCPickerPackage;
 // react-native-background-downloader
@@ -88,6 +90,7 @@ public class PackageList {
       new MainReactPackage(mConfig),
       new AsyncStoragePackage(),
       new RNCMaskedViewPackage(),
+      new NetInfoPackage(),
       new RNCPickerPackage(),
       new RNBackgroundDownloaderPackage(),
       new RNGestureHandlerPackage(),

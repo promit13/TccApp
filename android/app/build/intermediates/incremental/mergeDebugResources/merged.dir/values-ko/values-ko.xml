@@ -48,7 +48,7 @@
     <string msgid="730395136688082741" name="search_menu_title">"검색"</string>
     <string name="settings_button_content_description">설정</string>
     <string name="setup_button">설정</string>
-    <string msgid="8106346172024741305" name="status_bar_notification_info_overflow">"999+"</string>
+    <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
     <string name="switch_viewer_action">변경</string>
     <string name="switch_viewer_prompt">뷰어를 변경할까요?</string>
 </resources>

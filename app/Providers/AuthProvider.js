@@ -3,7 +3,7 @@ import Realm from 'realm';
 import axios from 'axios';
 import AsyncStorage from '@react-native-community/async-storage';
 import {getRealmApp} from '../config/getRealmApp';
-import {loginUrl} from '../config/appUrls';
+import {loginUrl, logoutUrl} from '../config/appUrls';
 // Access the Realm App.
 const app = getRealmApp();
 
@@ -65,6 +65,7 @@ const AuthProvider = ({children}) => {
     }
     console.log('Logging out...');
     await AsyncStorage.removeItem('userId');
+    // await axios.get(logoutUrl);
     user.logOut();
     setUser(null);
   };

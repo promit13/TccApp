@@ -69,7 +69,7 @@ export default function Campaign(props) {
     //   (o) => JSON.stringify(o._id) === JSON.stringify(item.thumbnail),
     // );
     // for local
-    const campaignUrl = `${RNBackgroundDownloader.directories.documents}/${item.thumbnail}.jpeg`;
+    const campaignUrl = `file://${dirs}/${item.thumbnail}.jpeg`;
 
     // for online
     // const campaignUrl = `https://admin.tcccampaignportal.com${url}`;

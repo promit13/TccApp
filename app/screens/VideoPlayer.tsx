@@ -1,20 +1,10 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  Dimensions,
-  ActivityIndicator,
-} from 'react-native';
-import RNBackgroundDownloader, {
-  TaskInfo,
-} from 'react-native-background-downloader';
+import {View, StyleSheet, ActivityIndicator} from 'react-native';
 // import Video from 'react-native-video';
 import VideoPlayer from 'react-native-video-controls';
 import Controller from '../components/Controller';
 
-const {width, height} = Dimensions.get('window');
+import {width, height} from '../config/utils';
 
 const introVideo = null;
 
@@ -99,7 +89,7 @@ class Video extends React.Component {
           source={
             introVideo
             // {
-            //   // uri: `file://${RNBackgroundDownloader.directories.documents}/${this.props.videoUrl}.mp4`,
+            //   // uri: `file://file://${dirs}/${this.props.videoUrl}.mp4`,
             //   // uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4',
             // }
           } // Can be a URL or a local file.

@@ -1,19 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  Image,
-  TouchableOpacity,
-  Dimensions,
-} from 'react-native';
-import * as Animatable from 'react-native-animatable';
-import RNBackgroundDownloader from 'react-native-background-downloader';
+import {View, Text, Image, TouchableOpacity, Dimensions} from 'react-native';
 import _ from 'lodash';
-import {Icon} from 'react-native-elements';
 import Header from '../components/Header';
-import {ZoneMenu} from '../components/ZoneMenu';
-import {CampaignMenu} from '../components/CampaignMenu';
 import {useDatas} from '../Providers/DataProviders';
 import {Loading} from '../components/Loading';
 
@@ -45,9 +33,7 @@ export default function CampaignSingle(props) {
     );
     setZone(title);
     // for offline
-    setImageUrl(
-      `${RNBackgroundDownloader.directories.documents}/${selectedCampaign.thumbnail}.jpeg`,
-    );
+    setImageUrl(`file://${dirs}/${selectedCampaign.thumbnail}.jpeg`);
     // for online
     // setImageUrl(`https://admin.tcccampaignportal.com${url}`);
     setLoading(false);

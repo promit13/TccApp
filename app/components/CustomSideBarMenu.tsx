@@ -1,14 +1,9 @@
 //This is an example code for Navigation Drawer with Custom Side bar//
 import React, {useState} from 'react';
-import {View, StyleSheet, Image, Text} from 'react-native';
+import {View, StyleSheet, Text} from 'react-native';
 import {Icon} from 'react-native-elements';
-import {scale, moderateScale} from 'react-native-size-matters';
+import {moderateScale} from 'react-native-size-matters';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import {
-  DrawerContentScrollView,
-  DrawerItemList,
-  DrawerItem,
-} from '@react-navigation/drawer';
 
 const items = [
   {
@@ -29,28 +24,28 @@ const items = [
   {
     fontSize: moderateScale(10),
     navOptionName: 'FRIENDS AND FAMILY',
-    screenToNavigate: 'Campaign',
+    screenToNavigate: 'CampaignTest',
     index: 1,
     id: '5f08c1f26e3da910bbf313a5',
   },
   {
     fontSize: moderateScale(10),
     navOptionName: 'FOOD FOR THOUGHT',
-    screenToNavigate: 'Campaign',
+    screenToNavigate: 'CampaignTest',
     index: 2,
     id: '5f08c1ea6e3da910bbf313a4',
   },
   {
     fontSize: moderateScale(10),
     navOptionName: 'CARING FOR THE PLANET',
-    screenToNavigate: 'Download',
+    screenToNavigate: 'CampaignTest',
     index: 4,
     id: '5f08c1e46e3da910bbf313a3',
   },
   {
     fontSize: moderateScale(10),
     navOptionName: 'LIVING WELL',
-    screenToNavigate: 'Campaign',
+    screenToNavigate: 'CampaignTest',
     id: '5f08c1d96e3da910bbf313a2',
   },
   {
@@ -62,6 +57,11 @@ const items = [
     fontSize: moderateScale(15),
     navOptionName: 'HELP',
     screenToNavigate: 'Help',
+  },
+  {
+    fontSize: moderateScale(15),
+    navOptionName: 'SYNC FILES',
+    screenToNavigate: 'Download',
   },
   {
     fontSize: moderateScale(15),

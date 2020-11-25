@@ -1,23 +1,18 @@
 import React from 'react';
 import {
-  ScrollView,
   TouchableOpacity,
   Image,
   Text,
   View,
-  Dimensions,
   FlatList,
   StyleSheet,
 } from 'react-native';
 import {moderateScale} from 'react-native-size-matters';
-import RNBackgroundDownloader from 'react-native-background-downloader';
-import {useDatas} from '../Providers/DataProviders';
-
-const {height, width} = Dimensions.get('window');
+import {dirs, width, height} from '../config/utils';
 
 export function CampaignMenu(props) {
   const renderItem = ({item, index}) => {
-    const campaignUrl = `${RNBackgroundDownloader.directories.documents}/${item.thumbnail}.jpeg`;
+    const campaignUrl = `file://${dirs}/${item.thumbnail}.jpeg`;
     return (
       <TouchableOpacity
         style={styles.touchableStyle}

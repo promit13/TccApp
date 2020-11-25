@@ -6,11 +6,8 @@ import {
   TextInput,
   Text,
   StyleSheet,
-  Dimensions,
-  TouchableOpacity,
   Image,
   PermissionsAndroid,
-  Platform,
   KeyboardAvoidingView,
   ScrollView,
 } from 'react-native';
@@ -19,7 +16,7 @@ import {Icon, Button} from 'react-native-elements';
 import {useAuth} from '../Providers/AuthProvider';
 import {Loading} from '../components/Loading';
 
-const {width} = Dimensions.get('window');
+import {width, height, platform} from '../config/utils';
 
 type FormData = {
   userId: string;
@@ -34,7 +31,7 @@ export default function Login({navigation}) {
   const {logIn} = useAuth();
 
   useEffect(() => {
-    if (Platform.OS === 'android') {
+    if (platform === 'android') {
       async function requestStorageAccessPermission() {
         try {
           await PermissionsAndroid.requestMultiple([
@@ -64,7 +61,7 @@ export default function Login({navigation}) {
   if (loading) return <Loading message="loading" />;
   return (
     <KeyboardAvoidingView
-      behavior={Platform.OS === 'ios' ? 'padding' : null}
+      behavior={platform === 'ios' ? 'padding' : null}
       style={{flex: 1}}>
       <ScrollView contentContainerStyle={styles.mainContainer}>
         <Image
@@ -85,6 +82,7 @@ export default function Login({navigation}) {
               <TextInput
                 style={styles.textInputStyle}
                 placeholder="Email address"
+                placeholderTextColor="grey"
                 onBlur={onBlur}
                 onChangeText={(value) => onChange(value)}
                 value={value}
@@ -115,6 +113,7 @@ export default function Login({navigation}) {
                 secureTextEntry
                 style={styles.textInputStyle}
                 placeholder="Password"
+                placeholderTextColor="grey"
                 onBlur={onBlur}
                 onChangeText={(value) => onChange(value)}
                 value={value}
@@ -144,7 +143,7 @@ export default function Login({navigation}) {
           onPress={handleSubmit(onSubmit)}
           titleStyle={styles.buttonTitleStyle}
         />
-        <View style={{flexDirection: 'row', marginTop: moderateScale(20)}}>
+        {/* <View style={{flexDirection: 'row', marginTop: moderateScale(20)}}>
           <Text style={styles.textStyle}>
             Don't have valid login credentials?
           </Text>
@@ -160,7 +159,7 @@ export default function Login({navigation}) {
               }}
             />
           </TouchableOpacity>
-        </View>
+        </View> */}
       </ScrollView>
     </KeyboardAvoidingView>
   );
@@ -177,7 +176,7 @@ const styles = StyleSheet.create({
     marginVertical: moderateScale(10),
     flexDirection: 'row',
     width: width / 3,
-    height: moderateScale(40),
+    height: platform === 'android' ? moderateScale(50) : moderateScale(40),
     padding: moderateScale(10),
     borderColor: 'grey',
     borderWidth: 1,

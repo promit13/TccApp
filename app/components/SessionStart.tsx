@@ -1,28 +1,34 @@
-import React from 'react';
-import {
-  View,
-  Text,
-  TextInput,
-  StyleSheet,
-  Dimensions,
-  Platform,
-  KeyboardAvoidingView,
-  ScrollView,
-} from 'react-native';
+import React, {useState} from 'react';
+import {View, Text, TextInput, StyleSheet} from 'react-native';
 import {useForm, Controller} from 'react-hook-form';
-import {scale, moderateScale} from 'react-native-size-matters';
+import {moderateScale} from 'react-native-size-matters';
 import {Button} from 'react-native-elements';
 import {useDatas} from '../Providers/DataProviders';
+import {Loading} from './Loading';
 
-const {width, height} = Dimensions.get('window');
+import {width, height} from '../config/utils';
 
 export function SessionStart({toggleOverlay}) {
+  const [loading, setLoading] = useState(false);
   const {createSession, sessionId, endSession} = useDatas();
   const {control, handleSubmit, errors} = useForm();
+
   const onSubmit = (data) => {
-    sessionId === null ? createSession(data.sessionName) : endSession();
-    toggleOverlay();
+    setLoading(true);
+    setTimeout(() => {
+      sessionId === null ? createSession(data.sessionName) : endSession();
+      toggleOverlay();
+    }, 500);
   };
+  if (loading)
+    return (
+      <View style={[styles.container, {height: height / 4}]}>
+        <Loading
+          message={sessionId ? 'Ending session' : 'Starting session'}
+          showMessage={true}
+        />
+      </View>
+    );
   return (
     <View style={styles.container}>
       <Text style={{fontSize: moderateScale(20)}}>
@@ -35,6 +41,7 @@ export function SessionStart({toggleOverlay}) {
             <TextInput
               style={styles.textInputStyle}
               placeholder="Enter nickname"
+              placeholderTextColor="grey"
               onBlur={onBlur}
               onChangeText={(session) => onChange(session)}
               value={value}
@@ -56,7 +63,10 @@ export function SessionStart({toggleOverlay}) {
       )}
       <View style={{flexDirection: 'row', marginTop: moderateScale(10)}}>
         <Button
-          buttonStyle={[styles.buttonStyle, {backgroundColor: '#d08332'}]}
+          buttonStyle={[
+            styles.buttonStyle,
+            {backgroundColor: '#BC955C', borderWidth: 0},
+          ]}
           title={sessionId === null ? 'Start' : 'End'}
           onPress={handleSubmit(onSubmit)}
           titleStyle={[styles.buttonTitleStyle, {color: 'white'}]}
@@ -74,7 +84,7 @@ export function SessionStart({toggleOverlay}) {
 
 const styles = StyleSheet.create({
   container: {
-    width: width - 200,
+    width: width / 2 + moderateScale(50),
     alignItems: 'center',
     alignSelf: 'center',
     paddingVertical: moderateScale(10),
@@ -82,11 +92,11 @@ const styles = StyleSheet.create({
   textInputStyle: {
     marginTop: moderateScale(10),
     fontSize: moderateScale(12),
-    width: width - 250,
+    width: width / 2,
     padding: moderateScale(10),
     borderRadius: 5,
     borderWidth: 1,
-    borderColor: 'grey',
+    borderColor: 'lightgrey',
   },
   errorTextStyle: {
     color: 'red',

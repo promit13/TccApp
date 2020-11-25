@@ -1,28 +1,23 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import {
   View,
   Text,
   ScrollView,
   Image,
+  StyleSheet,
   TouchableOpacity,
-  FlatList,
-  Dimensions,
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
-import {scale, moderateScale} from 'react-native-size-matters';
-import RNBackgroundDownloader from 'react-native-background-downloader';
+import {moderateScale} from 'react-native-size-matters';
 import _ from 'lodash';
 import {Icon} from 'react-native-elements';
 import Header from '../components/Header';
 import {ZoneMenu} from '../components/ZoneMenu';
-import {CampaignMenu} from '../components/CampaignMenu';
 import {useDatas} from '../Providers/DataProviders';
 import {Loading} from '../components/Loading';
 import {usePrevious} from '../components/userPrevious';
-import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
-
-const {height, width} = Dimensions.get('window');
+import {width, height, dirs, platform} from '../config/utils';
 
 let campaignsFiltered = [];
 export default function CampaignTest(props) {
@@ -35,6 +30,8 @@ export default function CampaignTest(props) {
 
   const previousId = usePrevious(id);
 
+  const testImage = require('../res/iphone.png');
+
   // console.log('PREV', previousId, id);
 
   const {zones, campaigns} = useDatas();
@@ -43,7 +40,6 @@ export default function CampaignTest(props) {
     if (previousId !== id) {
       setZoneId(id);
     }
-    // const indroductionSorted = introductions.sort((a, b) => a.createdAt - b.createdAt);
     campaignsFiltered = _.without(
       _.map(campaigns, function (item) {
         if (JSON.stringify(item.zone) === zoneId) return item;
@@ -71,41 +67,64 @@ export default function CampaignTest(props) {
   };
 
   const renderItem = () => {
-    // const campaignId = JSON.stringify(item._id);
-    // const {ext, url} = files.find(
-    //   (o) => JSON.stringify(o._id) === JSON.stringify(item.thumbnail),
-    // );
-    // for local
-    // const campaignUrl = `${RNBackgroundDownloader.directories.documents}/${item.thumbnail}.jpeg`;
-
-    // for online
-    // const campaignUrl = `https://admin.tcccampaignportal.com${url}`;
     const items = filteredCampaigns.map((item) => {
+      console.log(item.Mobile_Campaign_Thumbnail);
       return (
-        <TouchableWithoutFeedback
-          style={{alignItems: 'center'}}
-          onPress={
-            () => console.log('pressed')
-            // props.navigation.navigate('PanoramaTest', {
-            //   id: item._id,
-            //   campaigns: filteredCampaigns,
-            // })
-          }>
-          <Text>{item.title}</Text>
+        <View
+          style={{
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginTop: moderateScale(40),
+          }}>
           <Image
             resizeMode="cover"
-            style={{width: width / 4, height: height}}
+            style={{width: width / 4, height, marginTop: moderateScale(10)}}
             source={{
-              uri: `${RNBackgroundDownloader.directories.documents}/${item.Mobile_Campaign_Thumbnail}.jpeg`,
+              uri: `file://${dirs}/${item.Mobile_Campaign_Thumbnail}.jpeg`,
+              //uri: `file://${dirs}/${item.Mobile_Campaign_Thumbnail}.jpeg`,
             }}
           />
-        </TouchableWithoutFeedback>
+          <TouchableOpacity
+            onPress={() =>
+              props.navigation.navigate('PanoramaTest', {
+                id: item._id,
+                campaigns: filteredCampaigns,
+              })
+            }
+            style={{
+              backgroundColor: 'transparent',
+              height: height / 3,
+              width: width / 6,
+              position: 'absolute',
+              zIndex: 1,
+            }}
+          />
+        </View>
+        // <TouchableOpacity
+        //   key={item.position}
+        //   style={{
+        //     alignItems: 'center',
+        //     elevation: 1,
+        //   }}
+        //   onPress={() =>
+        //     props.navigation.navigate('PanoramaTest', {
+        //       id: item._id,
+        //       campaigns: filteredCampaigns,
+        //     })
+        //   }>
+        //   <Image
+        //     resizeMode="cover"
+        //     style={{width: width / 4, height}}
+        //     source={{
+        //       uri: `file://${dirs}/${item.Mobile_Campaign_Thumbnail}.jpeg`,
+        //       //uri: `file://${dirs}/${item.Mobile_Campaign_Thumbnail}.jpeg`,
+        //     }}
+        //   />
+        // </TouchableOpacity>
       );
     });
     return items;
   };
-
-  // console.log('FC', filteredCampaigns);
 
   if (loading) return <Loading message="Loading" />;
   return (
@@ -113,19 +132,10 @@ export default function CampaignTest(props) {
       style={{
         flex: 1,
       }}>
-      <View style={{position: 'absolute', zIndex: 1}}>
+      <View style={styles.headerStyle}>
         <Header nav={props.navigation} />
       </View>
-      <View
-        style={{
-          marginTop: moderateScale(50),
-          backgroundColor: '#BC955C',
-          width: width / 4,
-          padding: moderateScale(10),
-          alignItems: 'center',
-          position: 'absolute',
-          zIndex: 1,
-        }}>
+      <View style={styles.componentTitle}>
         <Text
           style={{
             color: 'white',
@@ -136,24 +146,12 @@ export default function CampaignTest(props) {
       </View>
       <View
         style={{
-          marginTop: moderateScale(20),
+          marginTop:
+            platform === 'android' ? moderateScale(50) : moderateScale(20),
           marginBottom: moderateScale(40),
           flex: 1,
         }}>
-        {/* <View
-          style={{
-            marginTop: moderateScale(75),
-            borderColor: '#BC955C',
-            borderWidth: moderateScale(3),
-            backgroundColor: 'white',
-            paddingVertical: moderateScale(15),
-            paddingHorizontal: moderateScale(30),
-            alignSelf: 'center',
-            position: 'absolute',
-            alignItems: 'center',
-            justifyContent: 'center',
-            zIndex: 1,
-          }}>
+        <View style={styles.zoneTitle}>
           <Text
             style={{
               color: 'grey',
@@ -161,7 +159,7 @@ export default function CampaignTest(props) {
             }}>
             {zoneTitle.toUpperCase()}
           </Text>
-        </View> */}
+        </View>
         <ScrollView
           horizontal={true}
           showsHorizontalScrollIndicator={false}
@@ -169,10 +167,6 @@ export default function CampaignTest(props) {
           {renderItem()}
         </ScrollView>
       </View>
-      {/* <CampaignMenu
-        campaigns={filteredCampaigns}
-        navigation={props.navigation}
-      /> */}
       <View
         style={{
           backgroundColor: 'white',
@@ -216,3 +210,31 @@ export default function CampaignTest(props) {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  headerStyle: {position: 'absolute', zIndex: 2, elevation: 4},
+  componentTitle: {
+    marginTop: moderateScale(50),
+    backgroundColor: '#BC955C',
+    width: width / 4,
+    padding: moderateScale(10),
+    alignItems: 'center',
+    position: 'absolute',
+    zIndex: 1,
+    elevation: 4,
+  },
+  zoneTitle: {
+    marginTop: platform === 'android' ? moderateScale(50) : moderateScale(75),
+    borderColor: '#BC955C',
+    borderWidth: moderateScale(3),
+    backgroundColor: 'white',
+    paddingVertical: moderateScale(15),
+    paddingHorizontal: moderateScale(30),
+    alignSelf: 'center',
+    position: 'absolute',
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 1,
+    elevation: 4,
+  },
+});

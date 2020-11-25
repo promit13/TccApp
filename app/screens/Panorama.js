@@ -121,41 +121,29 @@ function Panorama(props) {
       kuula_execution_five_title,
     );
     kulaImageArray.push(
-      `${RNBackgroundDownloader.directories.documents}/${panorama_execition_one}.jpeg`,
-      `${RNBackgroundDownloader.directories.documents}/${panorama_execition_two}.jpeg`,
-      `${RNBackgroundDownloader.directories.documents}/${panorama_execition_three}.jpeg`,
-      `${RNBackgroundDownloader.directories.documents}/${panorama_execition_four}.jpeg`,
-      `${RNBackgroundDownloader.directories.documents}/${panorama_execition_five}.jpeg`,
+      `file://${dirs}/${panorama_execition_one}.jpeg`,
+      `file://${dirs}/${panorama_execition_two}.jpeg`,
+      `file://${dirs}/${panorama_execition_three}.jpeg`,
+      `file://${dirs}/${panorama_execition_four}.jpeg`,
+      `file://${dirs}/${panorama_execition_five}.jpeg`,
     );
     console.log(kulaTitleArray, kulaImageArray, kulaImageArray.length);
 
     console.log(panorama_execition_one, panorama_execition_two);
-    insightsArray.push(
-      `${RNBackgroundDownloader.directories.documents}/${insights}.jpeg`,
-    );
-    objectivesArray.push(
-      `${RNBackgroundDownloader.directories.documents}/${objectives}.jpeg`,
-    );
+    insightsArray.push(`file://${dirs}/${insights}.jpeg`);
+    objectivesArray.push(`file://${dirs}/${objectives}.jpeg`);
 
     const game =
-      game_video === null
-        ? null
-        : `${RNBackgroundDownloader.directories.documents}/${game_video}.mp4`;
+      game_video === null ? null : `file://${dirs}/${game_video}.mp4`;
 
     activation_slider.map((item, index) => {
-      activationSliderArray.push(
-        `${RNBackgroundDownloader.directories.documents}/${item}.jpeg`,
-      );
+      activationSliderArray.push(`file://${dirs}/${item}.jpeg`);
     });
     product_information.map((item) => {
-      productInformationArray.push(
-        `${RNBackgroundDownloader.directories.documents}/${item}.jpeg`,
-      );
+      productInformationArray.push(`file://${dirs}/${item}.jpeg`);
     });
     kv.map((item, index) => {
-      kvArray.push(
-        `${RNBackgroundDownloader.directories.documents}/${item}.jpeg`,
-      );
+      kvArray.push(`file://${dirs}/${item}.jpeg`);
     });
     const zoneObject = zones.find(
       (o) => JSON.stringify(zone) === JSON.stringify(o._id),
@@ -163,7 +151,7 @@ function Panorama(props) {
     setCampaignUrl(
       execution
         ? kulaImageArray[imageIndex]
-        : `${RNBackgroundDownloader.directories.documents}/${panorama_background}.jpeg`,
+        : `file://${dirs}/${panorama_background}.jpeg`,
     );
     setZoneName(zoneObject.title);
     setZoneId(zoneObject._id);

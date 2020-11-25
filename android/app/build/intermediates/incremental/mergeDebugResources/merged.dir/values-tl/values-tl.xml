@@ -48,7 +48,7 @@
     <string msgid="730395136688082741" name="search_menu_title">"Maghanap"</string>
     <string name="settings_button_content_description">mga setting</string>
     <string name="setup_button">I-set up</string>
-    <string msgid="8106346172024741305" name="status_bar_notification_info_overflow">"999+"</string>
+    <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
     <string name="switch_viewer_action">I-switch</string>
     <string name="switch_viewer_prompt">Gumagamit ng ibang viewer?</string>
 </resources>

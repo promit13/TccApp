@@ -2,8 +2,6 @@ import React, {useEffect, useState} from 'react';
 import {
   View,
   Text,
-  ScrollView,
-  Dimensions,
   StyleSheet,
   TouchableOpacity,
   FlatList,
@@ -15,13 +13,13 @@ import {scale, moderateScale} from 'react-native-size-matters';
 import Swiper from 'react-native-swiper';
 import _ from 'lodash';
 import {Icon, Button} from 'react-native-elements';
-import RNBackgroundDownloader from 'react-native-background-downloader';
 import VideoComponent from '../components/Video';
 import Header from '../components/Header';
 import {useDatas} from '../Providers/DataProviders';
 import {Loading} from '../components/Loading';
 
-const {width, height} = Dimensions.get('window');
+import { dirs, width, height} from '../config/utils';
+
 
 let sliderImageArray = [];
 
@@ -39,7 +37,7 @@ export default function Introduction(props) {
     indroductionSorted.map((item) => {
       if (item.Video === '') {
         item.Slideshow.map((slide) => {
-          sliderImageArray.push(`${RNBackgroundDownloader.directories.documents}/${slide}.jpeg`);
+          sliderImageArray.push(`file://${dirs}/${slide}.jpeg`);
         });
       }
     });
@@ -48,7 +46,7 @@ export default function Introduction(props) {
   }, [introductions, files]);
 
   const onItemPress = (item) => {
-    setVideoUrl(`${RNBackgroundDownloader.directories.documents}/${item.video_file}.mp4`);
+    setVideoUrl(`file://${dirs}/${item.video_file}.mp4`);
     setOverlayVisible(true);
     item.Video === ''
       ? setVideoVisible(false)
@@ -72,9 +70,8 @@ export default function Introduction(props) {
             alignItems: 'center',
           }}
           source={{
-            uri: `${RNBackgroundDownloader.directories.documents}/${item.Thumbnail}.png`,
+            uri: `file://${dirs}/${item.Thumbnail}.png`
           }}
-          // source={{uri: `https://admin.tcccampaignportal.com${url}`}}
         >
           {item.Video === '' ? null : (
            <View style={styles.overlay} />
@@ -108,10 +105,8 @@ export default function Introduction(props) {
             resizeMode="contain"
             style={styles.sliderImageStyle}
             source={{
-              // uri: `${RNBackgroundDownloader.directories.documents}/${item.url}${item.ext}`,
               uri: item,
             }}
-            //source={{uri: `https://admin.tcccampaignportal.com${item.url}`}}
           />
         </View>
       );
@@ -126,7 +121,7 @@ export default function Introduction(props) {
   if (loading) return <Loading message="loading" />;
   return (
     <View style={{flex: 1}}>
-      <View style={{position: 'absolute', zIndex: 1}}>
+      <View style={{position: 'absolute', zIndex: 1, elevation: 5}}>
         <Header nav={props.navigation} />
       </View>
       <View
@@ -164,6 +159,7 @@ export default function Introduction(props) {
         coverScreen
         hasBackdrop
         backdropColor="black"
+        onBackdropPress={toggleOverlay}
         backdropOpacity={0.9}>
         <View
           style={{

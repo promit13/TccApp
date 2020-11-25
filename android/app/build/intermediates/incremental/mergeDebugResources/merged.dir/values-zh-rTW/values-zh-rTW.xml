@@ -48,7 +48,7 @@
     <string msgid="730395136688082741" name="search_menu_title">"搜尋"</string>
     <string name="settings_button_content_description">設定</string>
     <string name="setup_button">設定</string>
-    <string msgid="8106346172024741305" name="status_bar_notification_info_overflow">"999+"</string>
+    <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
     <string name="switch_viewer_action">切換</string>
     <string name="switch_viewer_prompt">要使用不同的觀影盒嗎？</string>
 </resources>

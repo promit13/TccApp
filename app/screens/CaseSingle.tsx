@@ -1,50 +1,23 @@
 import React, {useState, useEffect} from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  Image,
-  TouchableOpacity,
-  Dimensions,
-  StyleSheet,
-} from 'react-native';
-import * as Animatable from 'react-native-animatable';
-import RNBackgroundDownloader from 'react-native-background-downloader';
-import {scale, moderateScale} from 'react-native-size-matters';
+import {View, Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
+import {moderateScale} from 'react-native-size-matters';
 import _ from 'lodash';
 import Modal from 'react-native-modal';
 import Video from 'react-native-video';
 import Swiper from 'react-native-swiper';
 import {Icon} from 'react-native-elements';
 import Header from '../components/Header';
-import {useDatas} from '../Providers/DataProviders';
 import {Loading} from '../components/Loading';
-
-const {height, width} = Dimensions.get('window');
-
-let filteredCampaigns = [];
+import {dirs, height, width} from '../config/utils';
 
 export default function CaseSingle(props) {
   const [loading, setLoading] = useState(true);
   const [overlayVisible, setOverlayVisible] = useState(false);
   const [imageUrl, setImageUrl] = useState('');
   const {selectedCase, campaignTitle} = props.route.params;
-  const {zones, campaigns, files, cases} = useDatas();
 
   useEffect(() => {
-    // const selectedCase = cases.find(
-    //   (o) => JSON.stringify(o.campaigns[0]) === JSON.stringify(campaignId),
-    // );
-
-    // const {url, ext} = files.find(
-    //   (o) => JSON.stringify(o._id) === JSON.stringify(selectedCase.Thumbnail),
-    // );
-    // for offline
-    setImageUrl(
-      `${RNBackgroundDownloader.directories.documents}/${selectedCase.Thumbnail}.jpeg`,
-    );
-    // for online
-    // setImageUrl(`https://admin.tcccampaignportal.com${url}`);
+    setImageUrl(`file://${dirs}/${selectedCase.Thumbnail}.jpeg`);
     setLoading(false);
   }, [selectedCase]);
 
@@ -123,27 +96,18 @@ export default function CaseSingle(props) {
               resizeMode="contain"
               style={styles.sliderImageStyle}
               source={{
-                // uri: `${RNBackgroundDownloader.directories.documents}/${item.url}${item.ext}`,
-                uri: `${RNBackgroundDownloader.directories.documents}/${item.id}.jpeg`,
+                uri: `file://${dirs}/${item.id}.jpeg`,
               }}
-              //source={{uri: `https://admin.tcccampaignportal.com${item.url}`}}
             />
           ) : (
-            // <VideoComponent
-            //   videoHeight={height - height / 4}
-            //   videoWidth={width - moderateScale(150)}
-            //   onBack={toggleOverlay}
-            //   videoUrl={`${RNBackgroundDownloader.directories.documents}/${item.id}.mp4`}
-            // />
             <Video
               controls={true}
               style={{
                 height: height - height / 4,
                 width: width - moderateScale(150),
               }}
-              // source={demoVideo}
               source={{
-                uri: `${RNBackgroundDownloader.directories.documents}/${item.id}.mp4`,
+                uri: `file://${dirs}/${item.id}.mp4`,
               }}
             />
           )}
@@ -163,7 +127,7 @@ export default function CaseSingle(props) {
       style={{
         flex: 1,
       }}>
-      <View style={{position: 'absolute', zIndex: 1}}>
+      <View style={{position: 'absolute', zIndex: 1, elevation: 5}}>
         <Header nav={props.navigation} />
       </View>
       <TouchableOpacity

@@ -1,18 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import {View, StyleSheet, Dimensions} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 import _ from 'lodash';
-import {scale, moderateScale} from 'react-native-size-matters';
+import {moderateScale} from 'react-native-size-matters';
 import {Icon} from 'react-native-elements';
 import {Loading} from './Loading';
 
-// import DropDownPicker from 'react-native-dropdown-picker';
-// import ModalSelector from 'react-native-modal-selector';
-
-import {useAuth} from '../Providers/AuthProvider';
 import {useDatas} from '../Providers/DataProviders';
 
-const {height, width} = Dimensions.get('window');
+import {width, height} from '../config/utils';
 
 const daysArray = [
   {label: '30 Days', value: '30', key: '2'},
@@ -20,12 +16,6 @@ const daysArray = [
   {label: '365 Days', value: '365', key: '4'},
   {label: 'All', value: '10000', key: '5'},
 ];
-
-// const countriesArray = [
-//   {label: 'UK', value: 'uk', key: '2'},
-//   {label: 'Australia', value: 'au', key: '3'},
-//   {label: 'Africa', value: 'af', key: '4'},
-// ];
 
 let filteredCountries = [];
 let filteredDirectors = [];
@@ -265,6 +255,7 @@ const pickerSelectStyles = StyleSheet.create({
     // to ensure the text is never behind the icon
   },
   inputAndroid: {
+    width: moderateScale(110),
     fontSize: moderateScale(8),
     padding: moderateScale(5),
     borderRadius: moderateScale(2),

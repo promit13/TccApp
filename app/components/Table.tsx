@@ -1,13 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
-import {
-  ScrollView,
-  TouchableOpacity,
-  TouchableHighlight,
-} from 'react-native-gesture-handler';
-import {Icon} from 'react-native-elements';
+
 import {TitleBar} from '../components/TitleBar';
-import {scale, moderateScale} from 'react-native-size-matters';
+import {moderateScale} from 'react-native-size-matters';
 
 export default function Table({data, barColor, barTitle, showTitleBar}) {
   return (

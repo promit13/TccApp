@@ -8,6 +8,7 @@ androidx/annotation/BinderThread.class
 androidx/annotation/BoolRes.class
 androidx/annotation/CallSuper.class
 androidx/annotation/CheckResult.class
+androidx/annotation/ChecksSdkIntAtLeast.class
 androidx/annotation/ColorInt.class
 androidx/annotation/ColorLong.class
 androidx/annotation/ColorRes.class
@@ -74,13 +75,16 @@ androidx/core/app/NotificationCompat$BadgeIconType.class
 androidx/core/app/NotificationCompat$GroupAlertBehavior.class
 androidx/core/app/NotificationCompat$NotificationVisibility.class
 androidx/core/app/NotificationCompat$StreamType.class
+androidx/core/app/RemoteInput$EditChoicesBeforeSending.class
 androidx/core/app/RemoteInput$Source.class
 androidx/core/app/ServiceCompat$StopForegroundFlags.class
 androidx/core/content/PermissionChecker$PermissionResult.class
 androidx/core/content/pm/PermissionInfoCompat$Protection.class
 androidx/core/content/pm/PermissionInfoCompat$ProtectionFlags.class
+androidx/core/content/pm/ShortcutManagerCompat$ShortcutMatchFlags.class
 androidx/core/content/res/FontResourcesParserCompat$FetchStrategy.class
 androidx/core/graphics/drawable/IconCompat$IconType.class
+androidx/core/location/GnssStatusCompat$ConstellationType.class
 androidx/core/net/ConnectivityManagerCompat$RestrictBackgroundStatus.class
 androidx/core/provider/FontsContractCompat$FontRequestCallback$FontRequestFailReason.class
 androidx/core/text/util/LinkifyCompat$LinkifyMask.class
@@ -90,6 +94,8 @@ androidx/core/view/ViewCompat$FocusRelativeDirection.class
 androidx/core/view/ViewCompat$NestedScrollType.class
 androidx/core/view/ViewCompat$ScrollAxis.class
 androidx/core/view/ViewCompat$ScrollIndicators.class
+androidx/core/view/WindowInsetsCompat$Type$InsetsType.class
+androidx/core/view/accessibility/AccessibilityEventCompat$ContentChangeType.class
 androidx/core/widget/TextViewCompat$AutoSizeTextType.class
 androidx/lifecycle/Lifecycle$Event.class
 androidx/lifecycle/OnLifecycleEvent.class
@@ -304,6 +310,7 @@ com/horcrux/svg/TextProperties$AlignmentBaseline.class
 com/horcrux/svg/TextProperties$FontWeight.class
 com/horcrux/svg/TextProperties$TextDecoration.class
 com/horcrux/svg/VirtualView.class
+com/reactnativecommunity/netinfo/ConnectivityReceiver.class
 com/swmansion/reanimated/MapUtils.class
 com/swmansion/rnscreens/ScreenStackHeaderConfigViewManager.class
 com/tccapp/BuildConfig.class

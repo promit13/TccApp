@@ -1,8 +1,8 @@
 import React from 'react';
-import {View, Slider, StyleSheet, Dimensions, Text} from 'react-native';
+import {View, Slider, StyleSheet, Text} from 'react-native';
 import {Icon} from 'react-native-elements';
 
-const {width, height} = Dimensions.get('window');
+import {width, height} from '../config/utils';
 
 const formatTime = (time: number) => {
   //   let minutes = 0;
