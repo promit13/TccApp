@@ -178,7 +178,7 @@ function CaseStudies(props) {
       </View>
       {showBackButton && (
         <TouchableOpacity
-          onPress={() => props.navigation.navigate('PanoramaTest')}
+          onPress={() => props.navigation.navigate('Panorama')}
           style={{
             margin: moderateScale(10),
             width: width / 4,

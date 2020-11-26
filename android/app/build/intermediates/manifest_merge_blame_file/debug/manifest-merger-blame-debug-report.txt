@@ -111,46 +111,22 @@
 59-->/Users/promitrai/Projects/TccApp/android/app/src/main/AndroidManifest.xml:30:17-81
 60
 61        <provider
-61-->[:react-native-webview] /Users/promitrai/Projects/TccApp/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-20:20
-62            android:name="com.reactnativecommunity.webview.RNCWebViewFileProvider"
-62-->[:react-native-webview] /Users/promitrai/Projects/TccApp/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-83
-63            android:authorities="com.tccapp.fileprovider"
-63-->[:react-native-webview] /Users/promitrai/Projects/TccApp/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-64
+61-->[:rn-fetch-blob] /Users/promitrai/Projects/TccApp/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:36:9-44:20
+62            android:name="com.RNFetchBlob.Utils.FileProvider"
+62-->[:rn-fetch-blob] /Users/promitrai/Projects/TccApp/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:37:13-62
+63            android:authorities="com.tccapp.provider"
+63-->[:rn-fetch-blob] /Users/promitrai/Projects/TccApp/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:38:13-60
 64            android:exported="false"
-64-->[:react-native-webview] /Users/promitrai/Projects/TccApp/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-37
+64-->[:rn-fetch-blob] /Users/promitrai/Projects/TccApp/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:39:13-37
 65            android:grantUriPermissions="true" >
-65-->[:react-native-webview] /Users/promitrai/Projects/TccApp/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:13-47
+65-->[:rn-fetch-blob] /Users/promitrai/Projects/TccApp/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:40:13-47
 66            <meta-data
-66-->[:react-native-webview] /Users/promitrai/Projects/TccApp/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-19:63
+66-->[:rn-fetch-blob] /Users/promitrai/Projects/TccApp/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:41:13-43:58
 67                android:name="android.support.FILE_PROVIDER_PATHS"
-67-->[:react-native-webview] /Users/promitrai/Projects/TccApp/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:17-67
-68                android:resource="@xml/file_provider_paths" />
-68-->[:react-native-webview] /Users/promitrai/Projects/TccApp/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:17-60
+67-->[:rn-fetch-blob] /Users/promitrai/Projects/TccApp/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:42:17-67
+68                android:resource="@xml/provider_paths" />
+68-->[:rn-fetch-blob] /Users/promitrai/Projects/TccApp/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:43:17-55
 69        </provider>
-70        <provider
-70-->[:rn-fetch-blob] /Users/promitrai/Projects/TccApp/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:36:9-44:20
-71            android:name="com.RNFetchBlob.Utils.FileProvider"
-71-->[:rn-fetch-blob] /Users/promitrai/Projects/TccApp/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:37:13-62
-72            android:authorities="com.tccapp.provider"
-72-->[:rn-fetch-blob] /Users/promitrai/Projects/TccApp/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:38:13-60
-73            android:exported="false"
-73-->[:rn-fetch-blob] /Users/promitrai/Projects/TccApp/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:39:13-37
-74            android:grantUriPermissions="true" >
-74-->[:rn-fetch-blob] /Users/promitrai/Projects/TccApp/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:40:13-47
-75            <meta-data
-75-->[:react-native-webview] /Users/promitrai/Projects/TccApp/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-19:63
-76                android:name="android.support.FILE_PROVIDER_PATHS"
-76-->[:react-native-webview] /Users/promitrai/Projects/TccApp/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:17-67
-77                android:resource="@xml/provider_paths" />
-77-->[:react-native-webview] /Users/promitrai/Projects/TccApp/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:17-60
-78        </provider>
-79
-80        <service
-80-->[androidx.room:room-runtime:2.1.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/79749c7edbee7dc366f6280acb13630d/room-runtime-2.1.0/AndroidManifest.xml:25:9-27:40
-81            android:name="androidx.room.MultiInstanceInvalidationService"
-81-->[androidx.room:room-runtime:2.1.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/79749c7edbee7dc366f6280acb13630d/room-runtime-2.1.0/AndroidManifest.xml:26:13-74
-82            android:exported="false" />
-82-->[androidx.room:room-runtime:2.1.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/79749c7edbee7dc366f6280acb13630d/room-runtime-2.1.0/AndroidManifest.xml:27:13-37
-83    </application>
-84
-85</manifest>
+70    </application>
+71
+72</manifest>

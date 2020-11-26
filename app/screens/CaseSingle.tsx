@@ -3,7 +3,7 @@ import {View, Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
 import {moderateScale} from 'react-native-size-matters';
 import _ from 'lodash';
 import Modal from 'react-native-modal';
-import Video from 'react-native-video';
+import VideoPlayer from 'react-native-video-controls';
 import Swiper from 'react-native-swiper';
 import {Icon} from 'react-native-elements';
 import Header from '../components/Header';
@@ -90,6 +90,7 @@ export default function CaseSingle(props) {
           style={{
             alignItems: 'center',
             justifyContent: 'center',
+            flex: 1,
           }}>
           {item.image ? (
             <Image
@@ -100,15 +101,16 @@ export default function CaseSingle(props) {
               }}
             />
           ) : (
-            <Video
-              controls={true}
+            <VideoPlayer
               style={{
-                height: height - height / 4,
+                height: height - moderateScale(150),
                 width: width - moderateScale(150),
+                alignSelf: 'center',
               }}
               source={{
                 uri: `file://${dirs}/${item.id}.mp4`,
               }}
+              onBack={toggleOverlay}
             />
           )}
         </View>
@@ -131,7 +133,7 @@ export default function CaseSingle(props) {
         <Header nav={props.navigation} />
       </View>
       <TouchableOpacity
-        onPress={() => props.navigation.navigate('PanoramaTest')}
+        onPress={() => props.navigation.navigate('Panorama')}
         style={{
           marginTop: moderateScale(50),
           backgroundColor: '#BC955C',
@@ -147,7 +149,7 @@ export default function CaseSingle(props) {
       </TouchableOpacity>
       <View style={{padding: moderateScale(30)}}>
         <TouchableOpacity
-          onPress={() => props.navigation.navigate('PanoramaTest')}
+          onPress={() => props.navigation.navigate('Panorama')}
           style={{
             width: width / 4,
           }}>
@@ -181,6 +183,7 @@ export default function CaseSingle(props) {
         coverScreen
         hasBackdrop
         backdropColor="black"
+        onBackdropPress={toggleOverlay}
         backdropOpacity={0.9}>
         <View
           style={{

@@ -24,28 +24,28 @@ const items = [
   {
     fontSize: moderateScale(10),
     navOptionName: 'FRIENDS AND FAMILY',
-    screenToNavigate: 'CampaignTest',
+    screenToNavigate: 'Campaign',
     index: 1,
     id: '5f08c1f26e3da910bbf313a5',
   },
   {
     fontSize: moderateScale(10),
     navOptionName: 'FOOD FOR THOUGHT',
-    screenToNavigate: 'CampaignTest',
+    screenToNavigate: 'Campaign',
     index: 2,
     id: '5f08c1ea6e3da910bbf313a4',
   },
   {
     fontSize: moderateScale(10),
     navOptionName: 'CARING FOR THE PLANET',
-    screenToNavigate: 'CampaignTest',
+    screenToNavigate: 'Campaign',
     index: 4,
     id: '5f08c1e46e3da910bbf313a3',
   },
   {
     fontSize: moderateScale(10),
     navOptionName: 'LIVING WELL',
-    screenToNavigate: 'CampaignTest',
+    screenToNavigate: 'Campaign',
     id: '5f08c1d96e3da910bbf313a2',
   },
   {
@@ -70,7 +70,7 @@ const items = [
   },
 ];
 
-export function CustomSidebarMenu(props) {
+export function CustomDrawerMenu(props) {
   const [index, setIndex] = useState(2);
   return (
     <View style={styles.sideMenuContainer}>

@@ -1,89 +1,119 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, Image, TouchableOpacity, Dimensions} from 'react-native';
+import {View, Text, ScrollView, Image, TouchableOpacity} from 'react-native';
 import _ from 'lodash';
+import {moderateScale} from 'react-native-size-matters';
 import Header from '../components/Header';
 import {useDatas} from '../Providers/DataProviders';
 import {Loading} from '../components/Loading';
+import {dirs, platform, height, width} from '../config/utils';
 
-const {height, width} = Dimensions.get('window');
-
-let filteredCampaigns = [];
+let totalCampaigns = [];
 
 export default function CampaignSingle(props) {
   const [loading, setLoading] = useState(true);
-  const [zone, setZone] = useState('');
-  const [imageUrl, setImageUrl] = useState('');
+  const [totalFilteredCampaigns, setTotalFilteredCampaigns] = useState([]);
   const {selectedCampaign} = props.route.params;
   const {zones, campaigns, files} = useDatas();
 
   useEffect(() => {
-    filteredCampaigns = _.without(
+    totalCampaigns = [];
+    selectedCampaign.map((item) => {
+      const campaign = campaigns.find(
+        (o) => JSON.stringify(o._id) === JSON.stringify(item),
+      );
+      const {title} = zones.find(
+        (o) => JSON.stringify(o._id) === JSON.stringify(campaign.zone),
+      );
+      // for offline
+      const imageUrl = `file://${dirs}/${campaign.thumbnail}.jpeg`;
+      totalCampaigns.push(_.extend({zoneTitle: title, imageUrl}, campaign));
+    });
+    setTotalFilteredCampaigns(totalCampaigns);
+    setLoading(false);
+  }, [selectedCampaign, campaigns, files, zones]);
+
+  const onCampaignClick = (campaign) => {
+    const filteredCampaigns = _.without(
       _.map(campaigns, function (item) {
-        if (JSON.stringify(item.zone) === JSON.stringify(selectedCampaign.zone))
+        if (JSON.stringify(item.zone) === JSON.stringify(campaign.zone))
           return item;
       }),
       undefined,
     );
-    // const {url, ext} = files.find(
-    //   (o) =>
-    //     JSON.stringify(o._id) === JSON.stringify(selectedCampaign.thumbnail),
-    // );
-    const {title} = zones.find(
-      (o) => JSON.stringify(o._id) === JSON.stringify(selectedCampaign.zone),
-    );
-    setZone(title);
-    // for offline
-    setImageUrl(`file://${dirs}/${selectedCampaign.thumbnail}.jpeg`);
-    // for online
-    // setImageUrl(`https://admin.tcccampaignportal.com${url}`);
-    setLoading(false);
-  }, [
-    campaigns,
-    zones,
-    files,
-    selectedCampaign.thumbnail,
-    selectedCampaign.zone,
-  ]);
+    props.navigation.navigate('Panorama', {
+      id: campaign._id,
+      campaigns: filteredCampaigns,
+    });
+  };
+
+  const renderCampaigns = () => {
+    return totalFilteredCampaigns.map((item, index) => {
+      const {title, zoneTitle, imageUrl} = item;
+      return (
+        <TouchableOpacity
+          key={index}
+          onPress={() => onCampaignClick(item)}
+          style={{
+            width: width / 4,
+            height: height / 2,
+            marginTop: moderateScale(50),
+            marginLeft: index === 0 ? 0 : moderateScale(20),
+          }}>
+          <Image
+            style={{
+              height: height / 2,
+              width: width / 4,
+              resizeMode: 'contain',
+            }}
+            source={{uri: imageUrl}}
+          />
+          <View
+            style={{
+              marginTop: moderateScale(-10),
+              backgroundColor: 'white',
+              paddingVertical: moderateScale(20),
+            }}>
+            <Text
+              style={{
+                fontSize: moderateScale(12),
+                alignSelf: 'center',
+                marginTop: moderateScale(10),
+              }}>
+              {zoneTitle}
+            </Text>
+            <Text
+              style={{
+                fontSize: moderateScale(15),
+                alignSelf: 'center',
+                marginTop: moderateScale(10),
+              }}>
+              {title}
+            </Text>
+          </View>
+        </TouchableOpacity>
+      );
+    });
+  };
 
   if (loading) return <Loading message="Loading" />;
   return (
     <View
       style={{
         flex: 1,
-        padding: 20,
+        padding: moderateScale(15),
       }}>
-      <View style={{position: 'absolute', zIndex: 1}}>
+      <View style={{position: 'absolute', zIndex: 1, elevation: 5}}>
         <Header nav={props.navigation} />
       </View>
-      <TouchableOpacity
-        onPress={() =>
-          props.navigation.navigate('PanoramaTest', {
-            id: JSON.stringify(selectedCampaign._id),
-            // id: selectedCampaign._id,
-            campaigns: filteredCampaigns,
-          })
-        }
+      <View
         style={{
-          backgroundColor: 'white',
-          width: width / 4,
-          marginTop: 120,
-          paddingBottom: 40,
+          flex: 1,
+          marginTop: platform === 'android' ? moderateScale(30) : 0,
         }}>
-        <Image
-          style={{
-            height: height / 2,
-            width: width / 4,
-            resizeMode: 'contain',
-          }}
-          source={{uri: imageUrl}}
-        />
-        <Text style={{fontSize: 20, alignSelf: 'center', marginTop: 20}}>
-          {zone}
-        </Text>
-        <Text style={{fontSize: 30, alignSelf: 'center', marginTop: 20}}>
-          {selectedCampaign.title}
-        </Text>
-      </TouchableOpacity>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          {renderCampaigns()}
+        </ScrollView>
+      </View>
     </View>
   );
 }

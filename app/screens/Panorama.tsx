@@ -19,7 +19,6 @@ import Video from 'react-native-video';
 import {ObjectId} from 'bson';
 import Header from '../components/Header';
 import {CampaignMenu} from '../components/CampaignMenu';
-import {WebViewComponent} from '../components/WebViewComponent';
 import {useDatas} from '../Providers/DataProviders';
 import {Loading} from '../components/Loading';
 import {usePrevious} from '../components/userPrevious';
@@ -42,7 +41,7 @@ let objectivesArray = [];
 let kvArray = [];
 let kulaImageArray = [];
 
-function PanoramaTest(props) {
+export default function Panorama(props) {
   const {id, campaigns} = props.route.params;
   const [menuVisible, setMenuVisible] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -280,7 +279,7 @@ function PanoramaTest(props) {
 
       <TouchableOpacity
         onPress={() =>
-          props.navigation.navigate('CampaignTest', {
+          props.navigation.navigate('Campaign', {
             id: JSON.stringify(zoneId),
           })
         }
@@ -810,5 +809,3 @@ const styles = StyleSheet.create({
     margin: 3,
   },
 });
-
-export default PanoramaTest;

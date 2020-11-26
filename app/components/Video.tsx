@@ -15,7 +15,6 @@ export function VideoComponent({
         width: videoWidth,
         height: videoHeight,
       }}
-      // source={introVideo}
       onBack={onBack}
       paused={paused}
       source={{

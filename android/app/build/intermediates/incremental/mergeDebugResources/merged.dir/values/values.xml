@@ -761,20 +761,6 @@
     <string name="exposed_dropdown_menu_content_description">Show dropdown menu</string>
     <string name="fab_transformation_scrim_behavior" translatable="false">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
     <string name="fab_transformation_sheet_behavior" translatable="false">com.google.android.material.transformation.FabTransformationSheetBehavior</string>
-    <string name="fetch_notification_default_channel_id">fetch_downloads_channel_id</string>
-    <string name="fetch_notification_default_channel_name">Downloads</string>
-    <string name="fetch_notification_download_cancel">Cancel</string>
-    <string name="fetch_notification_download_complete">Complete</string>
-    <string name="fetch_notification_download_downloading">Downloading</string>
-    <string name="fetch_notification_download_eta_hrs">%1$dh %2$dm %3$ds left</string>
-    <string name="fetch_notification_download_eta_min">%1$dm %2$ds left</string>
-    <string name="fetch_notification_download_eta_sec">%1$ds left</string>
-    <string name="fetch_notification_download_failed">Failed</string>
-    <string name="fetch_notification_download_pause">Pause</string>
-    <string name="fetch_notification_download_paused">Paused</string>
-    <string name="fetch_notification_download_resume">Resume</string>
-    <string name="fetch_notification_download_retry">Retry</string>
-    <string name="fetch_notification_download_starting">Starting</string>
     <string description=" Short text shown in a button in the dialog box that shows up to help users configure their Cardboard experience. By clicking on this button, the user goes to the Cardboard app page on Playstore. [CHAR LIMIT=30]" name="go_to_playstore_button">
       Go to the Play Store
     </string>

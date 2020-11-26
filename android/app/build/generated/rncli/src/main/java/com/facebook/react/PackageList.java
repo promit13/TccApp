@@ -19,8 +19,6 @@ import org.reactnative.maskedview.RNCMaskedViewPackage;
 import com.reactnativecommunity.netinfo.NetInfoPackage;
 // @react-native-community/picker
 import com.reactnativecommunity.picker.RNCPickerPackage;
-// react-native-background-downloader
-import com.eko.RNBackgroundDownloaderPackage;
 // react-native-gesture-handler
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 // react-native-panorama-view
@@ -37,8 +35,6 @@ import com.horcrux.svg.SvgPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 // react-native-video
 import com.brentvatne.react.ReactVideoPackage;
-// react-native-webview
-import com.reactnativecommunity.webview.RNCWebViewPackage;
 // realm
 import io.realm.react.RealmReactPackage;
 // rn-fetch-blob
@@ -92,7 +88,6 @@ public class PackageList {
       new RNCMaskedViewPackage(),
       new NetInfoPackage(),
       new RNCPickerPackage(),
-      new RNBackgroundDownloaderPackage(),
       new RNGestureHandlerPackage(),
       new PanoramaViewPackage(),
       new ReanimatedPackage(),
@@ -101,7 +96,6 @@ public class PackageList {
       new SvgPackage(),
       new VectorIconsPackage(),
       new ReactVideoPackage(),
-      new RNCWebViewPackage(),
       new RealmReactPackage(),
       new RNFetchBlobPackage()
     ));

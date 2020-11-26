@@ -14,7 +14,6 @@ MERGED from [:react-native-community_async-storage] /Users/promitrai/Projects/Tc
 MERGED from [:react-native-community_masked-view] /Users/promitrai/Projects/TccApp/node_modules/@react-native-community/masked-view/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-community_netinfo] /Users/promitrai/Projects/TccApp/node_modules/@react-native-community/netinfo/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-12:12
 MERGED from [:react-native-community_picker] /Users/promitrai/Projects/TccApp/node_modules/@react-native-community/picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
-MERGED from [:react-native-background-downloader] /Users/promitrai/Projects/TccApp/node_modules/react-native-background-downloader/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-gesture-handler] /Users/promitrai/Projects/TccApp/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-panorama-view] /Users/promitrai/Projects/TccApp/node_modules/react-native-panorama-view/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-reanimated] /Users/promitrai/Projects/TccApp/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
@@ -23,7 +22,6 @@ MERGED from [:react-native-screens] /Users/promitrai/Projects/TccApp/node_module
 MERGED from [:react-native-svg] /Users/promitrai/Projects/TccApp/node_modules/react-native-svg/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-vector-icons] /Users/promitrai/Projects/TccApp/node_modules/react-native-vector-icons/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-video] /Users/promitrai/Projects/TccApp/node_modules/react-native-video/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
-MERGED from [:react-native-webview] /Users/promitrai/Projects/TccApp/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-23:12
 MERGED from [:realm] /Users/promitrai/Projects/TccApp/node_modules/realm/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:rn-fetch-blob] /Users/promitrai/Projects/TccApp/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-47:12
 MERGED from [com.facebook.react:react-native:0.63.2] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/8c12fc5186d0cbc438e248b8f91bb614/jetified-react-native-0.63.2/AndroidManifest.xml:2:1-13:12
@@ -58,8 +56,6 @@ MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/promitrai/.gradle/cach
 MERGED from [androidx.fragment:fragment:1.2.1] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/3c12965b57c5e1e86b95d72fd3b56079/fragment-1.2.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/cd29c5acebbf52d957788348d0bdfad9/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/b9d3e3e54657ce0eb1c9f2606ed99009/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.tonyodev.fetch2:xfetch2:3.1.4] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/765680fbb8d784d099b3dde6977ddaab/xfetch2-3.1.4/AndroidManifest.xml:2:1-15:12
-MERGED from [androidx.room:room-runtime:2.1.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/79749c7edbee7dc366f6280acb13630d/room-runtime-2.1.0/AndroidManifest.xml:17:1-30:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/600af7d8b4c1a49f073ccc55128c2ca0/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/0682d44037e63aa75fb007c4221fc230/loader-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.activity:activity:1.1.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/1eadbabcb348a5ccc29365639a3f8cf9/activity-1.1.0/AndroidManifest.xml:17:1-24:12
@@ -73,8 +69,6 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/prom
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/fe2dc7fc86bfac82c1908a087cb3dc5e/lifecycle-viewmodel-savedstate-2.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/00fca3b82372c2168626273b40bfb330/lifecycle-viewmodel-2.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/813aaf7d6bb80469e1f61dc1b20a9feb/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/620b40c9dc6c446aee17eddcd19ba1c7/sqlite-framework-2.0.1/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.sqlite:sqlite:2.0.1] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/ae3ab2ce00090e6ff60b72605a9917ed/sqlite-2.0.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/e2a3c36934de4dc0561002a6050950ef/lifecycle-runtime-2.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/0795f535144fd1be777f0291773b764a/savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/db8ad568b3c3d921cdfd0d9bcfc017af/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
@@ -85,7 +79,6 @@ MERGED from [com.google.vr:sdk-panowidget:1.180.0] /Users/promitrai/.gradle/cach
 MERGED from [com.google.vr:sdk-commonwidget:1.180.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/d4cee68d82e169a0c14e6cf6c0d2b3eb/jetified-sdk-commonwidget-1.180.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.vr:sdk-common:1.180.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/ac21c4c310741e4c1712119eaa3dd92c/sdk-common-1.180.0/AndroidManifest.xml:2:1-9:12
 MERGED from [com.yqritc:android-scalablevideoview:1.0.4] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/61f017f5d35d214e4839ce546d4e0081/jetified-android-scalablevideoview-1.0.4/AndroidManifest.xml:2:1-12:12
-MERGED from [androidx.tonyodev.fetch2core:xfetch2core:3.1.4] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/a9d3a36d698c8ee40be9e5f9c657e320/xfetch2core-3.1.4/AndroidManifest.xml:2:1-14:12
 INJECTED from /Users/promitrai/Projects/TccApp/android/app/src/debug/AndroidManifest.xml:2:1-8:12
 INJECTED from /Users/promitrai/Projects/TccApp/android/app/src/debug/AndroidManifest.xml:2:1-8:12
 INJECTED from /Users/promitrai/Projects/TccApp/android/app/src/debug/AndroidManifest.xml:2:1-8:12
@@ -112,8 +105,6 @@ MERGED from [com.facebook.flipper:flipper:0.37.0] /Users/promitrai/.gradle/cache
 MERGED from [com.facebook.flipper:flipper:0.37.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/81c7bc1e6fbd1ec2284cfce0fac5357c/flipper-0.37.0/AndroidManifest.xml:15:5-67
 MERGED from [:rn-fetch-blob] /Users/promitrai/Projects/TccApp/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:5-67
 MERGED from [:rn-fetch-blob] /Users/promitrai/Projects/TccApp/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:5-67
-MERGED from [androidx.tonyodev.fetch2:xfetch2:3.1.4] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/765680fbb8d784d099b3dde6977ddaab/xfetch2-3.1.4/AndroidManifest.xml:11:5-67
-MERGED from [androidx.tonyodev.fetch2:xfetch2:3.1.4] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/765680fbb8d784d099b3dde6977ddaab/xfetch2-3.1.4/AndroidManifest.xml:11:5-67
 	android:name
 		ADDED from /Users/promitrai/Projects/TccApp/android/app/src/main/AndroidManifest.xml:4:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
@@ -122,10 +113,6 @@ MERGED from [:react-native-community_netinfo] /Users/promitrai/Projects/TccApp/n
 MERGED from [:react-native-community_netinfo] /Users/promitrai/Projects/TccApp/node_modules/@react-native-community/netinfo/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-79
 MERGED from [:rn-fetch-blob] /Users/promitrai/Projects/TccApp/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:27:5-79
 MERGED from [:rn-fetch-blob] /Users/promitrai/Projects/TccApp/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:27:5-79
-MERGED from [androidx.tonyodev.fetch2:xfetch2:3.1.4] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/765680fbb8d784d099b3dde6977ddaab/xfetch2-3.1.4/AndroidManifest.xml:13:5-79
-MERGED from [androidx.tonyodev.fetch2:xfetch2:3.1.4] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/765680fbb8d784d099b3dde6977ddaab/xfetch2-3.1.4/AndroidManifest.xml:13:5-79
-MERGED from [androidx.tonyodev.fetch2core:xfetch2core:3.1.4] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/a9d3a36d698c8ee40be9e5f9c657e320/xfetch2core-3.1.4/AndroidManifest.xml:12:5-79
-MERGED from [androidx.tonyodev.fetch2core:xfetch2core:3.1.4] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/a9d3a36d698c8ee40be9e5f9c657e320/xfetch2core-3.1.4/AndroidManifest.xml:12:5-79
 	android:name
 		ADDED from /Users/promitrai/Projects/TccApp/android/app/src/main/AndroidManifest.xml:5:22-76
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
@@ -154,8 +141,6 @@ application
 ADDED from /Users/promitrai/Projects/TccApp/android/app/src/main/AndroidManifest.xml:11:5-31:19
 MERGED from /Users/promitrai/Projects/TccApp/android/app/src/main/AndroidManifest.xml:11:5-31:19
 MERGED from /Users/promitrai/Projects/TccApp/android/app/src/main/AndroidManifest.xml:11:5-31:19
-MERGED from [:react-native-webview] /Users/promitrai/Projects/TccApp/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-21:19
-MERGED from [:react-native-webview] /Users/promitrai/Projects/TccApp/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-21:19
 MERGED from [:realm] /Users/promitrai/Projects/TccApp/node_modules/realm/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-20
 MERGED from [:realm] /Users/promitrai/Projects/TccApp/node_modules/realm/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-20
 MERGED from [:rn-fetch-blob] /Users/promitrai/Projects/TccApp/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:35:5-45:19
@@ -166,8 +151,6 @@ MERGED from [com.facebook.soloader:soloader:0.9.0] /Users/promitrai/.gradle/cach
 MERGED from [com.facebook.soloader:soloader:0.9.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/8c726a69760654a996beebecd11f4c48/soloader-0.9.0/AndroidManifest.xml:11:5-20
 MERGED from [com.google.android.material:material:1.1.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/08b7f70788502e7fe5c57ef945a6713b/material-1.1.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.1.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/08b7f70788502e7fe5c57ef945a6713b/material-1.1.0/AndroidManifest.xml:22:5-20
-MERGED from [androidx.room:room-runtime:2.1.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/79749c7edbee7dc366f6280acb13630d/room-runtime-2.1.0/AndroidManifest.xml:24:5-28:19
-MERGED from [androidx.room:room-runtime:2.1.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/79749c7edbee7dc366f6280acb13630d/room-runtime-2.1.0/AndroidManifest.xml:24:5-28:19
 MERGED from [androidx.core:core:1.5.0-alpha05] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/a755dc7c58e467d36215e8d36b44bd11/core-1.5.0-alpha05/AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.5.0-alpha05] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/a755dc7c58e467d36215e8d36b44bd11/core-1.5.0-alpha05/AndroidManifest.xml:24:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/64e036f5d50542c926dd3b1d9ffbc5b0/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
@@ -249,8 +232,6 @@ MERGED from [:react-native-community_netinfo] /Users/promitrai/Projects/TccApp/n
 MERGED from [:react-native-community_netinfo] /Users/promitrai/Projects/TccApp/node_modules/@react-native-community/netinfo/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-community_picker] /Users/promitrai/Projects/TccApp/node_modules/@react-native-community/picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-community_picker] /Users/promitrai/Projects/TccApp/node_modules/@react-native-community/picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
-MERGED from [:react-native-background-downloader] /Users/promitrai/Projects/TccApp/node_modules/react-native-background-downloader/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-background-downloader] /Users/promitrai/Projects/TccApp/node_modules/react-native-background-downloader/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-gesture-handler] /Users/promitrai/Projects/TccApp/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-gesture-handler] /Users/promitrai/Projects/TccApp/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-panorama-view] /Users/promitrai/Projects/TccApp/node_modules/react-native-panorama-view/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
@@ -267,8 +248,6 @@ MERGED from [:react-native-vector-icons] /Users/promitrai/Projects/TccApp/node_m
 MERGED from [:react-native-vector-icons] /Users/promitrai/Projects/TccApp/node_modules/react-native-vector-icons/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-video] /Users/promitrai/Projects/TccApp/node_modules/react-native-video/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-video] /Users/promitrai/Projects/TccApp/node_modules/react-native-video/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-webview] /Users/promitrai/Projects/TccApp/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-webview] /Users/promitrai/Projects/TccApp/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [:realm] /Users/promitrai/Projects/TccApp/node_modules/realm/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:realm] /Users/promitrai/Projects/TccApp/node_modules/realm/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:rn-fetch-blob] /Users/promitrai/Projects/TccApp/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
@@ -337,10 +316,6 @@ MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/promitra
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/cd29c5acebbf52d957788348d0bdfad9/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/b9d3e3e54657ce0eb1c9f2606ed99009/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/b9d3e3e54657ce0eb1c9f2606ed99009/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.tonyodev.fetch2:xfetch2:3.1.4] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/765680fbb8d784d099b3dde6977ddaab/xfetch2-3.1.4/AndroidManifest.xml:7:5-9:41
-MERGED from [androidx.tonyodev.fetch2:xfetch2:3.1.4] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/765680fbb8d784d099b3dde6977ddaab/xfetch2-3.1.4/AndroidManifest.xml:7:5-9:41
-MERGED from [androidx.room:room-runtime:2.1.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/79749c7edbee7dc366f6280acb13630d/room-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.room:room-runtime:2.1.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/79749c7edbee7dc366f6280acb13630d/room-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/600af7d8b4c1a49f073ccc55128c2ca0/viewpager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/600af7d8b4c1a49f073ccc55128c2ca0/viewpager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/0682d44037e63aa75fb007c4221fc230/loader-1.0.0/AndroidManifest.xml:20:5-44
@@ -367,10 +342,6 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] /Users/promitrai/.gra
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/00fca3b82372c2168626273b40bfb330/lifecycle-viewmodel-2.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/813aaf7d6bb80469e1f61dc1b20a9feb/cardview-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/813aaf7d6bb80469e1f61dc1b20a9feb/cardview-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/620b40c9dc6c446aee17eddcd19ba1c7/sqlite-framework-2.0.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/620b40c9dc6c446aee17eddcd19ba1c7/sqlite-framework-2.0.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.sqlite:sqlite:2.0.1] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/ae3ab2ce00090e6ff60b72605a9917ed/sqlite-2.0.1/AndroidManifest.xml:20:5-44
-MERGED from [androidx.sqlite:sqlite:2.0.1] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/ae3ab2ce00090e6ff60b72605a9917ed/sqlite-2.0.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/e2a3c36934de4dc0561002a6050950ef/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/e2a3c36934de4dc0561002a6050950ef/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/0795f535144fd1be777f0291773b764a/savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
@@ -391,8 +362,6 @@ MERGED from [com.google.vr:sdk-common:1.180.0] /Users/promitrai/.gradle/caches/t
 MERGED from [com.google.vr:sdk-common:1.180.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/ac21c4c310741e4c1712119eaa3dd92c/sdk-common-1.180.0/AndroidManifest.xml:5:5-7:41
 MERGED from [com.yqritc:android-scalablevideoview:1.0.4] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/61f017f5d35d214e4839ce546d4e0081/jetified-android-scalablevideoview-1.0.4/AndroidManifest.xml:8:5-10:41
 MERGED from [com.yqritc:android-scalablevideoview:1.0.4] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/61f017f5d35d214e4839ce546d4e0081/jetified-android-scalablevideoview-1.0.4/AndroidManifest.xml:8:5-10:41
-MERGED from [androidx.tonyodev.fetch2core:xfetch2core:3.1.4] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/a9d3a36d698c8ee40be9e5f9c657e320/xfetch2core-3.1.4/AndroidManifest.xml:7:5-9:41
-MERGED from [androidx.tonyodev.fetch2core:xfetch2core:3.1.4] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/a9d3a36d698c8ee40be9e5f9c657e320/xfetch2core-3.1.4/AndroidManifest.xml:7:5-9:41
 INJECTED from /Users/promitrai/Projects/TccApp/android/app/src/debug/AndroidManifest.xml
 INJECTED from /Users/promitrai/Projects/TccApp/android/app/src/debug/AndroidManifest.xml
 	android:targetSdkVersion
@@ -411,28 +380,8 @@ MERGED from [:react-native-community_netinfo] /Users/promitrai/Projects/TccApp/n
 MERGED from [:react-native-community_netinfo] /Users/promitrai/Projects/TccApp/node_modules/@react-native-community/netinfo/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:10:5-76
 MERGED from [:rn-fetch-blob] /Users/promitrai/Projects/TccApp/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:30:5-76
 MERGED from [:rn-fetch-blob] /Users/promitrai/Projects/TccApp/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:30:5-76
-MERGED from [androidx.tonyodev.fetch2:xfetch2:3.1.4] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/765680fbb8d784d099b3dde6977ddaab/xfetch2-3.1.4/AndroidManifest.xml:12:5-76
-MERGED from [androidx.tonyodev.fetch2:xfetch2:3.1.4] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/765680fbb8d784d099b3dde6977ddaab/xfetch2-3.1.4/AndroidManifest.xml:12:5-76
-MERGED from [androidx.tonyodev.fetch2core:xfetch2core:3.1.4] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/a9d3a36d698c8ee40be9e5f9c657e320/xfetch2core-3.1.4/AndroidManifest.xml:11:5-76
-MERGED from [androidx.tonyodev.fetch2core:xfetch2core:3.1.4] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/a9d3a36d698c8ee40be9e5f9c657e320/xfetch2core-3.1.4/AndroidManifest.xml:11:5-76
 	android:name
 		ADDED from [com.facebook.flipper:flipper:0.37.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/81c7bc1e6fbd1ec2284cfce0fac5357c/flipper-0.37.0/AndroidManifest.xml:16:22-73
-provider#com.reactnativecommunity.webview.RNCWebViewFileProvider
-ADDED from [:react-native-webview] /Users/promitrai/Projects/TccApp/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-20:20
-	android:grantUriPermissions
-		ADDED from [:react-native-webview] /Users/promitrai/Projects/TccApp/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:13-47
-	android:authorities
-		ADDED from [:react-native-webview] /Users/promitrai/Projects/TccApp/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-64
-	android:exported
-		ADDED from [:react-native-webview] /Users/promitrai/Projects/TccApp/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-37
-	android:name
-		ADDED from [:react-native-webview] /Users/promitrai/Projects/TccApp/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-83
-meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from [:react-native-webview] /Users/promitrai/Projects/TccApp/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-19:63
-	android:resource
-		ADDED from [:react-native-webview] /Users/promitrai/Projects/TccApp/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:17-60
-	android:name
-		ADDED from [:react-native-webview] /Users/promitrai/Projects/TccApp/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:17-67
 uses-permission#com.android.vending.CHECK_LICENSE
 ADDED from [:rn-fetch-blob] /Users/promitrai/Projects/TccApp/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-73
 	android:name
@@ -451,12 +400,12 @@ ADDED from [:rn-fetch-blob] /Users/promitrai/Projects/TccApp/node_modules/rn-fet
 		ADDED from [:rn-fetch-blob] /Users/promitrai/Projects/TccApp/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:39:13-37
 	android:name
 		ADDED from [:rn-fetch-blob] /Users/promitrai/Projects/TccApp/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:37:13-62
-service#androidx.room.MultiInstanceInvalidationService
-ADDED from [androidx.room:room-runtime:2.1.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/79749c7edbee7dc366f6280acb13630d/room-runtime-2.1.0/AndroidManifest.xml:25:9-27:40
-	android:exported
-		ADDED from [androidx.room:room-runtime:2.1.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/79749c7edbee7dc366f6280acb13630d/room-runtime-2.1.0/AndroidManifest.xml:27:13-37
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [:rn-fetch-blob] /Users/promitrai/Projects/TccApp/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:41:13-43:58
+	android:resource
+		ADDED from [:rn-fetch-blob] /Users/promitrai/Projects/TccApp/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:43:17-55
 	android:name
-		ADDED from [androidx.room:room-runtime:2.1.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/79749c7edbee7dc366f6280acb13630d/room-runtime-2.1.0/AndroidManifest.xml:26:13-74
+		ADDED from [:rn-fetch-blob] /Users/promitrai/Projects/TccApp/node_modules/rn-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:42:17-67
 uses-feature#0x00020000
 ADDED from [com.google.vr:sdk-base:1.180.0] /Users/promitrai/.gradle/caches/transforms-2/files-2.1/2f2a69e8c4300f54b7be6497b705ca08/jetified-sdk-base-1.180.0/AndroidManifest.xml:10:5-12:35
 	android:glEsVersion

@@ -48,10 +48,6 @@
         "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/08b7f70788502e7fe5c57ef945a6713b/material-1.1.0/res/color/mtrl_chip_text_color.xml"
     },
     {
-        "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_fetch_notification_cancel.png.flat",
-        "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/765680fbb8d784d099b3dde6977ddaab/xfetch2-3.1.4/res/drawable-mdpi-v4/fetch_notification_cancel.png"
-    },
-    {
         "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
         "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/dc1b1298ed651ed2015da6fcf519fde1/appcompat-1.1.0/res/drawable-mdpi-v4/abc_btn_check_to_on_mtrl_000.png"
     },
@@ -66,10 +62,6 @@
     {
         "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/anim-v21_mtrl_bottom_sheet_slide_in.xml.flat",
         "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/08b7f70788502e7fe5c57ef945a6713b/material-1.1.0/res/anim-v21/mtrl_bottom_sheet_slide_in.xml"
-    },
-    {
-        "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_fetch_notification_pause.png.flat",
-        "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/765680fbb8d784d099b3dde6977ddaab/xfetch2-3.1.4/res/drawable-hdpi-v4/fetch_notification_pause.png"
     },
     {
         "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable-ldrtl-mdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -136,10 +128,6 @@
         "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/08b7f70788502e7fe5c57ef945a6713b/material-1.1.0/res/color/mtrl_choice_chip_background_color.xml"
     },
     {
-        "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_fetch_notification_retry.png.flat",
-        "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/765680fbb8d784d099b3dde6977ddaab/xfetch2-3.1.4/res/drawable-mdpi-v4/fetch_notification_retry.png"
-    },
-    {
         "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
         "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/dc1b1298ed651ed2015da6fcf519fde1/appcompat-1.1.0/res/drawable-hdpi-v4/abc_text_select_handle_left_mtrl_light.png"
     },
@@ -182,10 +170,6 @@
     {
         "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/layout-sw600dp-v13_mtrl_layout_snackbar.xml.flat",
         "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/08b7f70788502e7fe5c57ef945a6713b/material-1.1.0/res/layout-sw600dp-v13/mtrl_layout_snackbar.xml"
-    },
-    {
-        "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_fetch_notification_resume.png.flat",
-        "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/765680fbb8d784d099b3dde6977ddaab/xfetch2-3.1.4/res/drawable-xxhdpi-v4/fetch_notification_resume.png"
     },
     {
         "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable_abc_list_selector_background_transition_holo_dark.xml.flat",
@@ -636,10 +620,6 @@
         "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/08b7f70788502e7fe5c57ef945a6713b/material-1.1.0/res/drawable/mtrl_ic_error.xml"
     },
     {
-        "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_fetch_notification_retry.png.flat",
-        "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/765680fbb8d784d099b3dde6977ddaab/xfetch2-3.1.4/res/drawable-xxxhdpi-v4/fetch_notification_retry.png"
-    },
-    {
         "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable-v21_notification_action_background.xml.flat",
         "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/a755dc7c58e467d36215e8d36b44bd11/core-1.5.0-alpha05/res/drawable-v21/notification_action_background.xml"
     },
@@ -880,10 +860,6 @@
         "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/dc1b1298ed651ed2015da6fcf519fde1/appcompat-1.1.0/res/drawable-xhdpi-v4/abc_btn_radio_to_on_mtrl_000.png"
     },
     {
-        "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_fetch_notification_pause.png.flat",
-        "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/765680fbb8d784d099b3dde6977ddaab/xfetch2-3.1.4/res/drawable-xxhdpi-v4/fetch_notification_pause.png"
-    },
-    {
         "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/layout_abc_activity_chooser_view.xml.flat",
         "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/dc1b1298ed651ed2015da6fcf519fde1/appcompat-1.1.0/res/layout/abc_activity_chooser_view.xml"
     },
@@ -924,28 +900,16 @@
         "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/dc1b1298ed651ed2015da6fcf519fde1/appcompat-1.1.0/res/drawable-hdpi-v4/abc_ic_star_half_black_48dp.png"
     },
     {
-        "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_fetch_notification_retry.png.flat",
-        "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/765680fbb8d784d099b3dde6977ddaab/xfetch2-3.1.4/res/drawable-hdpi-v4/fetch_notification_retry.png"
-    },
-    {
-        "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/xml_file_provider_paths.xml.flat",
-        "source": "/Users/promitrai/Projects/TccApp/node_modules/react-native-webview/android/build/intermediates/packaged_res/debug/xml/file_provider_paths.xml"
+        "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable_btn_radio_on_to_off_mtrl_animation.xml.flat",
+        "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/dc1b1298ed651ed2015da6fcf519fde1/appcompat-1.1.0/res/drawable/btn_radio_on_to_off_mtrl_animation.xml"
     },
     {
         "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/anim_fragment_fade_enter.xml.flat",
         "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/3c12965b57c5e1e86b95d72fd3b56079/fragment-1.2.1/res/anim/fragment_fade_enter.xml"
     },
     {
-        "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable_btn_radio_on_to_off_mtrl_animation.xml.flat",
-        "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/dc1b1298ed651ed2015da6fcf519fde1/appcompat-1.1.0/res/drawable/btn_radio_on_to_off_mtrl_animation.xml"
-    },
-    {
         "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/color_mtrl_tabs_ripple_color.xml.flat",
         "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/08b7f70788502e7fe5c57ef945a6713b/material-1.1.0/res/color/mtrl_tabs_ripple_color.xml"
-    },
-    {
-        "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_fetch_notification_resume.png.flat",
-        "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/765680fbb8d784d099b3dde6977ddaab/xfetch2-3.1.4/res/drawable-mdpi-v4/fetch_notification_resume.png"
     },
     {
         "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/color-v23_abc_btn_colored_text_material.xml.flat",
@@ -1020,16 +984,8 @@
         "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/08b7f70788502e7fe5c57ef945a6713b/material-1.1.0/res/color/mtrl_fab_ripple_color.xml"
     },
     {
-        "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_fetch_notification_cancel.png.flat",
-        "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/765680fbb8d784d099b3dde6977ddaab/xfetch2-3.1.4/res/drawable-xxhdpi-v4/fetch_notification_cancel.png"
-    },
-    {
         "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/anim_abc_fade_out.xml.flat",
         "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/dc1b1298ed651ed2015da6fcf519fde1/appcompat-1.1.0/res/anim/abc_fade_out.xml"
-    },
-    {
-        "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_fetch_notification_cancel.png.flat",
-        "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/765680fbb8d784d099b3dde6977ddaab/xfetch2-3.1.4/res/drawable-hdpi-v4/fetch_notification_cancel.png"
     },
     {
         "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/layout_abc_action_bar_title_item.xml.flat",
@@ -1316,10 +1272,6 @@
         "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/dc1b1298ed651ed2015da6fcf519fde1/appcompat-1.1.0/res/drawable-hdpi-v4/abc_text_select_handle_middle_mtrl_light.png"
     },
     {
-        "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_fetch_notification_resume.png.flat",
-        "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/765680fbb8d784d099b3dde6977ddaab/xfetch2-3.1.4/res/drawable-xxxhdpi-v4/fetch_notification_resume.png"
-    },
-    {
         "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable_abc_seekbar_tick_mark_material.xml.flat",
         "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/dc1b1298ed651ed2015da6fcf519fde1/appcompat-1.1.0/res/drawable/abc_seekbar_tick_mark_material.xml"
     },
@@ -1362,10 +1314,6 @@
     {
         "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
         "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/dc1b1298ed651ed2015da6fcf519fde1/appcompat-1.1.0/res/drawable-mdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
-    },
-    {
-        "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_fetch_notification_pause.png.flat",
-        "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/765680fbb8d784d099b3dde6977ddaab/xfetch2-3.1.4/res/drawable-xxxhdpi-v4/fetch_notification_pause.png"
     },
     {
         "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/anim_btn_radio_to_off_mtrl_dot_group_animation.xml.flat",
@@ -1588,10 +1536,6 @@
         "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/dc1b1298ed651ed2015da6fcf519fde1/appcompat-1.1.0/res/drawable-xhdpi-v4/abc_text_select_handle_middle_mtrl_dark.png"
     },
     {
-        "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_fetch_notification_retry.png.flat",
-        "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/765680fbb8d784d099b3dde6977ddaab/xfetch2-3.1.4/res/drawable-xxhdpi-v4/fetch_notification_retry.png"
-    },
-    {
         "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
         "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/dc1b1298ed651ed2015da6fcf519fde1/appcompat-1.1.0/res/drawable-xhdpi-v4/abc_ic_menu_share_mtrl_alpha.png"
     },
@@ -1682,10 +1626,6 @@
     {
         "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
         "source": "/Users/promitrai/Projects/TccApp/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
-    },
-    {
-        "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_fetch_notification_resume.png.flat",
-        "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/765680fbb8d784d099b3dde6977ddaab/xfetch2-3.1.4/res/drawable-hdpi-v4/fetch_notification_resume.png"
     },
     {
         "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/color_material_on_primary_disabled.xml.flat",
@@ -1900,10 +1840,6 @@
         "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/3c12965b57c5e1e86b95d72fd3b56079/fragment-1.2.1/res/anim-v21/fragment_fast_out_extra_slow_in.xml"
     },
     {
-        "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_fetch_notification_cancel.png.flat",
-        "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/765680fbb8d784d099b3dde6977ddaab/xfetch2-3.1.4/res/drawable-xhdpi-v4/fetch_notification_cancel.png"
-    },
-    {
         "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
         "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/dc1b1298ed651ed2015da6fcf519fde1/appcompat-1.1.0/res/drawable-xxhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
     },
@@ -1976,10 +1912,6 @@
         "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/08b7f70788502e7fe5c57ef945a6713b/material-1.1.0/res/drawable/navigation_empty_icon.xml"
     },
     {
-        "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_fetch_notification_pause.png.flat",
-        "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/765680fbb8d784d099b3dde6977ddaab/xfetch2-3.1.4/res/drawable-xhdpi-v4/fetch_notification_pause.png"
-    },
-    {
         "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/anim-v21_design_bottom_sheet_slide_in.xml.flat",
         "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/08b7f70788502e7fe5c57ef945a6713b/material-1.1.0/res/anim-v21/design_bottom_sheet_slide_in.xml"
     },
@@ -2034,10 +1966,6 @@
     {
         "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
         "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/dc1b1298ed651ed2015da6fcf519fde1/appcompat-1.1.0/res/drawable-xxhdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png"
-    },
-    {
-        "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_fetch_notification_cancel.png.flat",
-        "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/765680fbb8d784d099b3dde6977ddaab/xfetch2-3.1.4/res/drawable-xxxhdpi-v4/fetch_notification_cancel.png"
     },
     {
         "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/layout_design_layout_tab_icon.xml.flat",
@@ -2242,10 +2170,6 @@
     {
         "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/color_mtrl_filled_stroke_color.xml.flat",
         "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/08b7f70788502e7fe5c57ef945a6713b/material-1.1.0/res/color/mtrl_filled_stroke_color.xml"
-    },
-    {
-        "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_fetch_notification_retry.png.flat",
-        "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/765680fbb8d784d099b3dde6977ddaab/xfetch2-3.1.4/res/drawable-xhdpi-v4/fetch_notification_retry.png"
     },
     {
         "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/animator_mtrl_card_state_list_anim.xml.flat",
@@ -2652,10 +2576,6 @@
         "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/08b7f70788502e7fe5c57ef945a6713b/material-1.1.0/res/layout/mtrl_picker_text_input_date.xml"
     },
     {
-        "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_fetch_notification_pause.png.flat",
-        "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/765680fbb8d784d099b3dde6977ddaab/xfetch2-3.1.4/res/drawable-mdpi-v4/fetch_notification_pause.png"
-    },
-    {
         "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_pressed_holo_light.9.png.flat",
         "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/dc1b1298ed651ed2015da6fcf519fde1/appcompat-1.1.0/res/drawable-mdpi-v4/abc_list_pressed_holo_light.9.png"
     },
@@ -2670,10 +2590,6 @@
     {
         "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable_ic_keyboard_arrow_right_black_24dp.xml.flat",
         "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/08b7f70788502e7fe5c57ef945a6713b/material-1.1.0/res/drawable/ic_keyboard_arrow_right_black_24dp.xml"
-    },
-    {
-        "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_fetch_notification_resume.png.flat",
-        "source": "/Users/promitrai/.gradle/caches/transforms-2/files-2.1/765680fbb8d784d099b3dde6977ddaab/xfetch2-3.1.4/res/drawable-xhdpi-v4/fetch_notification_resume.png"
     },
     {
         "merged": "/Users/promitrai/Projects/TccApp/android/app/build/intermediates/res/merged/debug/layout-v21_notification_action.xml.flat",

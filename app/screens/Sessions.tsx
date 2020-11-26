@@ -1,226 +1,162 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, Dimensions} from 'react-native';
-import {DropdownHeader} from '../components/DropdownHeader';
-import {
-  ScrollView,
-  TouchableOpacity,
-  TouchableHighlight,
-} from 'react-native-gesture-handler';
+import {View, Text, StyleSheet, Alert} from 'react-native';
+import {Button, Overlay, Icon} from 'react-native-elements';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 import _ from 'lodash';
-import {Icon} from 'react-native-elements';
-import {Loading} from '../components/Loading';
-import {testData} from '../config/testData';
+import {moderateScale} from 'react-native-size-matters';
+import moment from 'moment';
+import {useDatas} from '../Providers/DataProviders';
+import {SendCampaignDialog} from '../components/SendCampaignDialog';
 
-const {height, width} = Dimensions.get('window');
+let objectArray = [];
 
-let index = 0;
-// const data = [
-//   {key: index++, section: true, label: 'Fruits'},
-//   {key: index++, label: 'Red Apples'},
-//   {key: index++, label: 'Cherries'},
-//   {
-//     key: index++,
-//     label: 'Cranberries',
-//     accessibilityLabel: 'Tap here for cranberries',
-//   },
-//   // etc...
-//   // Can also add additional custom keys which are passed to the onChange callback
-//   {key: index++, label: 'Vegetable', customKey: 'Not a fruit'},
-// ];
-// const testPickerData = [
-//   {label: 'Football', value: 'football', key: '1'},
-//   {label: 'Baseball', value: 'baseball', key: '2'},
-//   {label: 'Hockey', value: 'hockey', key: '3'},
-// ];
+export default function Sessions({data}) {
+  const {favourites, campaigns, netInfo} = useDatas();
 
-const titleArray = [
-  'SESSION',
-  'DATE',
-  'TIME',
-  'COMPLETED SESSIONS',
-  'FAVOURITED',
-];
+  const [index, setIndex] = useState(0);
+  const [showDetail, setShowDetail] = useState(false);
+  const [overlayVisible, setOverlayVisible] = useState(false);
 
-const data = [
-  {
-    sessionId: '1234567890',
-    date: '2017-10-01',
-    time: '14:10',
-    completedSessions: '7',
-    favourited: '8',
-  },
-  {
-    sessionId: '1234567890',
-    date: '2017-10-01',
-    time: '14:10',
-    completedSessions: '7',
-    favourited: '8',
-  },
-  {
-    sessionId: '1234567890',
-    date: '2017-10-01',
-    time: '14:10',
-    completedSessions: '7',
-    favourited: '8',
-  },
-  {
-    sessionId: '1234567890',
-    date: '2017-10-01',
-    time: '14:10',
-    completedSessions: '7',
-    favourited: '8',
-  },
-  {
-    sessionId: '1234567890',
-    date: '2017-10-01',
-    time: '14:10',
-    completedSessions: '7',
-    favourited: '8',
-  },
-];
-let countries = [];
-let countryObjectArray = [];
-let directors = [];
-let directorsObjectArray = [];
-
-const daysArray = [
-  {label: '30 Days', value: '30', key: '2'},
-  {label: '90 Days', value: '90', key: '3'},
-  {label: '365 Days', value: '365', key: '4'},
-  {label: 'All', value: 'all', key: '5'},
-];
-
-export default class Sessions extends React.Component {
-  state = {
-    selectedIndex: 0,
-    showDetail: false,
-    country: 'all',
-    director: 'all',
-    days: '7',
-    showCountries: true,
-    showDirectors: true,
-    loading: true,
+  const toggleOverlay = () => {
+    setOverlayVisible(!overlayVisible);
   };
-  componentDidMount() {
-    // this.setState({loading: false, showCountries: true, showDirectors: true});
-    testData.map((item, index) => {
-      if (countries.includes(item.country)) {
-        return;
-      } else {
-        const countryObject = {label: item.country, value: item.country};
-        countries.push(item.country);
-        countryObjectArray.push(countryObject);
-      }
-    });
-    this.setState({loading: false});
-  }
-  renderScrollView = () => {
-    const {selectedIndex, showDetail} = this.state;
-    return data.map((item, index) => {
+
+  const renderScrollView = () => {
+    return data.map((item, i) => {
+      const favouritedArray = _.filter(favourites, function (o) {
+        return JSON.stringify(o.session) == JSON.stringify(item._id);
+      });
+      const formattedDate = moment(item.createdAt).format('DD/MM/YYYY');
+      const formattedTime = moment(item.createdAt).format('hh:mm');
       return (
-        <View>
+        <View key={JSON.stringify(item._id)}>
           <TouchableOpacity
-            style={{
-              flexDirection: 'row',
-              borderBottomWidth: 1,
-              borderBottomColor: 'grey',
-              backgroundColor: 'white',
-              alignItems: 'center',
-              padding: 20,
-              justifyContent: 'space-between',
-            }}
+            style={styles.touchableStyle}
             onPress={() => {
-              this.setState({
-                selectedIndex: index,
-                showDetail: !showDetail,
-              });
+              setIndex(i);
+              setShowDetail(!showDetail);
             }}>
             <View style={{flexDirection: 'row'}}>
               <Icon
                 name={
-                  index === selectedIndex && showDetail
+                  i === index && showDetail
                     ? 'chevron-small-down'
                     : 'chevron-small-right'
                 }
                 type="entypo"
               />
-              <Text>{item.sessionId}</Text>
+              <Text
+                style={[
+                  styles.textStyle,
+                  {
+                    marginLeft: moderateScale(1),
+                  },
+                ]}>
+                {item.title}
+              </Text>
             </View>
-            <Text>{item.date}</Text>
-            <Text>{item.time}</Text>
+            <Text style={styles.textStyle}>{formattedDate}</Text>
+            <Text style={[styles.textStyle, {width: moderateScale(55)}]}>
+              {formattedTime}
+            </Text>
             {/* <Text style={{marginLeft: width / 6}}>
               {item.completedSessions}
             </Text> */}
-            <Text>{item.favourited}</Text>
+            <Text style={styles.textStyle}>{favouritedArray.length}</Text>
           </TouchableOpacity>
-          {index === selectedIndex && showDetail ? (
-            <View style={{flex: 1, backgroundColor: 'grey', padding: 10}}>
-              <Text>Hello</Text>
+          {i === index && showDetail ? (
+            <View style={{flex: 1}}>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  backgroundColor: 'lightgrey',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  padding: moderateScale(10),
+                }}>
+                <Text style={{fontSize: moderateScale(10), fontWeight: 'bold'}}>
+                  Campaigns Favourited
+                </Text>
+                {favouritedArray.length !== 0 && (
+                  <Button
+                    containerStyle={{
+                      width: moderateScale(75),
+                    }}
+                    buttonStyle={{
+                      width: moderateScale(75),
+                      backgroundColor: 'grey',
+                      alignSelf: 'flex-end',
+                    }}
+                    title="Send"
+                    onPress={() => {
+                      if (!netInfo) {
+                        console.log('NETINFO', netInfo);
+                        Alert.alert('No internet connection');
+                        return;
+                      }
+                      objectArray = [];
+                      favouritedArray.map((favourite) => {
+                        const obj = campaigns.find(
+                          (o) =>
+                            JSON.stringify(o._id) ===
+                            JSON.stringify(favourite.campaign),
+                        );
+
+                        objectArray.push(obj);
+                      });
+                      toggleOverlay();
+                    }}
+                  />
+                )}
+              </View>
+              <View style={{padding: 10}}>
+                {favouritedArray.map((favourite, index) => {
+                  const obj = campaigns.find(
+                    (o) =>
+                      JSON.stringify(o._id) ===
+                      JSON.stringify(favourite.campaign),
+                  );
+                  return (
+                    <Text
+                      key={index}
+                      style={{
+                        marginVertical: 10,
+                        fontSize: moderateScale(8),
+                      }}>
+                      {obj.title}
+                    </Text>
+                  );
+                })}
+              </View>
             </View>
           ) : null}
+          <Overlay isVisible={overlayVisible} onBackdropPress={toggleOverlay}>
+            <SendCampaignDialog
+              toggleOverlay={toggleOverlay}
+              favouritedArray={objectArray}
+              sessionId={item._id}
+            />
+          </Overlay>
         </View>
       );
     });
   };
 
-  onDaySelected = (days) => {
-    this.setState({days});
-  };
-  onCountrySelected = (country) => {
-    this.setState({country, director: 'all'});
-  };
-  onDirectorSelected = (director) => {
-    this.setState({director});
-  };
-  // 75 70 120 150
-  render() {
-    const {country, showCountries, showDirectors, loading} = this.state;
-    directorsObjectArray = [];
-
-    if (country === 'all') {
-      testData.map((item, index) => {
-        const directorObject = {label: item.name, value: item.uid};
-        directorsObjectArray.push(directorObject);
-      });
-    } else {
-      _.filter(testData, function (item) {
-        if (item.country === country) {
-          const directorObj = {label: item.name, value: item.uid};
-          directorsObjectArray.push(directorObj);
-        }
-      });
-    }
-    if (loading) {
-      return <Loading message="Loading" />;
-    }
-    return (
-      <View style={{flex: 1}}>
-        {/* <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-          }}>
-          <Text style={{fontSize: 20, marginLeft: 10}}>SESSIONS</Text>
-          <DropdownHeader
-            showCountries={showCountries}
-            showDirectors={showDirectors}
-            countries={countryObjectArray}
-            directors={directorsObjectArray}
-            days={daysArray}
-            onDaySelected={this.onDaySelected}
-            onCountrySelected={this.onCountrySelected}
-            onDirectorSelected={this.onDirectorSelected}
-          />
-        </View> */}
-        {/* <Table
-          data={titleArray}
-          barColor="#4778A0"
-          barTitle="RECENTLY COMPLETED SESSIONS"
-          showTitleBar={true}
-        /> */}
-        {this.renderScrollView()}
-      </View>
-    );
-  }
+  return <View style={{flex: 1}}>{renderScrollView()}</View>;
 }
+
+const styles = StyleSheet.create({
+  touchableStyle: {
+    flexDirection: 'row',
+    borderBottomWidth: 1,
+    borderBottomColor: 'grey',
+    backgroundColor: 'white',
+    alignItems: 'center',
+    padding: moderateScale(10),
+    justifyContent: 'space-between',
+  },
+  textStyle: {
+    width: moderateScale(50),
+    marginTop: moderateScale(2),
+  },
+});

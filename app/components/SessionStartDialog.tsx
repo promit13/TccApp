@@ -8,7 +8,7 @@ import {Loading} from './Loading';
 
 import {width, height} from '../config/utils';
 
-export function SessionStart({toggleOverlay}) {
+export function SessionStartDialog({toggleOverlay}) {
   const [loading, setLoading] = useState(false);
   const {createSession, sessionId, endSession} = useDatas();
   const {control, handleSubmit, errors} = useForm();

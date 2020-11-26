@@ -168,7 +168,11 @@ export function SendCampaignDialog({
         <Text style={styles.errorTextStyle}>{errors.email.message}</Text>
       )}
       <Button
-        containerStyle={{width: moderateScale(50), alignSelf: 'flex-end'}}
+        containerStyle={{
+          width: moderateScale(50),
+          alignSelf: 'flex-end',
+          marginRight: moderateScale(10),
+        }}
         buttonStyle={styles.buttonStyle}
         title="Send"
         onPress={handleSubmit(onSubmit)}

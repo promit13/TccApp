@@ -24,13 +24,6 @@ export default function Table({data, barColor, barTitle, showTitleBar}) {
           {data.map((item, index) => {
             return <Text style={styles.headerTextStyle}>{item}</Text>;
           })}
-          {/* <Text style={[styles.headerTextStyle, {marginLeft: 0}]}>
-            SESSION ID
-          </Text>
-          <Text style={styles.headerTextStyle}>DATE</Text>
-          <Text style={styles.headerTextStyle}>TIME</Text>
-          <Text style={styles.headerTextStyle}>COMPLETED SESSIONS</Text>
-          <Text style={styles.headerTextStyle}>FAVOURITED</Text> */}
         </View>
       </View>
     </View>

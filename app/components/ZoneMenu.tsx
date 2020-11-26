@@ -30,7 +30,7 @@ export function ZoneMenu({nav, onPress, zones}) {
           style={styles.touchableStyle}
           onPress={() => {
             nav
-              ? nav.navigate('CampaignTest', {
+              ? nav.navigate('Campaign', {
                   id,
                 })
               : onPress(id);

@@ -25,10 +25,10 @@ public final class R {
     public static final class drawable {
         private drawable() {}
 
-        public static final int quantum_ic_close_white_24 = 0x7f070092;
-        public static final int quantum_ic_settings_white_24 = 0x7f070095;
-        public static final int rippleable = 0x7f070097;
-        public static final int transition = 0x7f07009b;
+        public static final int quantum_ic_close_white_24 = 0x7f07008e;
+        public static final int quantum_ic_settings_white_24 = 0x7f070091;
+        public static final int rippleable = 0x7f070093;
+        public static final int transition = 0x7f070097;
     }
     public static final class id {
         private id() {}
@@ -73,16 +73,16 @@ public final class R {
         public static final int dialog_title_warning = 0x7f0e004c;
         public static final int dialog_vr_core_not_enabled = 0x7f0e004d;
         public static final int dialog_vr_core_not_installed = 0x7f0e004e;
-        public static final int go_to_playstore_button = 0x7f0e0061;
-        public static final int go_to_vr_listeners_settings_button = 0x7f0e0062;
-        public static final int gvr_vr_mode_component = 0x7f0e0063;
-        public static final int no_browser_text = 0x7f0e008f;
-        public static final int place_your_phone_into_cardboard = 0x7f0e0095;
-        public static final int place_your_viewer_into_viewer_format = 0x7f0e0096;
-        public static final int settings_button_content_description = 0x7f0e009d;
-        public static final int setup_button = 0x7f0e009e;
-        public static final int switch_viewer_action = 0x7f0e00a8;
-        public static final int switch_viewer_prompt = 0x7f0e00a9;
+        public static final int go_to_playstore_button = 0x7f0e0053;
+        public static final int go_to_vr_listeners_settings_button = 0x7f0e0054;
+        public static final int gvr_vr_mode_component = 0x7f0e0055;
+        public static final int no_browser_text = 0x7f0e0081;
+        public static final int place_your_phone_into_cardboard = 0x7f0e0087;
+        public static final int place_your_viewer_into_viewer_format = 0x7f0e0088;
+        public static final int settings_button_content_description = 0x7f0e008f;
+        public static final int setup_button = 0x7f0e0090;
+        public static final int switch_viewer_action = 0x7f0e009a;
+        public static final int switch_viewer_prompt = 0x7f0e009b;
     }
     public static final class style {
         private style() {}

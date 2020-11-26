@@ -39,21 +39,6 @@ com/brentvatne/react/R.java
  com.brentvatne.react.R$style
  com.brentvatne.react.R$styleable
  com.brentvatne.react.R$xml
-com/eko/R.java
- com.eko.R
- com.eko.R$anim
- com.eko.R$attr
- com.eko.R$bool
- com.eko.R$color
- com.eko.R$dimen
- com.eko.R$drawable
- com.eko.R$id
- com.eko.R$integer
- com.eko.R$layout
- com.eko.R$string
- com.eko.R$style
- com.eko.R$styleable
- com.eko.R$xml
 com/facebook/fresco/memorytypes/ashmem/R.java
  com.facebook.fresco.memorytypes.ashmem.R
 com/facebook/imagepipelinebase/R.java
@@ -62,18 +47,6 @@ androidx/lifecycle/livedata/core/R.java
  androidx.lifecycle.livedata.core.R
 com/facebook/imagepipeline/R.java
  com.facebook.imagepipeline.R
-com/tonyodev/fetch2/R.java
- com.tonyodev.fetch2.R
- com.tonyodev.fetch2.R$attr
- com.tonyodev.fetch2.R$color
- com.tonyodev.fetch2.R$dimen
- com.tonyodev.fetch2.R$drawable
- com.tonyodev.fetch2.R$id
- com.tonyodev.fetch2.R$integer
- com.tonyodev.fetch2.R$layout
- com.tonyodev.fetch2.R$string
- com.tonyodev.fetch2.R$style
- com.tonyodev.fetch2.R$styleable
 androidx/appcompat/resources/R.java
  androidx.appcompat.resources.R
  androidx.appcompat.resources.R$attr
@@ -310,8 +283,6 @@ com/tccapp/MainActivity.java
  com.tccapp.MainActivity
 com/facebook/imagepipeline/backends/okhttp3/R.java
  com.facebook.imagepipeline.backends.okhttp3.R
-androidx/sqlite/db/framework/R.java
- androidx.sqlite.db.framework.R
 com/google/vr/sdk/base/R.java
  com.google.vr.sdk.base.R
  com.google.vr.sdk.base.R$color
@@ -567,9 +538,6 @@ com/facebook/flipper/R.java
  com.facebook.flipper.R$string
  com.facebook.flipper.R$style
  com.facebook.flipper.R$styleable
-com/tonyodev/fetch2core/R.java
- com.tonyodev.fetch2core.R
- com.tonyodev.fetch2core.R$string
 com/facebook/fresco/flipper/R.java
  com.facebook.fresco.flipper.R
  com.facebook.fresco.flipper.R$attr
@@ -622,25 +590,8 @@ com/facebook/imagepipeline/animated/R.java
  com.facebook.imagepipeline.animated.R$attr
  com.facebook.imagepipeline.animated.R$id
  com.facebook.imagepipeline.animated.R$styleable
-com/reactnativecommunity/webview/R.java
- com.reactnativecommunity.webview.R
- com.reactnativecommunity.webview.R$anim
- com.reactnativecommunity.webview.R$attr
- com.reactnativecommunity.webview.R$bool
- com.reactnativecommunity.webview.R$color
- com.reactnativecommunity.webview.R$dimen
- com.reactnativecommunity.webview.R$drawable
- com.reactnativecommunity.webview.R$id
- com.reactnativecommunity.webview.R$integer
- com.reactnativecommunity.webview.R$layout
- com.reactnativecommunity.webview.R$string
- com.reactnativecommunity.webview.R$style
- com.reactnativecommunity.webview.R$styleable
- com.reactnativecommunity.webview.R$xml
 com/facebook/nativeimagetranscoder/R.java
  com.facebook.nativeimagetranscoder.R
-androidx/sqlite/db/R.java
- androidx.sqlite.db.R
 com/facebook/animated/drawable/R.java
  com.facebook.animated.drawable.R
  com.facebook.animated.drawable.R$attr
@@ -658,18 +609,6 @@ androidx/viewpager/R.java
  androidx.viewpager.R$string
  androidx.viewpager.R$style
  androidx.viewpager.R$styleable
-androidx/room/R.java
- androidx.room.R
- androidx.room.R$attr
- androidx.room.R$color
- androidx.room.R$dimen
- androidx.room.R$drawable
- androidx.room.R$id
- androidx.room.R$integer
- androidx.room.R$layout
- androidx.room.R$string
- androidx.room.R$style
- androidx.room.R$styleable
 com/tccapp/R.java
  com.tccapp.R
  com.tccapp.R$anim

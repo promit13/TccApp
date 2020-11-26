@@ -7,7 +7,7 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import {ZoneMenu} from '../components/ZoneMenu';
 import {useDatas} from '../Providers/DataProviders';
 import {Loading} from '../components/Loading';
-import {SessionStart} from '../components/SessionStart';
+import {SessionStartDialog} from '../components/SessionStartDialog';
 
 import {width, height} from '../config/utils';
 
@@ -57,7 +57,7 @@ function Zone({navigation}) {
       </View>
       <ZoneMenu nav={navigation} zones={zones} />
       <Overlay isVisible={overlayVisible} onBackdropPress={toggleOverlay}>
-        <SessionStart toggleOverlay={toggleOverlay} />
+        <SessionStartDialog toggleOverlay={toggleOverlay} />
       </Overlay>
       {!sessionId && (
         <Button

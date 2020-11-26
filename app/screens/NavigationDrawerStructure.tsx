@@ -7,26 +7,20 @@ import {Button, Overlay} from 'react-native-elements';
 import {moderateScale} from 'react-native-size-matters';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createStackNavigator} from '@react-navigation/stack';
-import {CustomSidebarMenu} from '../components/CustomSideBarMenu';
-import {SessionStart} from '../components/SessionStart';
+import {CustomDrawerMenu} from '../components/CustomDrawerMenu';
+import {SessionStartDialog} from '../components/SessionStartDialog';
 
 //Import all the screens
 import Zone from './Zone';
 import Campaign from './Campaign';
-import CampaignTest from './CampaignTest';
-import Home from './Home';
-import Dashboard from './Dashboard';
 
-import DashboardTest from './DashboardTest';
-import DashboardTestSecond from './DashboardTestSecond';
-import PanoramaTest from './PanoramaTest';
+import Dashboard from './Dashboard';
 import Panorama from './Panorama';
 import Download from './Download';
-import GraphDemo from './GraphDemo';
 import Login from './Login';
 import Logout from './Logout';
 import Help from './Help';
-import CampaignSingleTest from './CampaignSingleTest';
+import CampaignSingle from './CampaignSingle';
 import CaseStudies from './CaseStudies';
 import Introduction from './Introduction';
 import CaseSingle from './CaseSingle';
@@ -41,7 +35,7 @@ const Drawer = createDrawerNavigator();
 const HomeStack = () => {
   return (
     <Drawer.Navigator
-      drawerContent={(props) => <CustomSidebarMenu {...props} />}
+      drawerContent={(props) => <CustomDrawerMenu {...props} />}
       drawerPosition="right"
       initialRouteName="Zone"
       drawerStyle={{width: width / 4}}
@@ -49,16 +43,14 @@ const HomeStack = () => {
         activeTintColor: 'grey',
       }}
       overlayColor="transparent">
-      <Drawer.Screen name="Home" component={DashboardTestSecond} />
+      <Drawer.Screen name="Home" component={Dashboard} />
       <Drawer.Screen name="Zone" component={Zone} />
       <Drawer.Screen name="Help" component={Help} />
       <Drawer.Screen name="Panorama" component={Panorama} />
-      <Drawer.Screen name="PanoramaTest" component={PanoramaTest} />
       <Drawer.Screen name="Download" component={Download} />
       <Drawer.Screen name="Logout" component={Logout} />
       <Drawer.Screen name="Campaign" component={Campaign} />
-      <Drawer.Screen name="CampaignTest" component={CampaignTest} />
-      <Drawer.Screen name="CampaignSingleTest" component={CampaignSingleTest} />
+      <Drawer.Screen name="CampaignSingle" component={CampaignSingle} />
       <Drawer.Screen name="CaseStudies" component={CaseStudies} />
       <Drawer.Screen name="Introduction" component={Introduction} />
       <Drawer.Screen name="CaseSingle" component={CaseSingle} />
@@ -91,7 +83,7 @@ export default function NavigationDrawerStructure() {
     <View style={{flex: 1}}>
       <SignedIn />
       <Overlay isVisible={overlayVisible} onBackdropPress={toggleOverlay}>
-        <SessionStart toggleOverlay={toggleOverlay} />
+        <SessionStartDialog toggleOverlay={toggleOverlay} />
       </Overlay>
       {sessionId && (
         <Button
